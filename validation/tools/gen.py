@@ -228,22 +228,95 @@ def styles_block(cat_styles, fidelity=None):
 
 
 def component_configuration(name):
-    """Return the minimum resource configuration required by Meshery validation."""
+    """Return the minimum catalog-valid resource configuration for Meshery validation."""
     configs = {
         "deploy-meshery-control": {
-            "spec": {},
+            "spec": {
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/name": "meshery-control",
+                    },
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app.kubernetes.io/name": "meshery-control",
+                        },
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "meshery-control",
+                            },
+                        ],
+                    },
+                },
+            },
         },
         "sts-redis": {
-            "spec": {},
+            "spec": {
+                "serviceName": "redis",
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/name": "redis",
+                    },
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app.kubernetes.io/name": "redis",
+                        },
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "redis",
+                            },
+                        ],
+                    },
+                },
+            },
         },
         "sts-postgres": {
-            "spec": {},
+            "spec": {
+                "serviceName": "postgres",
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/name": "postgres",
+                    },
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app.kubernetes.io/name": "postgres",
+                        },
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "postgres",
+                            },
+                        ],
+                    },
+                },
+            },
         },
         "prometheus": {
             "spec": {},
         },
         "sm-platform": {
-            "spec": {},
+            "spec": {
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/name": "meshery-control",
+                    },
+                },
+                "endpoints": [
+                    {
+                        "port": "metrics",
+                    },
+                ],
+            },
         },
         "alertmanager": {
             "spec": {},
@@ -265,6 +338,9 @@ def component_configuration(name):
         "vapb-ai-runtime": {
             "spec": {
                 "policyName": "vap-required-labels",
+                "validationActions": [
+                    "Deny",
+                ],
             },
         },
     }
