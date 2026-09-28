@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local validation/runtime artifacts
+/tmp/
+*.log
+
+# Local editor/OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Meshery local runtime data
+.meshery/

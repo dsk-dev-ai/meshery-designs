@@ -1,0 +1,663 @@
+Gate 1 strict Draft-07 validation
+schema:  /home/dsk/go/pkg/mod/github.com/meshery/schemas@v1.3.37/schemas/constructs/v1beta3/design/design.yaml
+artifact: /home/dsk/opensource_new_programs/meshery-designs/generated/design.yml
+schema modified by this harness: NO
+expected outcome: FAIL on patchStrategy='replace' (upstream schema/catalog inconsistency)
+==============================================================================
+design ai-native-platform is INVALID under the shipped schema: 162 error(s)
+==============================================================================
+
+FAIL  relationships/0/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/0/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/1/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/1/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/10/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/10/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/107/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/107/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/108/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/108/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/109/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/109/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/11/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/11/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/110/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/110/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/12/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/12/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/13/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/13/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/14/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/14/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/15/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/15/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/16/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/16/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/17/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/17/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/18/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/18/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/19/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/19/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/2/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/2/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/20/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/20/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/21/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/21/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/22/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/22/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/23/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/23/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/24/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/24/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/25/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/25/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/26/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/26/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/27/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/27/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/28/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/28/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/3/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/3/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/32/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/32/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/33/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/33/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/34/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/34/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/35/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/35/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/36/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/36/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/37/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/37/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/38/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/38/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/39/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/39/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/4/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/4/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/40/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/40/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/41/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/41/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/42/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/42/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/43/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/43/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/44/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/44/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/45/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/45/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/46/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/46/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/47/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/47/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/48/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/48/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/49/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/49/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/5/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/5/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/50/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/50/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/51/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/51/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/52/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/52/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/53/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/53/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/56/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/56/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/57/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/57/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/58/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/58/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/59/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/59/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/6/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/6/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/60/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/60/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/61/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/61/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/62/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/62/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/63/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/63/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/64/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/64/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/65/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/65/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/66/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/66/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/67/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/67/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/68/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/68/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/69/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/69/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/7/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/7/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/70/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/70/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/71/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/71/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/72/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/72/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/73/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/73/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/74/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/74/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/75/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/75/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/76/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/76/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/77/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/77/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/78/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/78/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/79/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/79/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/8/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/8/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/80/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/80/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/81/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/81/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/9/selectors/0/allow/from/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+FAIL  relationships/9/selectors/0/allow/to/0/patch/patchStrategy
+      value:   'replace'
+      message: 'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']
+
+------------------------------------------------------------------------------
+total errors: 162
+  patchStrategy='replace': 162
+  other:                   0
+
+Exit status: 1 (expected)

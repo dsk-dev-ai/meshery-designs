@@ -1,0 +1,986 @@
+{
+  "artifact": "/home/dsk/opensource_new_programs/meshery-designs/generated/design.yml",
+  "schema": "/home/dsk/go/pkg/mod/github.com/meshery/schemas@v1.3.37/schemas/constructs/v1beta3/design/design.yaml",
+  "schema_modified": false,
+  "total_findings": 162,
+  "known_upstream_schema_exception": 162,
+  "unexpected": 0,
+  "relationships_with_patchStrategy": 81,
+  "relationships_without_patchStrategy": 30,
+  "patchStrategy_fields": 162,
+  "gate1": "PASS",
+  "findings": [
+    {
+      "path": "relationships/0/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/0/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/1/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/1/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/10/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/10/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/107/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/107/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/108/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/108/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/109/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/109/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/11/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/11/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/110/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/110/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/12/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/12/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/13/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/13/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/14/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/14/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/15/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/15/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/16/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/16/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/17/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/17/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/18/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/18/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/19/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/19/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/2/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/2/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/20/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/20/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/21/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/21/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/22/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/22/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/23/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/23/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/24/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/24/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/25/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/25/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/26/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/26/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/27/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/27/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/28/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/28/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/3/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/3/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/32/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/32/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/33/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/33/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/34/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/34/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/35/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/35/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/36/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/36/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/37/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/37/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/38/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/38/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/39/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/39/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/4/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/4/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/40/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/40/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/41/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/41/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/42/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/42/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/43/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/43/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/44/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/44/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/45/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/45/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/46/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/46/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/47/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/47/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/48/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/48/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/49/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/49/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/5/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/5/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/50/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/50/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/51/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/51/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/52/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/52/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/53/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/53/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/56/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/56/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/57/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/57/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/58/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/58/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/59/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/59/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/6/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/6/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/60/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/60/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/61/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/61/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/62/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/62/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/63/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/63/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/64/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/64/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/65/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/65/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/66/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/66/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/67/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/67/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/68/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/68/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/69/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/69/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/7/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/7/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/70/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/70/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/71/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/71/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/72/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/72/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/73/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/73/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/74/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/74/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/75/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/75/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/76/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/76/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/77/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/77/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/78/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/78/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/79/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/79/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/8/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/8/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/80/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/80/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/81/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/81/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/9/selectors/0/allow/from/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    },
+    {
+      "path": "relationships/9/selectors/0/allow/to/0/patch/patchStrategy",
+      "value": "replace",
+      "message": "'replace' is not one of ['merge', 'strategic', 'add', 'remove', 'copy', 'move', 'test']",
+      "classification": "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
+    }
+  ]
+}

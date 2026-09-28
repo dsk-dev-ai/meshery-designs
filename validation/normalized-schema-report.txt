@@ -1,0 +1,201 @@
+Gate 1 normalized report
+artifact: /home/dsk/opensource_new_programs/meshery-designs/generated/design.yml
+==============================================================================
+EXCEPTION NOTICE
+Strict Draft-07 validation against the shipped Meshery schema fails
+for patchStrategy='replace'. This is an upstream schema/catalog
+inconsistency. The design preserves the catalog value faithfully.
+The exception is narrowly scoped and does not relax any other schema
+constraint.
+==============================================================================
+
+Counts
+  total findings                          162
+  KNOWN_UPSTREAM_SCHEMA_EXCEPTION          162
+  UNEXPECTED                               0
+
+Scope
+  relationships carrying patchStrategy      81 (expect 81)
+  relationships without patchStrategy       30 (expect 30)
+  patchStrategy fields (derived)            162
+
+Classification rule: a finding is KNOWN_UPSTREAM_SCHEMA_EXCEPTION only if its path is
+relationships[i].selectors[j].allow.{from,to}[k].patch.patchStrategy
+and its value is exactly "replace". Every other finding is UNEXPECTED
+and fails the gate.
+
+------------------------------------------------------------------------------
+UNEXPECTED findings
+------------------------------------------------------------------------------
+(none)
+
+------------------------------------------------------------------------------
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION findings
+------------------------------------------------------------------------------
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/0/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/0/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/1/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/1/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/10/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/10/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/107/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/107/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/108/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/108/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/109/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/109/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/11/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/11/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/110/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/110/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/12/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/12/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/13/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/13/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/14/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/14/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/15/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/15/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/16/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/16/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/17/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/17/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/18/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/18/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/19/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/19/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/2/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/2/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/20/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/20/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/21/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/21/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/22/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/22/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/23/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/23/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/24/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/24/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/25/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/25/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/26/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/26/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/27/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/27/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/28/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/28/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/3/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/3/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/32/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/32/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/33/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/33/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/34/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/34/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/35/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/35/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/36/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/36/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/37/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/37/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/38/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/38/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/39/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/39/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/4/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/4/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/40/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/40/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/41/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/41/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/42/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/42/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/43/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/43/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/44/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/44/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/45/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/45/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/46/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/46/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/47/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/47/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/48/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/48/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/49/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/49/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/5/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/5/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/50/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/50/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/51/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/51/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/52/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/52/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/53/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/53/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/56/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/56/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/57/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/57/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/58/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/58/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/59/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/59/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/6/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/6/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/60/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/60/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/61/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/61/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/62/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/62/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/63/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/63/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/64/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/64/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/65/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/65/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/66/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/66/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/67/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/67/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/68/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/68/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/69/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/69/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/7/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/7/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/70/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/70/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/71/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/71/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/72/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/72/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/73/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/73/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/74/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/74/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/75/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/75/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/76/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/76/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/77/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/77/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/78/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/78/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/79/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/79/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/8/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/8/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/80/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/80/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/81/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/81/selectors/0/allow/to/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/9/selectors/0/allow/from/0/patch/patchStrategy
+KNOWN_UPSTREAM_SCHEMA_EXCEPTION  relationships/9/selectors/0/allow/to/0/patch/patchStrategy
+
+==============================================================================
+GATE 1: PASS
+  zero unexpected violations; the only findings are the documented
+  patchStrategy='replace' exception. Upstream schema unmodified.

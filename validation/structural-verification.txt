@@ -1,0 +1,38 @@
+total findings               162
+  KNOWN_UPSTREAM_SCHEMA_EXCEPTION        162
+  UNEXPECTED                             0
+relationships w/ patch       81 (expect 81)
+relationships w/o patch      30 (expect 30)
+patch fields (derived)       162
+GATE 1: PASS
+
+PASS component order matches COMPONENT_INVENTORY.md
+PASS A1 top-level keys subset of allowed  -- set()
+PASS A2 all 6 required top-level keys present
+PASS A3 every component has all 11 required keys  -- []
+PASS A4 every component metadata has all 6 sub-keys  -- []
+PASS A5 every component block has version/kind/schema  -- []
+PASS A6 every relationship has all 7 required keys  -- []
+PASS A7 relationship kind/status within enums  -- []
+PASS A8 every modelReference has all 6 required keys  -- []
+PASS A9 every id is a valid non-zero UUID  -- []
+PASS A10 name 1-255 and version 1-50  -- name='ai-native-platform' version='v1.0.0'
+PASS A11 exactly 81 relationships carry patchStrategy, all 'replace'  -- with=81 fields=162 values=['replace']
+PASS A11b remaining 30 carry no patchStrategy  -- 30
+PASS 66 components (40 native / 26 annotation)  -- n=66 native=40 annotation=26
+PASS 111 relationships (59 semantic / 52 annotation)  -- n=111 semantic=59 annotation=52
+PASS component count per model matches inventory  -- {'kubernetes': 33, 'meshery-core': 26, 'meshery-operator': 2, 'sumologic': 1, 'kube-prometheus-stack': 4}
+PASS Gate 3 every component.version/kind/isNamespaced/genealogy matches catalog  -- []
+PASS Environment is the only isAnnotation override vs catalog  -- ['env-production']
+PASS every selector id resolves to a declared component  -- []
+PASS no Pod components
+PASS no StorageClass component
+PASS no firewall relationship
+PASS no edge with a Pod participant
+PASS every kind/type/subType triple exists in the catalog  -- set()
+PASS provenance split B54 / H21 / C27 / A9  -- {'B': 54, 'H': 21, 'C': 27, 'A': 9}
+PASS relationship count matches the matrix
+PASS hand-authored edges declare Provenance H (21)  -- 21
+PASS only the 25 basis-less edges claim no blueprint (25)  -- 25
+
+28 checks, 0 failed
