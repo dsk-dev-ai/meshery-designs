@@ -227,6 +227,50 @@ def styles_block(cat_styles, fidelity=None):
 
 
 
+def component_configuration(name):
+    """Return the minimum resource configuration required by Meshery validation."""
+    configs = {
+        "deploy-meshery-control": {
+            "spec": {},
+        },
+        "sts-redis": {
+            "spec": {},
+        },
+        "sts-postgres": {
+            "spec": {},
+        },
+        "prometheus": {
+            "spec": {},
+        },
+        "sm-platform": {
+            "spec": {},
+        },
+        "alertmanager": {
+            "spec": {},
+        },
+        "rb-ai-control": {
+            "roleRef": {
+                "apiGroup": "rbac.authorization.k8s.io",
+                "kind": "Role",
+                "name": "role-ai-control",
+            },
+        },
+        "rb-ai-state": {
+            "roleRef": {
+                "apiGroup": "rbac.authorization.k8s.io",
+                "kind": "Role",
+                "name": "role-ai-state",
+            },
+        },
+        "vapb-ai-runtime": {
+            "spec": {
+                "policyName": "vap-required-labels",
+            },
+        },
+    }
+    return configs.get(name, {})
+
+
 # ---------------------------------------------------------------------------
 # Components
 # ---------------------------------------------------------------------------
@@ -292,7 +336,7 @@ def build_components():
                 "instanceDetails": cat_meta.get("instanceDetails") or {},
                 "configurationUISchema": cat_meta.get("configurationUISchema", ""),
             },
-            "configuration": {"metadata": {"labels": {}, "annotations": {}}},
+            "configuration": {"metadata": {"labels": {}, "annotations": {}}, **component_configuration(name)},
             "component": {
                 "version": cat["component"]["version"],
                 "kind": cat["component"]["kind"],
