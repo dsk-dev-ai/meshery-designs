@@ -40,3 +40,16 @@ spec/          Architecture, components, relationships and decisions
 reports/       Research and reconnaissance
 validation/   Validation gates and reproducible tooling
 docs/         User-facing documentation
+## Tests
+
+Run the comprehensive validation tests:
+
+```bash
+bash tests/run_all.sh
+```
+
+Or run individual tests:
+
+```bash
+for f in tests/test_*.py; do python3 $f; done
+```
