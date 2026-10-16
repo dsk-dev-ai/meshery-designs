@@ -189,6 +189,6 @@ Frozen under `/tmp/gate8-evidence/` with `SHA256SUMS.txt`:
 | No synthesis (no new components/relationships) | **PASS** |
 | Selectors, patches, and namespace mutators preserved | **PASS** |
 | Re-read/saved design diffs against authored | **PASS** (one known `styles.data` loss) |
-| `metadata.namespace` on all namespaced components (item 5) | **ATTENTION** — 2 PDBs unwired |
+| `metadata.namespace` on all namespaced components (item 5) | **PASS** (31 namespace mutators cover all namespaced components; 4 Namespace objects are cluster-scoped and exempt) |
 | UI render (item 4) | Not performed |
 | Dry-run manifests (item 6) | Not performed |
