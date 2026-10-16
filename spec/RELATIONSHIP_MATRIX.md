@@ -1,6 +1,6 @@
 # Relationship Matrix — `ai-native-platform`
 
-111 relationships. Each is classified as **semantic** (`metadata.isAnnotation: false` — asserts something
+113 relationships. Each is classified as **semantic** (`metadata.isAnnotation: false` — asserts something
 Kubernetes or Meshery acts on) or **annotation** (`metadata.isAnnotation: true` — records intent or containment
 only).
 
@@ -20,7 +20,7 @@ Every relationship is one of four provenance classes:
 
 ---
 
-## 1. Namespace membership — 29 edges, all semantic, all provenance B
+## 1. Namespace membership — 31 edges, all semantic, all provenance B
 
 **Blueprint:** `models/kubernetes/v1.36.0/v1.0.0/relationships/hierarchical-parent-inventory-kmjea.json`
 **Triple:** `kind: hierarchical` · `type: parent` · `subType: inventory`
@@ -29,7 +29,7 @@ Every relationship is one of four provenance classes:
 **Why it exists:** In a Meshery design, a component does not become namespaced by setting a metadata field — the
 `inventory` relationship performs the write of `configuration.metadata.namespace` from the target Namespace's
 name. Every namespaced component therefore needs exactly one. This is the most consequential structural fact in
-the whole design: without it, 29 components deploy to the wrong namespace or fail.
+the whole design: without it, 31 components deploy to the wrong namespace or fail.
 
 | # | Source | Target | Why |
 |---|---|---|---|
@@ -62,6 +62,8 @@ the whole design: without it, 29 components deploy to the wrong namespace or fai
 | A27 | `sm-platform` | `ns-ai-observability` | Monitor must be co-located with its Prometheus. |
 | A28 | `alertmanager` | `ns-ai-observability` | Alert routing is telemetry-tier. |
 | A29 | `promrule-platform-slo` | `ns-ai-observability` | Rules are evaluated by the co-located Prometheus. |
+| A30 | `pdb-sts-redis` | `ns-ai-state` | The budget must live in the same namespace as the StatefulSet it protects. |
+| A31 | `pdb-sts-postgres` | `ns-ai-state` | Same as A30. |
 
 **Cluster-scoped, deliberately not wired:** `ns-ai-control`, `ns-ai-runtime`, `ns-ai-state`,
 `ns-ai-observability`, `pc-ai-critical`, `vap-required-labels`. The `inventory` blueprint's `to` side requires
@@ -338,7 +340,7 @@ is unenforceable. Scoping the four namespaces means the environment statement at
 
 | Group | Edges | Semantic | Annotation | B | H | C | A |
 |---|---|---|---|---|---|---|---|
-| 1 Namespace membership | 29 | 29 | 0 | 29 | 0 | 0 | 0 |
+| 1 Namespace membership | 31 | 31 | 0 | 31 | 0 | 0 | 0 |
 | 2 Label grouping | 3 | 3 | 0 | 3 | 0 | 0 | 0 |
 | 3 Network reachability | 4 | 4 | 0 | 2 | 2 | 0 | 0 |
 | 4 Reference bindings | 18 | 18 | 0 | 18 | 0 | 0 | 0 |
@@ -348,13 +350,13 @@ is unenforceable. Scoping the four namespaces means the environment statement at
 | 8 AI-native chain | 16 | 0 | 16 | 0 | 16 | 0 | 0 |
 | 9 Annotation↔native | 9 | 0 | 9 | 0 | 0 | 0 | 9 |
 | 10 Environment scoping | 4 | 0 | 4 | 0 | 0 | 4 | 0 |
-| **Total** | **111** | **59** | **52** | **54** | **21** | **27** | **9** |
+| **Total** | **113** | **61** | **52** | **56** | **21** | **27** | **9** |
 
-Each edge carries exactly one provenance class, so the four class columns sum to the total: 54 + 21 + 27 + 9 = 111.
+Each edge carries exactly one provenance class, so the four class columns sum to the total: 56 + 21 + 27 + 9 = 113.
 A-9 (`otel-collector → prometheus`) is counted once, as **A**, because it is an annotation-to-native
 correspondence edge; its additional hand-authored nature is recorded in §9 and §6 rather than in this tally.
 
-**59 semantic edges, 52 annotation edges.** Every one of the 59 semantic edges corresponds to a fact about the
+**61 semantic edges, 52 annotation edges.** Every one of the 61 semantic edges corresponds to a fact about the
 deployed cluster. Every one of the 52 annotation edges is explicitly marked and could be deleted without changing
 what deploys — which is the correct property for an architecture diagram.
 
@@ -367,7 +369,7 @@ do not describe their contents: `hierarchical-parent-inventory-pfnyn.json` is ac
 
 | Blueprint file | Model | Verified `kind/type/subType` | Verified participants | Used by |
 |---|---|---|---|---|
-| `hierarchical-parent-inventory-kmjea.json` | `kubernetes` | `hierarchical`/`parent`/`inventory` | `*` → `Namespace` | A1–A29 |
+| `hierarchical-parent-inventory-kmjea.json` | `kubernetes` | `hierarchical`/`parent`/`inventory` | `*` → `Namespace` | A1–A31 |
 | `sibling-tagsets.json` | `kubernetes` | `hierarchical`/`sibling`/`matchlabels` | `*` ↔ `*` | B1–B3 |
 | `edge-non-binding-network-duixv.json` | `kubernetes` | `edge`/`non-binding`/`network` | `Service` → `Deployment` | C1 |
 | `edge-non-binding-network-jccsr.json` | `kubernetes` | `edge`/`non-binding`/`network` | `Ingress` → `Service` | C2 |

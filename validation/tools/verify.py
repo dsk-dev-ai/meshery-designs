@@ -123,8 +123,8 @@ def main():
                         values.add(p["patchStrategy"])
                         hit = True
         with_patch += 1 if hit else 0
-    check("A11 exactly 81 relationships carry patchStrategy, all 'replace'",
-          with_patch == 81 and values == {"replace"},
+    check("A11 exactly 83 relationships carry patchStrategy, all 'replace'",
+          with_patch == 83 and values == {"replace"},
           "with=%d fields=%d values=%s" % (with_patch, patch_fields, sorted(values)))
     check("A11b remaining 30 carry no patchStrategy",
           len(rels) - with_patch == 30, str(len(rels) - with_patch))
@@ -136,8 +136,8 @@ def main():
           "n=%d native=%d annotation=%d" % (len(comps), len(comps) - ann, ann))
 
     rel_ann = sum(1 for r in rels if r["metadata"]["isAnnotation"])
-    check("111 relationships (59 semantic / 52 annotation)",
-          len(rels) == 111 and rel_ann == 52 and len(rels) - rel_ann == 59,
+    check("113 relationships (61 semantic / 52 annotation)",
+          len(rels) == 113 and rel_ann == 52 and len(rels) - rel_ann == 61,
           "n=%d semantic=%d annotation=%d" % (len(rels), len(rels) - rel_ann, rel_ann))
 
     by_model = collections.Counter(
@@ -213,9 +213,9 @@ def main():
 
     # ---- provenance classification matches the matrix
     prov = collections.Counter(e[4] for e in S.EDGES)
-    check("provenance split B54 / H21 / C27 / A9",
-          dict(prov) == {"B": 54, "H": 21, "C": 27, "A": 9}, str(dict(prov)))
-    check("relationship count matches the matrix", len(rels) == len(S.EDGES) == 111)
+    check("provenance split B56 / H21 / C27 / A9",
+          dict(prov) == {"B": 56, "H": 21, "C": 27, "A": 9}, str(dict(prov)))
+    check("relationship count matches the matrix", len(rels) == len(S.EDGES) == 113)
 
     # ---- each hand-authored edge is labelled as such in its description
     hand = [r for r in rels if "Provenance H" in r["metadata"]["description"]]

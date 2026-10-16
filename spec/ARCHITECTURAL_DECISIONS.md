@@ -20,7 +20,7 @@ copy from.
 **Alternatives rejected.**
 - *v1beta1, for consistency with the catalog.* Rejected. The catalog is a legacy corpus, not a specification. A
   new design written to a superseded schema acquires debt immediately and will need the version bridge anyway.
-- *Defer the choice.* Rejected. The schema determines the required-field set for all 66 components and 111
+- *Defer the choice.* Rejected. The schema determines the required-field set for all 66 components and 113
   relationships. It must be fixed before authoring begins.
 
 **Consequences.** Every component carries 11 required fields and every relationship 7, including several that the

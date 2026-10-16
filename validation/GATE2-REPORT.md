@@ -1,32 +1,33 @@
 # Gate 2 report — Go struct round-trip
 
-Artifact under test: `../generated/design.yml` (unmodified; md5 verified before and after)
+Artifact under test: `../generated/design.yml` (unmodified; md5 `6aead397280a3a6a34780b5a0db009fd`,
+247597 bytes, verified before and after)
 Probe: `tools/gate2/` — `meshkit/encoding.Unmarshal` → `design.PatternFile` → `encoding.Marshal`
 Assertions: `tools/gate2/assertions.py` (14 checks, extends the plan's six)
 
 ## Verdict: **FAIL**
 
-13 of 14 assertions pass. **Assertion 6 fails**: the round-tripped document has **995**
+13 of 14 assertions pass. **Assertion 6 fails**: the round-tripped document has **1001**
 `UNEXPECTED` schema violations. The cause is an upstream contradiction between the shipped
 v1beta1/v1beta2 JSON Schema and the shipped Go structs, reproduced below on a design shipped
 by Meshery itself. It is not caused by, and cannot be fixed in, this artifact.
 
 | # | Assertion | Result |
 |---|---|---|
-| 1 | `Unmarshal` succeeds | **PASS** — 66 components, 111 relationships recovered |
-| 2 | Counts remain 66 / 111 | **PASS** — `components=66 relationships=111` |
+| 1 | `Unmarshal` succeeds | **PASS** — 66 components, 113 relationships recovered |
+| 2 | Counts remain 66 / 113 | **PASS** — `components=66 relationships=113` |
 | 3a | Every `component.id` survives unchanged | **PASS** — identical set *and* order |
 | 3b | Every `relationship.id` survives unchanged | **PASS** — identical set *and* order |
 | 3c | No id blanked or zeroed | **PASS** |
-| 4 | Every `selectors[].allow.from\|to[].id` resolves | **PASS** — 222/222 resolve, 0 blanked |
-| 4b | Selector id+kind pairs identical to authored | **PASS** — 222 vs 222 |
+| 4 | Every `selectors[].allow.from\|to[].id` resolves | **PASS** — 226/226 resolve, 0 blanked |
+| 4b | Selector id+kind pairs identical to authored | **PASS** — 226 vs 226 |
 | 5 | `isAnnotation` survives | **PASS** — 26 `true` / 40 `false`, 0 mismatched |
 | 5b | 26 annotation / 40 native preserved | **PASS** |
 | 5c | `isNamespaced` survives | **PASS** — 35 namespaced (Gate 8 depends on this) |
-| 6 | Round-trip re-validates under Gate 1, 0 `UNEXPECTED` | **FAIL** — `UNEXPECTED=995 KNOWN=162` |
-| 6b | `patchStrategy` exception count unchanged | **PASS** — 162, not amplified |
-| 7 | Namespace `mutatorRef` structure survives verbatim | **PASS** — 29/29 identical |
-| 8 | All 162 patch blocks survive with `patchStrategy: "replace"` | **PASS** — 162 vs 162 |
+| 6 | Round-trip re-validates under Gate 1, 0 `UNEXPECTED` | **FAIL** — `UNEXPECTED=1001 KNOWN=166` |
+| 6b | `patchStrategy` exception count unchanged | **PASS** — 166, not amplified |
+| 7 | Namespace `mutatorRef` structure survives verbatim | **PASS** — 31/31 identical |
+| 8 | All 166 patch blocks survive with `patchStrategy: "replace"` | **PASS** — 166 vs 166 |
 
 Assertion 4 — the one the plan calls "exactly the failure the runtime would hide" — **passes**.
 The semantic content of the design is fully representable in the Go structs. Counts, ids,
@@ -72,24 +73,24 @@ The component schema `$ref`s `v1beta1/model/model.yaml`, which sets
 `RegistrantId` carrying the tag `json:"connection_id"` is a copy-paste error in the upstream
 struct. The result is that the four fields the schema *requires* are exactly the four the
 runtime *cannot emit*, while the three it does emit under wrong names are exactly the ones the
-schema *forbids*. **396** of the 995 violations come from this single block (66 components ×
+schema *forbids*. **396** of the 1001 violations come from this single block (66 components ×
 6 findings).
 
-### The other 599 are injected nulls
+### The other 605 are injected nulls
 
 Go struct fields lacking `omitempty` are re-emitted as explicit `null` on pointers that are nil:
 
 | Injected key | Count | Violation |
 |---|---|---|
-| `relationships[].evaluationQuery` | 111 | `None is not of type 'string'` |
-| `…allow.from[].matchStrategyMatrix` | 111 | `None is not of type 'array'` |
-| `…allow.to[].matchStrategyMatrix` | 111 | `None is not of type 'array'` |
+| `relationships[].evaluationQuery` | 113 | `None is not of type 'string'` |
+| `…allow.from[].matchStrategyMatrix` | 113 | `None is not of type 'array'` |
+| `…allow.to[].matchStrategyMatrix` | 113 | `None is not of type 'array'` |
 | `components[].capabilities` | 66 | `None is not of type 'array'` |
 | `components[].model.metadata` | 66 | `None is not of type 'object'` |
 | `components[].model.registrant.deleted_at` | 66 | `None is not of type 'string'` |
 | `…allow.from[].patch` | 30 | `None is not of type 'object'` |
 | `…allow.to[].patch` | 30 | `None is not of type 'object'` |
-| `…match.from[].id`, `…match.to[].id` | 4 | `None is not of type 'string'` |
+| `…match.from[].id`, `…match.to[].id` | 8 | `None is not of type 'string'` |
 
 The 60 `patch: null` findings are the 30 no-patch relationships. The Go struct cannot
 distinguish "no patch" from "patch is null", and the schema's `patch` is a non-nullable `$ref`.
@@ -117,14 +118,14 @@ absorbed into the existing exception.
 
 The control also shows a related edge case that does not affect this design: a design with zero
 relationships round-trips to `relationships: null`, which is schema-invalid
-(`relationships` has no `omitempty` and the schema requires an array). Our 111 relationships
+(`relationships` has no `omitempty` and the schema requires an array). Our 113 relationships
 avoid this.
 
 ## Information lost during unmarshal/remarshal
 
 ```
 DROPPED keys (in design.yml, absent after round trip)   352
-INJECTED keys (added by the Go structs)                  929
+INJECTED keys (added by the Go structs)                  935
 CHANGED values                                             0
 ```
 
@@ -139,12 +140,12 @@ CHANGED values                                             0
 | `components[].model.category.metadata` | 66 | schema-**required** |
 | `components[].styles.data` | 22 | cosmetic; the catalog value is `{"label": ""}` |
 
-**Injected** — 929 keys, 595 of which are schema violations and 334 harmless
+**Injected** — 935 keys, 605 of which are schema violations and 330 harmless
 (`components[].created_at` and `updated_at`, 132, are permitted by the schema). None of the
 injected keys overwrite authored data; they are all absent-in / null-out artefacts.
 
-**Assessment.** Nothing semantically load-bearing was lost. Every id, every one of the 222
-selector wirings, all 162 patch blocks including `patchStrategy: "replace"`, all 29 namespace
+**Assessment.** Nothing semantically load-bearing was lost. Every id, every one of the 226
+selector wirings, all 166 patch blocks including `patchStrategy: "replace"`, all 31 namespace
 `mutatorRef` structures, and all `isAnnotation` / `isNamespaced` flags survive byte-identically.
 The loss is confined to four schema-required model identity fields per component plus one
 cosmetic key — the fields the Go structs cannot represent, which is precisely the schema-permitted-
@@ -157,19 +158,18 @@ re-marshalled struct or the original request bytes. If it re-serialises `Pattern
 every design with a `model` block loses its `categoryId`/`registrantId` and gains three
 schema-forbidden snake_case keys — which would affect the 361 shipped designs equally, and
 makes that look like an upstream bug rather than a property of this design. Gate 8 (server load
-and render) is the gate that settles it and has not been run: `meshery` and `metashery` are
-not installed and nothing is listening on `:8081`.
+and render) settles it and has been run: see `GATE8-REPORT.md`.
 
 ## Reproducing
 
 ```sh
 cd validation/tools/gate2
-GO=/home/dsk/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.26.4.linux-amd64/bin/go
-GOTOOLCHAIN=local GOFLAGS=-mod=mod GOPROXY=off $GO run . \
-    ../../generated/design.yml /tmp/roundtrip.json
-#   unmarshal OK / components 66 / relationships 111
+export GOROOT=/tmp/goroot PATH=/tmp/goroot/bin:$PATH GOMODCACHE=/tmp/gomodcache GOCACHE=/tmp/gocache GOPATH=/tmp/gopath GOTOOLCHAIN=local GOFLAGS=-mod=mod
+go run . \
+    ../../../generated/design.yml /tmp/roundtrip.json
+#   unmarshal OK / components 66 / relationships 113
 
-cd .. && python3 gate1.py /tmp/roundtrip.json /tmp/g2reports   # 995 UNEXPECTED
+cd .. && python3 gate1.py /tmp/roundtrip.json /tmp/g2reports   # 1001 UNEXPECTED
 python3 gate2/assertions.py                                     # 14 assertions
 ```
 

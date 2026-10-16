@@ -19,10 +19,10 @@ The current design contains:
 - 66 components
 - 40 native components
 - 26 annotation components
-- 111 relationships
-- 222 selector entries
-- 162 patch entries
-- 29 namespace mutator relationships
+- 113 relationships
+- 226 selector entries
+- 166 patch entries
+- 31 namespace mutator relationships
 - 5 referenced models
 
 The design uses four namespaces:

@@ -600,7 +600,7 @@ def main():
     print(f"relationships           {len(relationships)}")
     print(f"  semantic / annotation {sum(1 for r in relationships if not r['metadata']['isAnnotation'])}"
           f" / {sum(1 for r in relationships if r['metadata']['isAnnotation'])}")
-    print(f"  with patchStrategy    {with_patch}  (expect 81)")
+    print(f"  with patchStrategy    {with_patch}  (expect 83)")
     print(f"  patch fields          {fields}  (derived, not fixed)")
     print(f"  without patchStrategy {len(relationships)-with_patch}  (expect 30)")
     print(f"unique ids              {len(ids)} of {len(components)+len(relationships)}")

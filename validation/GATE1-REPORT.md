@@ -1,6 +1,7 @@
 # Gate 1 report — `generated/design.yml`
 
-Artifact: `../generated/design.yml` (244 KB, 66 components, 111 relationships)
+Artifact: `../generated/design.yml` (247597 bytes, 66 components, 113 relationships;
+md5 `6aead397280a3a6a34780b5a0db009fd`)
 Schema: `meshery/schemas@v1.3.37` — `constructs/v1beta3/design/design.yaml`, **unmodified**
 Harness: `tools/gate1.py` (bundles external `$ref`s by filesystem path, strips the flattened
 upstream `$id` values **in memory only**, runs Draft-07 validation)
@@ -8,10 +9,10 @@ upstream `$id` values **in memory only**, runs Draft-07 validation)
 ## Verdict
 
 ```
-total findings               162
-  KNOWN_UPSTREAM_SCHEMA_EXCEPTION        162
+total findings               166
+  KNOWN_UPSTREAM_SCHEMA_EXCEPTION        166
   UNEXPECTED                             0
-relationships w/ patch       81 (expect 81)
+relationships w/ patch       83 (expect 83)
 relationships w/o patch      30 (expect 30)
 GATE 1: PASS
 ```
@@ -28,7 +29,7 @@ inconsistency. The design preserves the catalog value faithfully.
 The exception is narrowly scoped and does not relax any other schema
 constraint.
 
-All 162 findings are that one enum violation and nothing else. Evidence that this is
+All 166 findings are that one enum violation and nothing else. Evidence that this is
 upstream, not authored: `replace` appears **10,135** times across **4,845** blueprint files
 and **2,762** times across **150** shipped designs, is the only non-null value any catalog
 patch uses, and is absent from the enum in all four schema versions despite being
@@ -49,7 +50,7 @@ loss rather than a design choice.
 | 5 | `registrant.deleted_at: null` | typed as a string | Null-valued keys dropped | — |
 | 6 | `registrant.sub_type` (sumologic only) | requires `subType`, rejects unknown keys | Spelling normalised | 1 model |
 | 7 | `match` blocks with `id: null` | typed as a string | Null keys dropped (`null` and absent mean the same here) | 2 relationships |
-| 8 | blueprint `model` block with empty `displayName`/`version` | both `minLength: 1` | Reference rebuilt from the catalog `model.json` the blueprint names | all 76 blueprint-backed edges |
+| 8 | blueprint `model` block with empty `displayName`/`version` | both `minLength: 1` | Reference rebuilt from the catalog `model.json` the blueprint names | all 78 blueprint-backed edges |
 | 9 | `styles.shape` `circle` (25), `shield` (4), `right-rhomboid` (1) | 25-value `Shape` enum | `circle`→`ellipse`, `right-rhomboid`→`rhomboid` (exact suffix match), `shield`→`pentagon`. An unmapped shape now raises instead of silently falling back. | 30 |
 | 10 | `styles.svg*` full inline SVG, often >10 KB | `maxLength: 500` | Emitted empty when over the cap, matching the shipped reference-design convention. 36 values that fit are kept verbatim. | 106 fields |
 | 11 | `subCategory: "App Definition and Development"` (meshery-operator) | not in the 46-value `SubCategory` enum | The schema's own documented default `Uncategorized` | 2 components |
@@ -82,8 +83,8 @@ the places a reviewer should push back if the loss matters:
 
 ## Preserved
 
-- `patchStrategy: "replace"` — **never** substituted, omitted or altered. Present on 81
-  relationships, 162 fields, all `"replace"`.
+- `patchStrategy: "replace"` — **never** substituted, omitted or altered. Present on 83
+  relationships, 166 fields, all `"replace"`.
 - The one documented `isAnnotation` override: `Environment` → `true`. Verified to be the only
   deviation from the catalog.
 - `component.version`, `component.kind`, `isNamespaced`, `genealogy` — all 66 verified
@@ -91,20 +92,21 @@ the places a reviewer should push back if the loss matters:
 - `env-production` as the single isAnnotation override; no synthesised models, versions,
   relationships, `Pod` components, `StorageClass` components, or firewall edges.
 - Every `kind`/`type`/`subType` triple is verified to occur in the upstream catalog.
-- Provenance split matches `RELATIONSHIP_MATRIX.md`: B=54, H=21, C=27, A=9.
+- Provenance split matches `RELATIONSHIP_MATRIX.md`: B=56, H=21, C=27, A=9.
 
-## Gates not executed here
+## Gates outside this report
 
-`meshery`, `metashery` and `kubectl` are not installed and no server is listening on
-`:8081`, so these remain **unrun** — they are not passes:
+This report covers the offline Gate 1 (and the offline half of Gates 3, 5, 6). The remaining
+gates are reported separately:
 
-- **Gate 2** Go struct round-trip — needs the Meshery server.
+- **Gate 2** Go struct round-trip — see `GATE2-REPORT.md` / `GATE2-EXCEPTIONS.md` (server-based).
 - **Gate 4** schema version consistency — partially covered offline (versions are literal);
   the import-side check needs the server.
 - **Gate 7** cluster-level assumptions — needs `kubectl`.
-- **Gate 8** server load and render, including the post-import component count and the
-  namespace assignment on all 35 namespaced components — needs the server. The count of 35
-  is confirmed offline; the assignment itself is not.
+- **Gate 8** server load and render — executed; see `GATE8-REPORT.md`. It confirms the
+  post-import component count and the namespace assignment on all 31 namespace-scoped
+  components (the four `Namespace` components are cluster-scoped and carry no parent
+  namespace).
 - **Gate 9** design-intent review — human review, by definition.
 
 ## Reproducing

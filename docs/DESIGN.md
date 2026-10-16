@@ -18,10 +18,10 @@ The design is organized into four logical namespaces:
 | Components | 66 |
 | Native components | 40 |
 | Annotation components | 26 |
-| Relationships | 111 |
-| Selector entries | 222 |
-| Patch entries | 162 |
-| Namespace mutator relationships | 29 |
+| Relationships | 113 |
+| Selector entries | 226 |
+| Patch entries | 166 |
+| Namespace mutator relationships | 31 |
 | Models | 5 |
 
 ## Models

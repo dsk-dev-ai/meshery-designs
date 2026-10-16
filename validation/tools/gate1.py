@@ -212,7 +212,7 @@ def main():
         fh.write("  %-40s %d\n" % (KNOWN, len(known)))
         fh.write("  %-40s %d\n" % (UNEXPECTED, len(unexpected)))
         fh.write("\nScope\n")
-        fh.write("  relationships carrying patchStrategy      %d (expect 81)\n"
+        fh.write("  relationships carrying patchStrategy      %d (expect 83)\n"
                  % rel_with_patch)
         fh.write("  relationships without patchStrategy       %d (expect 30)\n"
                  % (len(design.get("relationships", [])) - rel_with_patch))
@@ -237,12 +237,12 @@ def main():
         for f in known:
             fh.write("%s  %s\n" % (KNOWN, f["path"]))
         fh.write("\n" + "=" * 78 + "\n")
-        gate1 = "PASS" if (not unexpected and rel_with_patch == 81) else "FAIL"
+        gate1 = "PASS" if (not unexpected and rel_with_patch == 83) else "FAIL"
         fh.write("GATE 1: %s\n" % gate1)
         if unexpected:
             fh.write("  reason: %d unexpected violation(s)\n" % len(unexpected))
-        if rel_with_patch != 81:
-            fh.write("  reason: %d relationships carry patchStrategy, expected 81\n"
+        if rel_with_patch != 83:
+            fh.write("  reason: %d relationships carry patchStrategy, expected 83\n"
                      % rel_with_patch)
         if gate1 == "PASS":
             fh.write("  zero unexpected violations; the only findings are the documented\n")
@@ -260,20 +260,20 @@ def main():
             "relationships_without_patchStrategy":
                 len(design.get("relationships", [])) - rel_with_patch,
             "patchStrategy_fields": patch_fields,
-            "gate1": "PASS" if (not unexpected and rel_with_patch == 81) else "FAIL",
+            "gate1": "PASS" if (not unexpected and rel_with_patch == 83) else "FAIL",
             "findings": findings,
         }, fh, indent=2)
 
     print("total findings               %d" % len(findings))
     print("  %-38s %d" % (KNOWN, len(known)))
     print("  %-38s %d" % (UNEXPECTED, len(unexpected)))
-    print("relationships w/ patch       %d (expect 81)" % rel_with_patch)
+    print("relationships w/ patch       %d (expect 83)" % rel_with_patch)
     print("relationships w/o patch      %d (expect 30)"
           % (len(design.get("relationships", [])) - rel_with_patch))
     print("patch fields (derived)       %d" % patch_fields)
     for f in unexpected[:20]:
         print("  UNEXPECTED %s :: %s" % (f["path"], f["message"][:110]))
-    print("GATE 1: %s" % ("PASS" if (not unexpected and rel_with_patch == 81) else "FAIL"))
+    print("GATE 1: %s" % ("PASS" if (not unexpected and rel_with_patch == 83) else "FAIL"))
     return 0 if not unexpected else 1
 
 

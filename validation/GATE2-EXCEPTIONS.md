@@ -7,7 +7,7 @@ and schema definitions, and assigns each a final classification.
 
 This does **not** widen the Gate 1 `patchStrategy` exception. That exception remains scoped to
 `relationships[i].selectors[j].allow.{from,to}[k].patch.patchStrategy == "replace"` and is
-counted separately (162 findings, unchanged through the round trip). No finding in this
+counted separately (166 findings, unchanged through the round trip). No finding in this
 document is a `patchStrategy` finding.
 
 ## Summary
@@ -15,11 +15,11 @@ document is a `patchStrategy` finding.
 | | Strict schema failure | Classification | Runtime effect |
 |---|---|---|---|
 | G2-E1 | 396 | known upstream contradiction | none — block is deleted before persist, re-fetched on read |
-| G2-E2 | 599 | serialization-only difference | none — every consumer is nil-guarded or has a default |
+| G2-E2 | 605 | serialization-only difference | none — every consumer is nil-guarded or has a default |
 | Artifact loss | 0 schema findings | `styles.data` on 22 components | cosmetic, value is `{"label": ""}` |
-| Gate 1 `patchStrategy` | 162 | known upstream exception (unchanged) | none — preserved verbatim |
+| Gate 1 `patchStrategy` | 166 | known upstream exception (unchanged) | none — preserved verbatim |
 
-Round trip: **995 UNEXPECTED = 396 (G2-E1) + 599 (G2-E2)**.
+Round trip: **1001 UNEXPECTED = 396 (G2-E1) + 605 (G2-E2)**.
 Artifact under test: `../generated/design.yml`, unmodified.
 
 ---
@@ -149,19 +149,19 @@ runtime consequence for this design.
 Not assumed harmless. Each field was traced through the shipped Go struct, the shipped schema,
 and every live read site in `meshery` at commit `90bac8dc4`.
 
-**599 violations** decompose as: the four named fields account for **459**, and three further
-null injections riding the same mechanism bring the total to **599**.
+**605 violations** decompose as: the four named fields account for **465**, and three further
+null injections riding the same mechanism bring the total to **605**.
 
 | Field | Violations | Struct tag | Consumer | Verdict |
 |---|---|---|---|---|
-| `relationships[].evaluationQuery` | 111 | `json:"evaluationQuery"` (no `omitempty`) | nil-guarded CLI display | **3 — ignored by the runtime** |
-| `…allow.{from,to}[].matchStrategyMatrix` | 222 | `json:"matchStrategyMatrix"` (no `omitempty`) | nil guard → explicit `equal` default | **2 — serialization artifact** |
+| `relationships[].evaluationQuery` | 113 | `json:"evaluationQuery"` (no `omitempty`) | nil-guarded CLI display | **3 — ignored by the runtime** |
+| `…allow.{from,to}[].matchStrategyMatrix` | 226 | `json:"matchStrategyMatrix"` (no `omitempty`) | nil guard → explicit `equal` default | **2 — serialization artifact** |
 | `…allow.{from,to}[].patch` | 60 | `json:"patch"` (no `omitempty`) | every read nil-guarded; nil ≡ absent | **2 — serialization artifact** |
 | `components[].capabilities` | 66 | `json:"capabilities"` (no `omitempty`) | `DehydratePattern` nils it; `HydratePattern` re-fetches | **2/3 hybrid — intentional dehydration** |
 | `components[].model.metadata` | 66 | `json:"metadata"` (no `omitempty`) | inside the G2-E1 block | **2 — serialization artifact** |
 | `components[].model.registrant.deleted_at` | 66 | `json:"deleted_at"` (no `omitempty`) | inside the G2-E1 block | **2 — serialization artifact** |
 | `…match.{from,to}[].id` | 8 | `json:"id"` (no `omitempty`) | nil-guarded deref | **2 — serialization artifact** |
-| **Total** | **599** | | | |
+| **Total** | **605** | | | |
 
 ### 1. Required runtime information — **none**
 
@@ -226,7 +226,7 @@ no code can distinguish them. Every read site nil-checks first, e.g.
 `server/policies/eval_rules.go:476` (`if fromClause…Patch == nil || toClause…Patch == nil { return false }`),
 `policy_inventory.go:119`, `policy_alias.go:95,113,229`.
 
-The 60 injected nulls are the 30 no-patch relationships. The gate confirms all **162** real
+The 60 injected nulls are the 30 no-patch relationships. The gate confirms all **166** real
 patch blocks, with `patchStrategy: "replace"`, survive the round trip byte-identically
 (`GATE2-REPORT.md` assertion 8). Nothing is lost; the null only makes the wire form disagree
 with the schema.
@@ -279,7 +279,7 @@ model fields the Go structs cannot emit, and on three struct-emitted names the s
 Real, reproducible, and upstream. Persisted-document impact: 0 findings from the contradiction
 itself, 66 from the intended dehydrated form.
 
-**G2-E2: 599 findings.** The round-tripped document fails on nil values injected by Go fields
+**G2-E2: 605 findings.** The round-tripped document fails on nil values injected by Go fields
 without `omitempty`. Real and reproducible, but a representation mismatch, not a content defect.
 
 Both are genuine strict schema failures. `GATE2-REPORT.md` reports `FAIL` and is not amended.
@@ -300,14 +300,14 @@ override with no content. This is the **only** authored content lost across
 Everything else survives identically, verified field by field on the persisted document:
 
 ```
-PASS counts 66/111                    PASS metadata.isAnnotation identical (26/40)
+PASS counts 66/113                    PASS metadata.isAnnotation identical (26/40)
 PASS all 66 component ids present     PASS metadata.isNamespaced identical (35)
 PASS component order identical        PASS metadata.published identical
 PASS displayName/description          PASS component.styles identical except data (22)
 PASS schemaVersion/format/version     PASS modelReference identical (regenerated by ToReference)
-PASS status                           PASS all 222 selector id/kind/patch triples identical
-PASS 162 patch blocks, patchStrategy=replace
-PASS 29 namespace mutatorRef structures
+PASS status                           PASS all 226 selector id/kind/patch triples identical
+PASS 166 patch blocks, patchStrategy=replace
+PASS 31 namespace mutatorRef structures
 ```
 
 **No topology loss.** No component, relationship, selector, patch, namespace assignment, or
@@ -315,7 +315,7 @@ metadata flag is lost, reordered, or blanked.
 
 ### Serialization-only difference
 
-G2-E2 (599), plus 132 harmless injected keys (`created_at`, `updated_at`) that the schema permits.
+G2-E2 (605), plus 132 harmless injected keys (`created_at`, `updated_at`) that the schema permits.
 These differ between the authored YAML and the re-marshalled JSON purely because of pointer
 `omitempty` tags. None carries information.
 
@@ -331,26 +331,26 @@ These differ between the authored YAML and the re-marshalled JSON purely because
 3. **The schema validates the hydrated form, storage holds the dehydrated form.** This is the
    single upstream issue underlying both, and it is the one worth reporting to the Meshery
    maintainers: applying `design.yaml` to a persisted design is validating the wrong document.
-4. Gate 8 remains the gate that settles end-to-end behaviour. It is unrun — `meshery` and
-   `metashery` are not installed and nothing listens on `:8081`.
+4. Gate 8 is the gate that settles end-to-end behaviour. It has been run: see `GATE8-REPORT.md`.
 
 ## Reproducing
 
 ```sh
 cd validation/tools/gate2
-GO=/home/dsk/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.26.4.linux-amd64/bin/go
+export GOROOT=/tmp/goroot PATH=/tmp/goroot/bin:$PATH GOMODCACHE=/tmp/gomodcache GOCACHE=/tmp/gocache GOPATH=/tmp/gopath GOTOOLCHAIN=local GOFLAGS=-mod=mod GOPROXY=off
 
-# strict probe (Gate 2 report) — 995 UNEXPECTED
-GOTOOLCHAIN=local GOFLAGS=-mod=mod GOPROXY=off $GO run . \
-    ../../generated/design.yml /tmp/roundtrip.json
+# strict probe (Gate 2 report) — 1001 UNEXPECTED
+go run . \
+    ../../../generated/design.yml /tmp/roundtrip.json
 python3 ../gate1.py /tmp/roundtrip.json /tmp/g2reports
 python3 assertions.py
 
-# production save path (this document) — G2-E1 falls to 0, G2-E2 persists at 533
-GOTOOLCHAIN=local GOFLAGS=-mod=mod $GO run ./persist \
-    ../../generated/design.yml /tmp/persisted.json
+# production save path (this document) — G2-E1 falls to 0, G2-E2 persists at 539
+go run ./persist \
+    ../../../generated/design.yml /tmp/persisted.json
 python3 ../gate1.py /tmp/persisted.json /tmp/persistedreports
 ```
 
-`../generated/design.yml` and `../tools/gen.py` are unmodified (md5-verified). No file in
-`meshery` or `meshery-mcp-server` was written; `meshery` remains clean at `90bac8dc4`.
+`../generated/design.yml` and `../tools/gen.py` are unmodified (md5-verified: design md5
+`6aead397280a3a6a34780b5a0db009fd`). No file in `meshery` or `meshery-mcp-server` was
+written; `meshery` remains clean at `90bac8dc4`.

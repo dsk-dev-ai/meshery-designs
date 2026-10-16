@@ -77,28 +77,28 @@ Verified programmatically from the catalog blueprints and the frozen blueprint m
 
 | Class | Relationships | Carries `patchStrategy: "replace"` |
 |---|---|---|
-| §1 Namespace membership — `hierarchical-parent-inventory-kmjea.json` (29) | 29 | Yes |
+| §1 Namespace membership — `hierarchical-parent-inventory-kmjea.json` (31) | 31 | Yes |
 | §3 C1–C2 — `edge-non-binding-network-duixv.json` / `…-jccsr.json` (2) | 2 | Yes |
 | §4 Reference and binding edges (18 blueprints) | 18 | Yes |
 | §7 Section containment — `hierarchical-parent-alias-iicqa.json` (23) | 23 | Yes |
 | §10 Environment scoping — `hierarchical-parent-alias-iicqa.json` (4) | 4 | Yes |
-| **Blueprint-backed subtotal** | **76** | **Yes** |
+| **Blueprint-backed subtotal** | **78** | **Yes** |
 | §3 C3–C4 — `Service → StatefulSet` hand-authored, triple copied from `duixv` (2) | 2 | Yes |
 | §6 F1–F3 — hand-authored semantic edges, triple copied from a real reference blueprint (3) | 3 | Yes |
 | **Hand-authored subtotal** | **5** | **Yes** |
-| **Total expected to contain the field** | **81** | |
+| **Total expected to contain the field** | **83** | |
 | §2 Label grouping — `sibling-tagsets.json`, `patch: null` (3) | 3 | No |
 | §5 Permission binding — `edge-binding-permission-homji.json`, `patch: null` (2) | 2 | No |
 | §8 AI-native chain (16) | 16 | No |
 | §9 Annotation↔native correspondence (9) | 9 | No |
 | **No-patch subtotal** | **30** | **No** |
-| **Total** | **111** | |
+| **Total** | **113** | |
 
 The two no-patch blueprint classes are not omissions: `sibling-tagsets.json` and
 `edge-binding-permission-homji.json` genuinely carry `patch: null` in the catalog, verified by reading the files.
 They assert a grouping or a permission grant and mutate nothing.
 
-**If the authored artifact's count of `patchStrategy` fields is not exactly 81, stop and report the discrepancy
+**If the authored artifact's count of `patchStrategy` fields is not exactly 83, stop and report the discrepancy
 before proceeding.** Do not adjust the design to force the number.
 
 ### Harness requirements
@@ -128,7 +128,7 @@ Classification vocabulary, used in the normalized report:
 | `UNEXPECTED` | Any other violation | **Fails the gate** |
 
 A design that reports zero relationships carrying `patchStrategy` is *not* automatically suspicious, but a
-design reporting fewer than 81 must be reconciled against the measured scope above before the gate may pass.
+design reporting fewer than 83 must be reconciled against the measured scope above before the gate may pass.
 
 ### Assertions
 
@@ -148,11 +148,11 @@ design reporting fewer than 81 must be reconciled against the measured scope abo
    `00000000-0000-0000-0000-000000000000` (that value is a catalog placeholder, never valid in a design
    instance — `RECONNAISSANCE.md` §K item 4).
 10. `name` is 1–255 characters; `version` is 1–50 characters.
-11. Exactly **81** relationships contain at least one `patchStrategy` field, and every such field is `"replace"`.
-    (The 81 counts *relationships*, not fields. An individual edge may carry more than one: the `inventory`
-    blueprint patches both its `from` and `to` side, so each of the 29 namespace edges contributes 2 fields.
+11. Exactly **83** relationships contain at least one `patchStrategy` field, and every such field is `"replace"`.
+    (The 83 counts *relationships*, not fields. An individual edge may carry more than one: the `inventory`
+    blueprint patches both its `from` and `to` side, so each of the 31 namespace edges contributes 2 fields.
     The total field count — and therefore the total number of findings in either report — is a *derived* number,
-    recomputed from the artifact, and is not fixed at 81.)
+    recomputed from the artifact, and is not fixed at 83.)
 12. Zero violations classified `UNEXPECTED`.
 
 **Pass:** assertions 1–10 and 12 hold with no unexpected violation, and assertion 11 holds exactly. The
@@ -183,7 +183,7 @@ Reuse the probe pattern proven in `RECONNAISSANCE.md` Appendix: a throwaway modu
 
 **Assertions:**
 1. `Unmarshal` succeeds.
-2. Re-marshalled output has the same component count (66) and relationship count (111).
+2. Re-marshalled output has the same component count (66) and relationship count (113).
 3. Every `component.id` and `relationship.id` survives the round trip unchanged.
 4. Every relationship's `selectors[].allow.from|to[].id` still resolves to an existing `component.id` — the
    round trip must not silently drop or blank selector IDs.
@@ -279,13 +279,13 @@ detect catalog drift before apply.
 6. Every relationship that has a `patch` uses `patchStrategy: replace` and provides at least one of
    `mutatorRef` / `mutatedRef` in array-of-path-strings form.
 7. **No component appears as the `from` side of more than one namespace-membership (`hierarchical/parent/inventory`)
-   relationship per namespace.** A component has exactly one namespace, so 29 in / 29 inventory edges, no
+   relationship per namespace.** A component has exactly one namespace, so 31 in / 31 inventory edges, no
    component twice.
-8. Count check: 111 relationships total, distributed as 29 + 3 + 4 + 18 + 2 + 3 + 23 + 16 + 9 + 4 per
+8. Count check: 113 relationships total, distributed as 31 + 3 + 4 + 18 + 2 + 3 + 23 + 16 + 9 + 4 per
    `RELATIONSHIP_MATRIX.md` §11. Note that §4 is 18 edges (D1–D18), not 21; an earlier draft of this plan
    miscounted it.
 9. Every relationship is classified: `metadata.isAnnotation` is explicitly `true` or `false` — not omitted.
-   Expected: 59 `false`, 52 `true`.
+   Expected: 61 `false`, 52 `true`.
 10. Every `kind`/`type`/`subType` triple in the design appears in at least one real upstream blueprint. **No triple
     is invented.** Only seven distinct triples are in use, all verified present in the catalog:
     `edge/non-binding/reference`, `edge/non-binding/network`, `edge/non-binding/firewall`,
@@ -367,18 +367,19 @@ validated offline and must be confirmed before the design is trusted.
 2. **Assert the post-import component count is exactly 66.** This is the anti-silent-drop check. Because
    `NewPatternFileFromK8sManifest` uses `ignoreErrors=true`, a count below 66 means components were dropped
    without an error. A count above 66 means the server synthesised something.
-3. Confirm the relationship count is 111 and that no relationship was discarded as unresolvable.
+3. Confirm the relationship count is 113 and that no relationship was discarded as unresolvable.
 4. Confirm the design renders in the Meshery UI with the eight `Section` bands, the annotation nodes visually
    distinct, and no layout collapse.
-5. Confirm the namespace-membership relationships produced the expected `metadata.namespace` on all 35
-   namespaced components. **This is the single check most likely to reveal a design error**, because namespace
+5. Confirm the namespace-membership relationships produced the expected `metadata.namespace` on all 31
+   namespace-scoped components (the four `Namespace` components are cluster-scoped and carry no parent
+   namespace). **This is the single check most likely to reveal a design error**, because namespace
    assignment is relationship-driven and easy to mis-wire.
 6. Confirm `metashery apply --dry-run` produces a manifest set matching the 40 native components and produces
    **nothing** for the 26 annotation components.
 7. Re-read the saved design from the server and diff it against the authored file. Divergence reveals server-side
    normalisation that would break future re-imports.
 
-**Pass:** 66 components, 111 relationships, no drops, no synthesis, correct namespaces, no manifests for
+**Pass:** 66 components, 113 relationships, no drops, no synthesis, correct namespaces, no manifests for
 annotations.
 
 ---
@@ -423,14 +424,14 @@ annotations.
 
 The design is ready to apply when **all** of the following hold:
 
-- [ ] Gate 1: zero `UNEXPECTED` violations; exactly 81 relationships carry `patchStrategy: "replace"`, all such findings classified `KNOWN_UPSTREAM_SCHEMA_EXCEPTION`; both `strict-schema-report` and `normalized-schema-report` produced; upstream schema unmodified
-- [ ] Gate 2: round-trip preserves 66 components, 111 relationships, and every selector ID
+- [ ] Gate 1: zero `UNEXPECTED` violations; exactly 83 relationships carry `patchStrategy: "replace"`, all such findings classified `KNOWN_UPSTREAM_SCHEMA_EXCEPTION`; both `strict-schema-report` and `normalized-schema-report` produced; upstream schema unmodified
+- [ ] Gate 2: round-trip preserves 66 components, 113 relationships, and every selector ID
 - [ ] Gate 3: all 66 components resolve to an enabled catalog entry; `component.version` strings verified from disk
 - [ ] Gate 4: assertions 1–4 pass offline; assertion 5 confirmed against a server
 - [ ] Gate 5: all 10 assertions pass, including no invented `kind`/`type`/`subType`
 - [ ] Gate 6: all 6 hand-authored edges and the containment class signed off; zero `Pod` components
 - [ ] Gate 7: all 7 cluster prerequisites confirmed
-- [ ] Gate 8: server import yields exactly 66 components and 111 relationships with no drops
+- [ ] Gate 8: server import yields exactly 66 components and 113 relationships with no drops
 - [ ] Gate 9: all six intent traces confirmed by a reviewer
 
 **Definition of done:** Gates 1–8 automated and green in CI; Gate 9 signed off by a human reviewer who has read

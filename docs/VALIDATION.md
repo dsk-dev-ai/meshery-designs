@@ -11,7 +11,7 @@ Gate 1 validates the generated artifact against Meshery catalog and schema expec
 Key checks include:
 
 - 66 components
-- 111 relationships
+- 113 relationships
 - catalog resolution
 - selector integrity
 - relationship patch integrity
@@ -51,10 +51,10 @@ Verified:
 - persistence
 - retrieval
 - 66/66 component IDs
-- 111/111 relationship IDs
-- 222/222 selector entries
-- 162/162 patch records
-- 29/29 namespace mutator entries
+- 113/113 relationship IDs
+- 226/226 selector entries
+- 166/166 patch records
+- 31/31 namespace mutator entries
 
 Report:
 

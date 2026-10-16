@@ -229,7 +229,7 @@ def _e(src, dst, basis, ann, prov, ref):
     EDGES.append((src, dst, basis, ann, prov, ref))
 
 
-# ---- Section 1: namespace membership, 29 edges, provenance B
+# ---- Section 1: namespace membership, 31 edges, provenance B
 _INV = "ns-ai-control"
 for _s in ["meshsync", "broker", "deploy-meshery-control", "svc-meshery-control",
            "ingress-ai-platform", "sec-broker-endpoint", "sec-registry-creds",
@@ -238,7 +238,8 @@ for _s in ["meshsync", "broker", "deploy-meshery-control", "svc-meshery-control"
 for _s in ["cm-agent-runtime", "cm-model-router", "quota-ai-runtime", "limits-ai-runtime"]:
     _e(_s, "ns-ai-runtime", "kmjea", False, "B", "RELATIONSHIP_MATRIX.md#1")
 for _s in ["sts-redis", "svc-redis", "pvc-redis", "sts-postgres", "svc-postgres",
-           "pvc-postgres", "sec-state-creds", "sa-ai-state", "role-ai-state", "rb-ai-state"]:
+           "pvc-postgres", "sec-state-creds", "sa-ai-state", "role-ai-state", "rb-ai-state",
+           "pdb-sts-redis", "pdb-sts-postgres"]:
     _e(_s, "ns-ai-state", "kmjea", False, "B", "RELATIONSHIP_MATRIX.md#1")
 for _s in ["otel-collector", "prometheus", "sm-platform", "alertmanager", "promrule-platform-slo"]:
     _e(_s, "ns-ai-observability", "kmjea", False, "B", "RELATIONSHIP_MATRIX.md#1")

@@ -276,7 +276,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id034
+  modelReference: &id036
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1752,7 +1752,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id033
+  modelReference: &id035
     id: 00000000-0000-0000-0000-000000000000
     name: sumologic
     version: v1.0.0
@@ -1823,7 +1823,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id035
+  modelReference: &id037
     id: 00000000-0000-0000-0000-000000000000
     name: kube-prometheus-stack
     version: v1.0.0
@@ -1894,7 +1894,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id036
+  modelReference: &id038
     id: 00000000-0000-0000-0000-000000000000
     name: kube-prometheus-stack
     version: v1.0.0
@@ -1970,7 +1970,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id037
+  modelReference: &id039
     id: 00000000-0000-0000-0000-000000000000
     name: kube-prometheus-stack
     version: v1.0.0
@@ -2042,7 +2042,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id038
+  modelReference: &id040
     id: 00000000-0000-0000-0000-000000000000
     name: kube-prometheus-stack
     version: v1.0.0
@@ -2544,7 +2544,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id039
+  modelReference: &id041
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2614,7 +2614,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id040
+  modelReference: &id042
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -3238,7 +3238,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id041
+  modelReference: &id033
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -3307,7 +3307,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id042
+  modelReference: &id034
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -5785,7 +5785,69 @@ relationships:
           mutatorRef:
           - - displayName
           patchStrategy: replace
-- id: e5b47852-44fe-5413-b9eb-4a71e8cdfaf8
+- id: 5726cd9b-808a-5806-ac5f-5a8e5dad6e10
+  schemaVersion: relationships.meshery.io/v1beta2
+  version: v1.0.0
+  kind: hierarchical
+  type: parent
+  subType: inventory
+  status: enabled
+  metadata:
+    description: 'pdb-sts-redis -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
+    isAnnotation: false
+  model: *id006
+  selectors:
+  - allow:
+      from:
+      - id: cc174c28-e5c1-51ae-b03a-58bf845946f4
+        kind: PodDisruptionBudget
+        model: *id033
+        patch:
+          mutatedRef:
+          - - configuration
+            - metadata
+            - namespace
+          patchStrategy: replace
+      to:
+      - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
+        kind: Namespace
+        model: *id023
+        patch:
+          mutatorRef:
+          - - displayName
+          patchStrategy: replace
+- id: 9d523920-b7a6-50fe-96d1-25ea12e2af66
+  schemaVersion: relationships.meshery.io/v1beta2
+  version: v1.0.0
+  kind: hierarchical
+  type: parent
+  subType: inventory
+  status: enabled
+  metadata:
+    description: 'pdb-sts-postgres -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
+    isAnnotation: false
+  model: *id006
+  selectors:
+  - allow:
+      from:
+      - id: e424c405-2795-5068-a73e-4a2ff6bb3c6d
+        kind: PodDisruptionBudget
+        model: *id034
+        patch:
+          mutatedRef:
+          - - configuration
+            - metadata
+            - namespace
+          patchStrategy: replace
+      to:
+      - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
+        kind: Namespace
+        model: *id023
+        patch:
+          mutatorRef:
+          - - displayName
+          patchStrategy: replace
+- id: b54d7491-6049-5d33-9245-cb53fee4409e
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -5802,7 +5864,7 @@ relationships:
       from:
       - id: 0d0922e4-d9e9-59bb-8d59-6bb7b8e95214
         kind: OpenTelemetryCollector
-        model: *id033
+        model: *id035
         patch:
           mutatedRef:
           - - configuration
@@ -5812,12 +5874,12 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id034
+        model: *id036
         patch:
           mutatorRef:
           - - displayName
           patchStrategy: replace
-- id: 889f5097-baf7-5de5-80ed-01634bcd0375
+- id: be08501a-7d56-5495-b8a9-6ed2791150d2
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -5833,7 +5895,7 @@ relationships:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id035
+        model: *id037
         patch:
           mutatedRef:
           - - configuration
@@ -5843,12 +5905,12 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id034
+        model: *id036
         patch:
           mutatorRef:
           - - displayName
           patchStrategy: replace
-- id: 1f090400-a707-55c6-acec-4c638149702c
+- id: 88512b13-15aa-590c-a4b3-b72879031db2
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -5865,7 +5927,7 @@ relationships:
       from:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id036
+        model: *id038
         patch:
           mutatedRef:
           - - configuration
@@ -5875,12 +5937,12 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id034
+        model: *id036
         patch:
           mutatorRef:
           - - displayName
           patchStrategy: replace
-- id: 81953b3b-1ab0-59ef-b105-51fbc9daf0aa
+- id: 9f0dced3-70f5-5221-b2b4-a67e137f7aae
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -5897,7 +5959,7 @@ relationships:
       from:
       - id: 8c183854-165d-5253-a3f9-f42f54260825
         kind: Alertmanager
-        model: *id037
+        model: *id039
         patch:
           mutatedRef:
           - - configuration
@@ -5907,12 +5969,12 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id034
+        model: *id036
         patch:
           mutatorRef:
           - - displayName
           patchStrategy: replace
-- id: f4a8ab83-3fad-5e8c-974e-d9408f3e0d83
+- id: a402a0a5-2f57-5405-b55c-125096609b0b
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -5929,7 +5991,7 @@ relationships:
       from:
       - id: 9fc66572-889e-55e6-95db-611b6a9e7373
         kind: PrometheusRule
-        model: *id038
+        model: *id040
         patch:
           mutatedRef:
           - - configuration
@@ -5939,12 +6001,12 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id034
+        model: *id036
         patch:
           mutatorRef:
           - - displayName
           patchStrategy: replace
-- id: ecd6254a-ec05-502f-a2ec-26ab9198bd73
+- id: 4eda644f-d74b-5ecc-b7a7-ad48a104549c
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -5975,7 +6037,7 @@ relationships:
           - - configuration
             - metadata
             - labels
-- id: 6d44bc56-4c08-5159-87f5-ba2e83f713ea
+- id: ed0aa3fe-3274-52ef-9278-8ff160e25f0d
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -5991,7 +6053,7 @@ relationships:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id035
+        model: *id037
         match:
           refs:
           - - configuration
@@ -6000,13 +6062,13 @@ relationships:
       to:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id036
+        model: *id038
         match:
           refs:
           - - configuration
             - metadata
             - labels
-- id: be30f2be-b867-5e46-bfd0-53d3a2c24131
+- id: b98ad271-0e03-5bd7-ac8a-95dcca009aa2
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -6023,7 +6085,7 @@ relationships:
       from:
       - id: 08935853-d938-585a-99c8-cd1f642967be
         kind: NetworkPolicy
-        model: *id039
+        model: *id041
         match:
           refs:
           - - configuration
@@ -6032,13 +6094,13 @@ relationships:
       to:
       - id: cf30eeb1-f57b-534e-b0c6-88c15c758ed0
         kind: NetworkPolicy
-        model: *id040
+        model: *id042
         match:
           refs:
           - - configuration
             - metadata
             - labels
-- id: 8b64e98f-148d-52a9-ab12-a34cec1529c7
+- id: 4d8d0b5e-48b1-5b3f-aea0-73317f2f7db2
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6101,7 +6163,7 @@ relationships:
             - '0'
             - protocol
           patchStrategy: replace
-- id: 48b05650-0221-5b26-9f89-4e010d09a6e7
+- id: 64a86981-b753-5f5d-af20-6fac206d2d93
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6156,7 +6218,7 @@ relationships:
             - '0'
             - port
           patchStrategy: replace
-- id: 90d6f001-0769-5932-bfe5-00190c1c07c0
+- id: f00821b7-8bba-5ede-8944-d61fffe692db
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6218,7 +6280,7 @@ relationships:
             - '0'
             - protocol
           patchStrategy: replace
-- id: 1bbfafb4-5e65-584d-bcd8-4cb03c8a2b32
+- id: b71b36ae-54bf-52bd-bba2-fc74cf2b8496
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6280,7 +6342,7 @@ relationships:
             - '0'
             - protocol
           patchStrategy: replace
-- id: 095bc885-88a3-5fd3-9e05-31aaa732051f
+- id: f35c86f0-194b-5138-a392-4d5cb91be6b7
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6314,7 +6376,7 @@ relationships:
             - '0'
             - spec
           patchStrategy: replace
-- id: 0b03d12c-6c15-5b96-9875-0bacb5d8f6bb
+- id: 6333e234-e648-5994-b452-d653e3c68f96
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6348,7 +6410,7 @@ relationships:
             - '0'
             - spec
           patchStrategy: replace
-- id: bb2a39da-e3c1-5422-97b5-1670febad08d
+- id: ae0a89aa-775c-50f8-bee6-a4968d39da1e
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6387,7 +6449,7 @@ relationships:
             - configMapRef
             - name
           patchStrategy: replace
-- id: d2500b74-86e7-5ac2-a6bd-673e7df3b501
+- id: 396cade9-a11e-511b-b685-30ae98e7739e
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6426,7 +6488,7 @@ relationships:
             - configMapRef
             - name
           patchStrategy: replace
-- id: df2dfe35-d14a-543f-80c3-2db5189b5021
+- id: 3894b8db-7ee0-5ac9-b5a0-42a99cfd6446
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6465,7 +6527,7 @@ relationships:
             - secretRef
             - name
           patchStrategy: replace
-- id: 85e87133-be72-5bc9-b283-cdd6753190f8
+- id: 238b08e1-d9b1-56f3-b3a6-089681f3a6ca
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6504,7 +6566,7 @@ relationships:
             - secretRef
             - name
           patchStrategy: replace
-- id: 42028af0-2632-570a-b20a-1e7a11edd552
+- id: af7ff066-b44b-5ac8-8130-64355220fb75
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6539,7 +6601,7 @@ relationships:
             - metadata
             - name
           patchStrategy: replace
-- id: 679dad5c-7a55-590f-bf98-6f1c92b9b811
+- id: d6032bed-42b3-5233-8ef4-06d40b612f4f
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6573,7 +6635,7 @@ relationships:
             - metadata
             - name
           patchStrategy: replace
-- id: 5aa822b7-ac4c-5259-8a3c-9ea29ca8efac
+- id: 71dd343c-2263-5928-abd1-e23296413c07
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6589,7 +6651,7 @@ relationships:
       from:
       - id: cc174c28-e5c1-51ae-b03a-58bf845946f4
         kind: PodDisruptionBudget
-        model: *id041
+        model: *id033
         patch:
           mutatorRef:
           - - configuration
@@ -6607,7 +6669,7 @@ relationships:
             - metadata
             - labels
           patchStrategy: replace
-- id: 7c3b74eb-cd25-5715-90ed-bb84a337e254
+- id: 0df173c5-9294-5d30-a0c8-bb6b209aeb17
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6624,7 +6686,7 @@ relationships:
       from:
       - id: e424c405-2795-5068-a73e-4a2ff6bb3c6d
         kind: PodDisruptionBudget
-        model: *id042
+        model: *id034
         patch:
           mutatorRef:
           - - configuration
@@ -6642,7 +6704,7 @@ relationships:
             - metadata
             - labels
           patchStrategy: replace
-- id: 20fb9924-9a70-5ac7-8c6d-b71888b07146
+- id: c03b786f-b8d9-5e17-bcac-4ccd3e4b0962
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6675,7 +6737,7 @@ relationships:
             - spec
             - priorityClassName
           patchStrategy: replace
-- id: e50c9dcb-7693-57cf-89fc-81cd4d761ab4
+- id: 702d134e-4746-50e4-b08d-019336845f34
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6708,7 +6770,7 @@ relationships:
             - spec
             - priorityClassName
           patchStrategy: replace
-- id: c9baebec-4e2a-5c58-9f50-9d64c2cb055d
+- id: abfd649a-a924-5593-bdcc-a8e0595622b1
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6742,7 +6804,7 @@ relationships:
             - spec
             - policyName
           patchStrategy: replace
-- id: ae5cd261-0075-5e45-a024-1e443f893b42
+- id: 97f47c19-8bd2-5b78-ac7f-3823a7bb5327
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6752,13 +6814,13 @@ relationships:
   metadata:
     description: 'prometheus -> sm-platform. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis: edge-sibling-matchlabels-fmlwc.json.'
     isAnnotation: false
-  model: *id035
+  model: *id037
   selectors:
   - allow:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id035
+        model: *id037
         patch:
           mutatorRef:
           - - configuration
@@ -6768,14 +6830,14 @@ relationships:
       to:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id036
+        model: *id038
         patch:
           mutatedRef:
           - - configuration
             - metadata
             - labels
           patchStrategy: replace
-- id: 98ae932b-635e-5af8-a6d2-3b30e1c82e89
+- id: f5ab9232-e931-5808-bfd1-ec7d1023065e
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6786,13 +6848,13 @@ relationships:
     description: 'sm-platform -> svc-meshery-control. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis:
       edge-sibling-matchlabels-qvwox.json.'
     isAnnotation: false
-  model: *id035
+  model: *id037
   selectors:
   - allow:
       from:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id036
+        model: *id038
         patch:
           mutatorRef:
           - - configuration
@@ -6809,7 +6871,7 @@ relationships:
             - metadata
             - labels
           patchStrategy: replace
-- id: 38ec3b1a-2eac-56b8-97df-14df60f5ecfb
+- id: 83911624-b224-5bcf-9e64-fefcc95c28e5
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6819,13 +6881,13 @@ relationships:
   metadata:
     description: 'sm-platform -> svc-redis. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis: edge-sibling-matchlabels-qvwox.json.'
     isAnnotation: false
-  model: *id035
+  model: *id037
   selectors:
   - allow:
       from:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id036
+        model: *id038
         patch:
           mutatorRef:
           - - configuration
@@ -6842,7 +6904,7 @@ relationships:
             - metadata
             - labels
           patchStrategy: replace
-- id: a71f647f-b619-5bcf-bf46-065638fff3f1
+- id: 93c2406a-38bc-5237-9276-d18887945a79
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6852,13 +6914,13 @@ relationships:
   metadata:
     description: 'sm-platform -> svc-postgres. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis: edge-sibling-matchlabels-qvwox.json.'
     isAnnotation: false
-  model: *id035
+  model: *id037
   selectors:
   - allow:
       from:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id036
+        model: *id038
         patch:
           mutatorRef:
           - - configuration
@@ -6875,7 +6937,7 @@ relationships:
             - metadata
             - labels
           patchStrategy: replace
-- id: 0705aed9-5eb8-5f04-a517-80ad0c9aa282
+- id: a43f17a8-2794-57b9-b11f-33a7428c42e3
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6886,13 +6948,13 @@ relationships:
     description: 'prometheus -> promrule-platform-slo. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis:
       edge-sibling-matchlabels-cunlc.json.'
     isAnnotation: false
-  model: *id035
+  model: *id037
   selectors:
   - allow:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id035
+        model: *id037
         patch:
           mutatorRef:
           - - configuration
@@ -6902,14 +6964,14 @@ relationships:
       to:
       - id: 9fc66572-889e-55e6-95db-611b6a9e7373
         kind: PrometheusRule
-        model: *id038
+        model: *id040
         patch:
           mutatedRef:
           - - configuration
             - metadata
             - labels
           patchStrategy: replace
-- id: 31c1be79-4ea5-5640-bf3b-eece79c7ea5e
+- id: 51399d11-367f-5b87-bd54-2ff916c3f3a5
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -6961,7 +7023,7 @@ relationships:
           - kind: self
             mutatorRef:
             - - displayName
-- id: 6fe12c53-d983-53e8-b361-918918b95903
+- id: 75ec6765-a6db-5fc9-896d-f563eeed0b56
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -7013,7 +7075,7 @@ relationships:
           - kind: self
             mutatorRef:
             - - displayName
-- id: 83b7b769-19d4-518f-99af-bede989d524f
+- id: 70ce9302-68bd-50fb-8325-b0421f9a6970
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -7051,7 +7113,7 @@ relationships:
             - secretRef
             - name
           patchStrategy: replace
-- id: b8723192-3094-5088-8630-3ee3ef0cfb9f
+- id: de5efbc2-13df-535d-9073-2f31a85fc820
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -7089,7 +7151,7 @@ relationships:
             - secretRef
             - name
           patchStrategy: replace
-- id: 3eef9f25-de90-5061-8d0a-43d184d13b72
+- id: 4561d57f-8162-507f-80b6-4f9e1e64bf1a
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -7099,13 +7161,13 @@ relationships:
   metadata:
     description: 'prometheus -> alertmanager. Provenance H (RELATIONSHIP_MATRIX.md#6); basis: edge-sibling-matchlabels-fmlwc.json.'
     isAnnotation: false
-  model: *id035
+  model: *id037
   selectors:
   - allow:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id035
+        model: *id037
         patch:
           mutatorRef:
           - - configuration
@@ -7115,14 +7177,14 @@ relationships:
       to:
       - id: 8c183854-165d-5253-a3f9-f42f54260825
         kind: Alertmanager
-        model: *id037
+        model: *id039
         patch:
           mutatedRef:
           - - configuration
             - metadata
             - labels
           patchStrategy: replace
-- id: 74ed99f6-a3c3-5ab8-b074-fbd3b6a82b0a
+- id: 5278417a-c409-5906-925e-ca1e5e69b2a2
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7162,7 +7224,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: f708d43a-acf3-5b4b-80b7-a7d6030eb967
+- id: 98505a47-1486-503f-900c-83fac0aecf58
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7202,7 +7264,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 43093e48-cec9-5624-a02d-c48c4032f872
+- id: e0672189-f23c-5c0a-a149-30c6d11c6014
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7242,7 +7304,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: efad0299-1184-52e8-880b-319f38ee5fa9
+- id: 6e2a9433-9400-5acf-ae77-050f8ad4749f
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7282,7 +7344,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 8b44ba99-c62b-5d58-9e23-3ba874b5b5bd
+- id: d1485589-0ab2-56b6-b96a-e729e6b815b4
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7322,7 +7384,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 21c10f7e-162f-5d2f-a208-016a959b5d6c
+- id: 3cf033f6-1aea-554b-b1a3-1931f754bc05
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7362,7 +7424,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: f55fbd80-1c34-5593-926d-e70349a62e10
+- id: e479775c-5432-5750-86b3-dc69a58d1866
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7402,7 +7464,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 2c5bb7da-bd23-5a15-b3b4-a8c9c61459ec
+- id: d207e1ea-4073-586d-a338-f8146f0fa870
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7441,7 +7503,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 71a74a07-24fb-545d-8302-50696d4768f7
+- id: 8e4b5f9a-122e-5735-9674-4a0fed4867cf
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7481,7 +7543,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 07fb3bf9-21fb-56ca-b864-682cdbd14c0d
+- id: 3b2d4d55-b19e-5203-a5a3-6bf77152b769
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7521,7 +7583,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 3ee2e64a-4d3a-5aea-a392-2aee4df032fd
+- id: 6c0b237f-19ff-5205-8645-db62ef28f412
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7561,7 +7623,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 876b2553-011e-565b-97e0-4b2a8d68767d
+- id: f33ec637-f736-522b-809b-ef2c1fd14190
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7600,7 +7662,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 0c44b482-befa-5a42-9c7d-4df5bbc7c714
+- id: 75816ed2-7ac8-5dbb-9b50-9547916d8e9d
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7639,7 +7701,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: e648d124-2916-5143-bea2-ff47f1b7f043
+- id: 0f96ed94-6a8c-5ab2-a542-bac2b6f835ad
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7679,7 +7741,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 72da9457-080b-5e3e-893f-a0add6a3bf55
+- id: ca5527f9-6213-5602-bc5b-7e0cf31bcbde
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7719,7 +7781,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: c7e6e4fc-1212-5591-8ee6-d964bbbc90f7
+- id: 5c4c68e4-95ff-526e-bf54-fe248679d618
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7759,7 +7821,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: f3ca16e7-0e75-5521-92e7-81cb88cfb822
+- id: 10625da0-4127-5124-bf1d-4e1a73d9aaf3
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7799,7 +7861,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 52a1d02b-57ae-5bec-b93d-bb9e3d01b1ef
+- id: 33f1fe4c-4d60-5832-85db-e2e5431c3768
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7839,7 +7901,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 87e4fdf0-c5ca-5cc7-b9cd-7fcb97ab7204
+- id: bcb4a3f6-42f9-5e90-84b0-c74eec435b7e
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7869,7 +7931,7 @@ relationships:
       to:
       - id: 08935853-d938-585a-99c8-cd1f642967be
         kind: NetworkPolicy
-        model: *id039
+        model: *id041
         patch:
           mutatedRef:
           - - configuration
@@ -7879,7 +7941,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 647885b8-560b-5f7a-99d0-a3e6c6a2c1a7
+- id: 7339fb9e-2825-57f3-bc58-819191519da3
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7909,7 +7971,7 @@ relationships:
       to:
       - id: cf30eeb1-f57b-534e-b0c6-88c15c758ed0
         kind: NetworkPolicy
-        model: *id040
+        model: *id042
         patch:
           mutatedRef:
           - - configuration
@@ -7919,7 +7981,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: b3ef335c-9ca3-5e4c-a816-b5f15303e96a
+- id: 3c443e32-fbbb-524b-a73b-ccbae80af65a
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7959,7 +8021,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 0dba7816-eae5-5980-9284-bcacd5bcce67
+- id: 11ca3ab1-762e-5ded-9450-ec575f0d254d
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -7989,7 +8051,7 @@ relationships:
       to:
       - id: cc174c28-e5c1-51ae-b03a-58bf845946f4
         kind: PodDisruptionBudget
-        model: *id041
+        model: *id033
         patch:
           mutatedRef:
           - - configuration
@@ -7999,7 +8061,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 1ab93651-581e-5042-8a1b-b8e97fe17296
+- id: 8c14ae6d-e097-5ac1-91fc-70aae1904305
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -8029,7 +8091,7 @@ relationships:
       to:
       - id: e424c405-2795-5068-a73e-4a2ff6bb3c6d
         kind: PodDisruptionBudget
-        model: *id042
+        model: *id034
         patch:
           mutatedRef:
           - - configuration
@@ -8039,7 +8101,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 66a856e8-fa3d-5548-82fe-b5ad58b83785
+- id: cffca199-74fc-57f1-9ce7-b91395a6ce82
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8061,7 +8123,7 @@ relationships:
       - id: 2ec8e438-c15e-5223-8fea-4b6b780aaf7c
         kind: GenericNode
         model: *id049
-- id: 51d0f0ed-57eb-569f-b22a-1c46056fa6d5
+- id: 1b3d72f0-d26a-5f67-b594-5fe2fb7fd83b
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8083,7 +8145,7 @@ relationships:
       - id: 721d974f-fd00-5b68-8ec8-e0558cba4fb0
         kind: GenericNode
         model: *id050
-- id: 53d9ea91-b62f-54f3-aec9-3e6848520ffb
+- id: 4526ecc2-b608-5224-a3f3-6a823498c3bd
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8105,7 +8167,7 @@ relationships:
       - id: 32be07b6-c456-5938-9dc3-6210180f66fb
         kind: GenericNode
         model: *id057
-- id: ba822d3d-fd35-5b06-a723-50e68aec9507
+- id: 0689b061-39be-5561-adeb-8a48569944e6
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8127,7 +8189,7 @@ relationships:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
         model: *id052
-- id: ac736f81-2192-56ea-8711-8619ca02dc41
+- id: 85066dc7-1b75-5f24-84fc-16d122a98c36
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8149,7 +8211,7 @@ relationships:
       - id: 04273108-df39-51f2-b9ae-76ce5dbef43a
         kind: GenericNode
         model: *id053
-- id: c7945a13-6f8c-5b0a-834e-172d434100d2
+- id: da036ae3-3fa9-5329-a014-d7502cb8426d
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8171,7 +8233,7 @@ relationships:
       - id: 96a614f1-823f-57f9-98d1-3260743cf97f
         kind: GenericNode
         model: *id054
-- id: 0aba7eab-9f90-5299-856a-2e23b2691426
+- id: cf5e7e8d-296e-5e7b-ad61-c9cb86d8a4e4
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8193,7 +8255,7 @@ relationships:
       - id: 47609e0c-98d0-51fc-b11e-58c8371713a8
         kind: GenericNode
         model: *id055
-- id: 810abd1e-2fd2-56ac-ab3e-9453b2fc954d
+- id: db7a2586-30d2-5679-bee4-0ee2b72953d3
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8215,7 +8277,7 @@ relationships:
       - id: 64751509-5cbc-508f-9116-6ee47a7c937f
         kind: GenericNode
         model: *id058
-- id: 5fa52709-41db-5886-814d-b52de043136c
+- id: 38fec468-2441-5e35-a9f0-e1dbc67a95af
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8237,7 +8299,7 @@ relationships:
       - id: fc9f12a2-d974-5a2d-a147-888c36ee18fb
         kind: GenericNode
         model: *id064
-- id: 0fa0e15f-a595-50dd-bfe8-01a5796d7cff
+- id: 0b224165-88e3-57d0-8d95-9a4eb8d66103
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8259,7 +8321,7 @@ relationships:
       - id: 3e7e2036-596a-52a8-a2e8-32af6d3f8457
         kind: Credential
         model: *id059
-- id: 9a55079a-cc28-5b0a-9431-9155291b5347
+- id: 6b2b9e6c-4b77-5ed3-a478-11a9bbd86424
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8281,7 +8343,7 @@ relationships:
       - id: 1caa5e3d-1b98-5de8-81c8-9d85981b7546
         kind: Secret
         model: *id013
-- id: ebdab330-73c0-5dd2-b77d-2bebf297c1e6
+- id: 6b3a5d2f-2a36-5d29-9a50-4a92dea0d03f
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8303,7 +8365,7 @@ relationships:
       - id: 32be07b6-c456-5938-9dc3-6210180f66fb
         kind: GenericNode
         model: *id057
-- id: aaed472b-3ef2-5045-bc15-f79682ac7299
+- id: fff1c8df-4011-53c5-82a8-b20db1356238
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8325,7 +8387,7 @@ relationships:
       - id: 64751509-5cbc-508f-9116-6ee47a7c937f
         kind: GenericNode
         model: *id058
-- id: f19068bd-a062-59db-9c3e-da9034e6ee95
+- id: 8df1430f-22ef-59ba-90c6-06de4b69f739
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8347,7 +8409,7 @@ relationships:
       - id: 8a00ddd1-a076-572f-a021-63062feb36a8
         kind: GenericNode
         model: *id063
-- id: 427b9b1b-8890-5b30-b80d-f9ca3e5cd1d3
+- id: 36f4a5a0-2cae-55ef-8662-7703727adbcb
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8369,7 +8431,7 @@ relationships:
       - id: 32be07b6-c456-5938-9dc3-6210180f66fb
         kind: GenericNode
         model: *id057
-- id: f5bde996-f9b8-5155-a287-613dfec9faa5
+- id: 35c4b356-6b14-5e80-883c-c6505692be04
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8391,7 +8453,7 @@ relationships:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
         model: *id052
-- id: b4fe3ca2-20ab-50a3-9d90-ca6aba7f5a3c
+- id: cac62f35-ba75-5d91-bd1a-ee1cf6c1ccdf
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8413,7 +8475,7 @@ relationships:
       - id: ce2a979e-5a8e-596a-83c1-7f2913ed38a3
         kind: MeshSync
         model: *id007
-- id: f3abfd57-6cba-5098-a336-2561f2244007
+- id: 77c14964-71d4-50c6-b608-ab0a93492bcf
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8435,7 +8497,7 @@ relationships:
       - id: 5d252a3b-1b26-5347-98db-5034535b7aab
         kind: Broker
         model: *id008
-- id: b0c4629e-c3f5-533b-9808-fd6a0b772c68
+- id: 52ef61d2-81ab-59ad-a99b-488691398bca
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8457,7 +8519,7 @@ relationships:
       - id: 1f9852e8-2638-5742-bd52-099ed58a7459
         kind: Deployment
         model: *id009
-- id: 00b317fb-f64a-5b14-82ee-f08228998d7c
+- id: 153e78c9-2858-5331-ae08-7dba622360b5
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8479,7 +8541,7 @@ relationships:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
         model: *id026
-- id: b84367fa-7c78-56cc-b01f-12ea3ef70e57
+- id: 07f3c27f-30f3-544d-be2d-ac1527ffc5e9
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8501,7 +8563,7 @@ relationships:
       - id: 1caa5e3d-1b98-5de8-81c8-9d85981b7546
         kind: Secret
         model: *id013
-- id: 4d35a342-81a1-59d5-b81d-3cea5879f524
+- id: 3f40ed56-d7b8-59e5-96e0-8096f8825366
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8523,7 +8585,7 @@ relationships:
       - id: 402e2057-09a9-565e-91e3-cd02f54eb7b9
         kind: Ingress
         model: *id011
-- id: ff0d11da-ee03-584c-a285-e53687db0c1e
+- id: 6e0c866d-87ec-547d-aad7-92be37c348e1
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8545,7 +8607,7 @@ relationships:
       - id: 8632e5f1-4455-5a24-88ca-1e37c580613f
         kind: ValidatingAdmissionPolicy
         model: *id044
-- id: 7a443eee-3e98-5056-8418-c8f49516a6ac
+- id: b4732e1c-86bd-5588-a5e4-7fa41df4502f
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8556,7 +8618,7 @@ relationships:
     description: 'degradation-controller -> promrule-platform-slo. Provenance A (RELATIONSHIP_MATRIX.md#9);
       basis: no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id038
+  model: *id040
   selectors:
   - allow:
       from:
@@ -8566,8 +8628,8 @@ relationships:
       to:
       - id: 9fc66572-889e-55e6-95db-611b6a9e7373
         kind: PrometheusRule
-        model: *id038
-- id: deb852de-205d-5855-857c-1346beb3f8b5
+        model: *id040
+- id: db6d2be5-dcac-5a33-8f6e-f995f1a0dae7
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: edge
@@ -8578,18 +8640,18 @@ relationships:
     description: 'otel-collector -> prometheus. Provenance A (RELATIONSHIP_MATRIX.md#9); basis: no upstream
       blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id035
+  model: *id037
   selectors:
   - allow:
       from:
       - id: 0d0922e4-d9e9-59bb-8d59-6bb7b8e95214
         kind: OpenTelemetryCollector
-        model: *id033
+        model: *id035
       to:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id035
-- id: 1527eb06-7c57-538c-b49e-7060dd9477cf
+        model: *id037
+- id: a9006fd5-6d75-5e4d-8183-a47440b32126
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -8628,7 +8690,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 07f94b62-27a1-56bc-8a53-321360eecb7d
+- id: 2c74c538-1beb-56af-aefd-4d23886dde96
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -8667,7 +8729,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 2f9b0039-a919-56ec-acf0-a9b6605915bd
+- id: 29a76379-b0e9-5f1d-a0af-9857e4410de1
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -8706,7 +8768,7 @@ relationships:
             - containers
             - _
           patchStrategy: replace
-- id: 9dbb0aa1-8646-5665-8a89-dcd5f6561299
+- id: 037e28cf-7971-5686-b8fd-34744d3610f2
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
   kind: hierarchical
@@ -8736,7 +8798,7 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id034
+        model: *id036
         patch:
           mutatedRef:
           - - configuration

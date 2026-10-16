@@ -58,12 +58,12 @@ def main():
 
     # ---- assertion 1: Unmarshal succeeded (probe exited 0 and produced output)
     check("A1 Unmarshal into design.PatternFile succeeded", True,
-          "66 components / 111 relationships recovered")
+          "66 components / 113 relationships recovered")
 
     # ---- assertion 2: counts
     nc, nr = len(rt["components"]), len(rt["relationships"])
-    check("A2 component count 66 and relationship count 111 survive",
-          nc == 66 and nr == 111, "components=%d relationships=%d" % (nc, nr))
+    check("A2 component count 66 and relationship count 113 survive",
+          nc == 66 and nr == 113, "components=%d relationships=%d" % (nc, nr))
 
     # ---- assertion 3: ids survive unchanged
     oc_ids = [c["id"] for c in orig["components"]]
@@ -159,8 +159,8 @@ def main():
                             out.append((r["id"], side, json.dumps(p, sort_keys=True)))
         return out
     o_p, r_p = patches(orig), patches(rt)
-    check("A8 all 162 patch blocks survive with patchStrategy=replace",
-          o_p == r_p and len(r_p) == 162,
+    check("A8 all 166 patch blocks survive with patchStrategy=replace",
+          o_p == r_p and len(r_p) == 166,
           "authored=%d roundtrip=%d" % (len(o_p), len(r_p)))
 
     # ---- assertion 6: re-validates under Gate 1
@@ -171,8 +171,8 @@ def main():
     check("A6 round-tripped output re-validates under Gate 1 (0 UNEXPECTED)",
           len(unexp) == 0,
           "UNEXPECTED=%d KNOWN=%d" % (len(unexp), len(known)))
-    check("A6b patchStrategy exception count unchanged (162)",
-          len(known) == 162, "known=%d" % len(known))
+    check("A6b patchStrategy exception count unchanged (166)",
+          len(known) == 166, "known=%d" % len(known))
 
     # ---- information-loss analysis
     dropped, injected, changed = diff(orig, rt)
