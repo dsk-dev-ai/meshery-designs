@@ -34,14 +34,22 @@ Error: HTTP Error Response: 404
 (/api/provider/extension/provider/navigator/meshmap/index.js?packageVersion=v1.0.71-1)
 ```
 
-**Diagnosis** — A Playground frontend/extension asset is missing for the
-published bundle version (`v1.0.71-1`). This is a server/deployment issue
-on the Meshery side and is unrelated to the design file.
+**Diagnosis** — Upstream Meshery bug, not a design defect. The error is
+rendered by the Navigator/MeshMap host when `useRemoteComponent(url)`
+fails to fetch the extension bundle
+(`ui/components/layout/Navigator/NavigatorExtension.tsx`, the
+`NavigatorExtensionError` component at the `err != null` branch). The
+Playground provider advertises extension `packageVersion=v1.0.71-1` but
+does not serve that bundle, so the fetch returns 404. It fires while the
+Navigator UI loads, independently of any design import — the design
+upload itself succeeds.
 
-**Resolution** — Hard refresh or open Playground in an incognito window
-to drop the stale cached bundle, retry the upload, or use **URL Import**
-instead of File Upload. If it persists, report it upstream at
-`meshery/meshery` issues.
+**Resolution** — Not fixable from this repository. Workarounds: hard
+refresh or an incognito window to drop the stale cached bundle; retry
+after Playground redeploys; or wait for the provider to publish the
+matching extension version. Report at `meshery/meshery` issues (the
+host error path above), noting the requested
+`packageVersion=v1.0.71-1` returned 404.
 
 ## 3. Duplicate designs in the account
 
