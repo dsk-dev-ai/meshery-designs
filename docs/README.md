@@ -8,7 +8,7 @@ Documentation for the AI-Native Platform Meshery design.
 - [Architecture](ARCHITECTURE.md)
 - [Design](DESIGN.md)
 - [Validation](VALIDATION.md)
-- [Mentorship Submission](SUBMISSION.md)
+- [Troubleshooting](TROUBLESHOOTING.md)
 
 ## Repository
 
