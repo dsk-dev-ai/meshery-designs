@@ -71,7 +71,7 @@ the places a reviewer should push back if the loss matters:
 - **`component.schema` dropped for 42 components** because the catalog value exceeds the
   `ComponentSchema` `maxLength` of 500 (typical size ~3 KB). The other 24 are empty *in the
   catalog* — they are the hand-authored `meshery-core` kinds (`Section`, `GenericNode`,
-  `Environment`, `Credential`). Net: 0 of 66 components carry a schema. This matches shipped
+  `Credential`). Net: 0 of 66 components carry a schema. This matches shipped
   convention, so it is expected to be harmless, but it is total loss.
 - **`model.metadata` dropped from all 5 model blocks** (see #2–#4).
 - **`styles.svg*` emptied on 106 fields** (see #10); icons will fall back to the UI default.
@@ -85,11 +85,12 @@ the places a reviewer should push back if the loss matters:
 
 - `patchStrategy: "replace"` — **never** substituted, omitted or altered. Present on 83
   relationships, 166 fields, all `"replace"`.
-- The one documented `isAnnotation` override: `Environment` → `true`. Verified to be the only
-  deviation from the catalog.
+- No `isAnnotation` override: every component's value equals the catalog's. (The environment
+  grouping uses the registered `Section` annotation rather than `Environment`, which the registry
+  never registers.)
 - `component.version`, `component.kind`, `isNamespaced`, `genealogy` — all 66 verified
   byte-equal to the catalog.
-- `env-production` as the single isAnnotation override; no synthesised models, versions,
+- No synthesised models, versions,
   relationships, `Pod` components, `StorageClass` components, or firewall edges.
 - Every `kind`/`type`/`subType` triple is verified to occur in the upstream catalog.
 - Provenance split matches `RELATIONSHIP_MATRIX.md`: B=56, H=21, C=27, A=9.

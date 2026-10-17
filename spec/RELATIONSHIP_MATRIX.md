@@ -324,6 +324,10 @@ annotation layer floats free of the infrastructure. All `edge` / `non-binding` /
 
 **Triple:** `kind: hierarchical` · `type: parent` · `subType: alias`
 
+The source component `env-production` is a meshery-core `Section` annotation — see
+`COMPONENT_INVENTORY.md` for why the catalog `Environment` component cannot be used (it is
+never registered).
+
 | # | Source | Target | Why |
 |---|---|---|---|
 | S1 | `env-production` | `ns-ai-control` | Scoping the control namespace to the production environment. |

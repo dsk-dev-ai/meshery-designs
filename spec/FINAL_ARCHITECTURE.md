@@ -196,7 +196,7 @@ row and the rows sum to the totals.
 
 | Group | Native | Annotation | Total |
 |---|---|---|---|
-| Namespaces and scoping | 4 | 1 `Environment` | 5 |
+| Namespaces and scoping | 4 | 1 `Section` (environment grouping) | 5 |
 | Control plane (layer 6) | 5 | 1 `meshery-control-plane` | 6 |
 | Configuration and secrets | 5 | 1 `Credential` | 6 |
 | State (layer 9) | 6 | 0 | 6 |
@@ -209,7 +209,8 @@ row and the rows sum to the totals.
 | **Total** | **40** | **26** | **66** |
 
 The 10 layer-band and commentary components are 8 `Section` bands and 2 `Comment` nodes. The 26 annotation
-components are 1 `Environment`, 14 `GenericNode`, 1 `Credential`, 8 `Section`, and 2 `Comment`.
+components are 14 `GenericNode`, 1 `Credential`, 9 `Section` (8 layer bands plus the environment grouping),
+and 2 `Comment`.
 
 Layer 8 has no row of its own: its components — the `Deployment`, the three `Service`s, two `ConfigMap`s, three
 `Secret`s, and two `StatefulSet`s — are counted in the functional groups above. See `COMPONENT_INVENTORY.md`

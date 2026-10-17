@@ -312,13 +312,14 @@ components:
     height: 80
     width: 80
     secondaryColor: '#7aa1f0'
-- id: 711b10e4-b2cf-55e8-8016-a57fa349feeb
+- id: 331b0ad0-0b84-51e7-b865-3330f37ca569
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Environment
-  description: Declares the target environment for the whole design. The only component whose isAnnotation
-    differs from its catalog default (catalog says false; this design sets true because an Environment
-    is a Meshery-level statement, not a deployable resource).
+  displayName: Section
+  description: 'Declares the target environment grouping for the whole design. Expressed with meshery-core''s
+    registered `Section` annotation: the catalog''s `Environment` component is never registered because
+    it carries an empty `component.schema` with `metadata.isAnnotation: false`, which ComponentDefinition.Create
+    silently drops, so any design that references it fails dry-run validation.'
   format: JSON
   status: enabled
   model:
@@ -375,7 +376,7 @@ components:
       annotations: {}
   component:
     version: core.meshery.io/v1alpha1
-    kind: Environment
+    kind: Section
     schema: ''
   styles:
     shape: rectangle
@@ -383,9 +384,15 @@ components:
     svgColor: ''
     svgWhite: ''
     svgComplete: ''
-    height: 22
-    width: 22
+    background-image: none
+    background-opacity: 0
+    border-style: dashed
+    border-width: 1
+    height: 80
+    width: 80
     secondaryColor: '#00D3A9'
+    data:
+      label: ''
 - id: ce2a979e-5a8e-596a-83c1-7f2913ed38a3
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
@@ -8665,8 +8672,8 @@ relationships:
   selectors:
   - allow:
       from:
-      - id: 711b10e4-b2cf-55e8-8016-a57fa349feeb
-        kind: Environment
+      - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
+        kind: Section
         model: *id069
         patch:
           mutatorRef:
@@ -8704,8 +8711,8 @@ relationships:
   selectors:
   - allow:
       from:
-      - id: 711b10e4-b2cf-55e8-8016-a57fa349feeb
-        kind: Environment
+      - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
+        kind: Section
         model: *id069
         patch:
           mutatorRef:
@@ -8743,8 +8750,8 @@ relationships:
   selectors:
   - allow:
       from:
-      - id: 711b10e4-b2cf-55e8-8016-a57fa349feeb
-        kind: Environment
+      - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
+        kind: Section
         model: *id069
         patch:
           mutatorRef:
@@ -8783,8 +8790,8 @@ relationships:
   selectors:
   - allow:
       from:
-      - id: 711b10e4-b2cf-55e8-8016-a57fa349feeb
-        kind: Environment
+      - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
+        kind: Section
         model: *id069
         patch:
           mutatorRef:
