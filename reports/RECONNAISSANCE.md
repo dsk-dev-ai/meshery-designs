@@ -277,6 +277,12 @@ Latest available for technologies relevant to an AI-native platform:
 | `sumologic` | 4.18.0 | 12 | 0 |
 | `dapr` | 0.1.5 | — | — |
 
+> **Catalog vs. registry.** This table surveys what exists in the `meshery/models` catalog
+> tree. A model being present in the catalog does **not** mean the registry serves it:
+> `sumologic` appears here but is absent from the registry (`totalCount: 0`), so none of its
+> components can be resolved at deploy time. Corrections of this kind are noted inline below
+> (OpenTelemetry Collector, Environment scoping).
+
 `kubernetes` model versions available: `v1.35.0` … `v1.37.1` (incl. `-alpha`/`-beta`/`-rc`). **v1.37.1 is the
 newest stable**; earlier notes referencing v1.36.0 (153 components) are one release behind (158 in v1.37.1).
 
@@ -368,7 +374,7 @@ Legend: **RC** = `REAL_COMPONENT` · **AC** = `ARCHITECTURAL_CONCEPT` (must be e
 | Loki | **RC** | `loki` 18.13.7 (2 components) |
 | Jaeger | **RC** | `jaegertracing` / `jaeger-operator` jaeger-3.4.1 |
 | Tempo | **NF** | Only `meshery-dev-icons/0.7.2/…/tempo.json` — an **icon**, not a component. No Tempo model exists. |
-| OpenTelemetry Collector | **RC** | `sumologic` 4.18.0 → `OpenTelemetryCollector` (`kind: OpenTelemetryCollector`, `version: opentelemetry.io/v1alpha1`, `isNamespaced: true`, `status: enabled`). Also `MeshOpenTelemetryBackend` in `kuma`/`kong-mesh`; `AWS Distro for OpenTelemetry` in `aws`. |
+| OpenTelemetry Collector | **RC (not usable)** | `sumologic` 4.18.0 → `OpenTelemetryCollector` (`kind: OpenTelemetryCollector`, `version: opentelemetry.io/v1alpha1`). **The `sumologic` model is not shipped by the registry**, so this component cannot be resolved at deploy time; the design uses a `kubernetes` `Deployment` instead (ADR-010). Also `MeshOpenTelemetryBackend` in `kuma`/`kong-mesh` and `AWS Distro for OpenTelemetry` in `aws` (mesh/cloud-scoped). |
 | Gateway API (`Gateway`, `GatewayClass`, `HTTPRoute`) | **NF** | Absent from `kubernetes` v1.37.1. Only `HTTPRouteGroup` (`traefik-mesh`) and `MeshHTTPRoute` (`kong-mesh`) exist — mesh-specific, not upstream Gateway API. Use `kubernetes` `Ingress`, or `nginx-ingress` / `kong` / `apisix-ingress-controller` / `traefik-mesh` as the ingress layer. |
 | Ingress controllers | **RC** | `nginx-ingress` 2.7.3, `kong` 3.4.1, `apisix-ingress-controller` 0.8.0, `traefik-mesh` 4.1.1 |
 | Service mesh | **RC** | `istio-base` 1.16.0 (15 comps, 3 rels). Also `kuma`, `linkerd`, `kiali-operator` |
@@ -402,8 +408,10 @@ the namespace with `hierarchical/parent/inventory` (`mutatedRef: [["configuratio
 and group by labels with `hierarchical/sibling/matchlabels`.
 
 **Layer 2 — Observability, real but only if wanted:**
-`kube-prometheus-stack` `Prometheus` + `ServiceMonitor`, optionally `loki` and `jaegertracing`. `sumologic`'s
-`OpenTelemetryCollector` gives a genuine OTel component without inventing one. `Grafana` is **not** cleanly
+`kube-prometheus-stack` `Prometheus` + `ServiceMonitor`, optionally `loki` and `jaegertracing`. The
+`OpenTelemetryCollector` component lives in the `sumologic` model, **which the registry does not ship**,
+so the design models the collector as a portable `kubernetes` `Deployment` (ADR-010) rather than
+inventing a CRD. `Grafana` is **not** cleanly
 available — keep it as a `GenericNode` rather than coupling to `fmtok8s-conference-chart`.
 
 **Layer 3 — AI-native abstraction, all AC via `meshery-core`:**

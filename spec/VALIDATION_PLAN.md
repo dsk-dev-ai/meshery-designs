@@ -208,14 +208,13 @@ For each of the 66 components, assert that
 
 | Model | Kinds to resolve | Instances |
 |---|---|---|
-| `kubernetes` `v1.37.1/v1.0.0` | `Namespace`×4, `ServiceAccount`×2, `Role`×2, `RoleBinding`×2, `Deployment`×1, `Service`×3, `Ingress`×1, `ConfigMap`×2, `Secret`×3, `StatefulSet`×2, `PersistentVolumeClaim`×2, `NetworkPolicy`×2, `ResourceQuota`×1, `LimitRange`×1, `ValidatingAdmissionPolicy`×1, `ValidatingAdmissionPolicyBinding`×1, `PriorityClass`×1, `PodDisruptionBudget`×2 | 33 |
+| `kubernetes` `v1.37.1/v1.0.0` | `Namespace`×4, `ServiceAccount`×2, `Role`×2, `RoleBinding`×2, `Deployment`×2, `Service`×3, `Ingress`×1, `ConfigMap`×2, `Secret`×3, `StatefulSet`×2, `PersistentVolumeClaim`×2, `NetworkPolicy`×2, `ResourceQuota`×1, `LimitRange`×1, `ValidatingAdmissionPolicy`×1, `ValidatingAdmissionPolicyBinding`×1, `PriorityClass`×1, `PodDisruptionBudget`×2 | 34 |
 | `meshery-core` `0.7.2/v1.0.0` | `GenericNode`×14, `Section`×9, `Comment`×2, `Credential`×1 | 26 |
 | `meshery-operator` `1.0.70/v1.0.0` | `MeshSync`×1, `Broker`×1 | 2 |
 | `kube-prometheus-stack` `89.2.2/v1.0.0` | `Prometheus`×1, `ServiceMonitor`×1, `Alertmanager`×1, `PrometheusRule`×1 | 4 |
-| `sumologic` `4.18.0/v1.0.0` | `OpenTelemetryCollector`×1 | 1 |
 | | | **66** |
 
-Native total 40 (33 + 2 + 4 + 1); annotation total 26 (all `meshery-core`). **All 66 paths above were confirmed to
+Native total 40 (34 + 2 + 4); annotation total 26 (all `meshery-core`). **All 66 paths above were confirmed to
 exist on disk during authoring**, as were all 18 distinct `kubernetes` kinds. This gate re-runs that check to
 detect catalog drift before apply.
 
@@ -226,7 +225,7 @@ detect catalog drift before apply.
    authoring and must be re-checked against the catalog rather than trusted from this document:
    `ValidatingAdmissionPolicy` and `ValidatingAdmissionPolicyBinding` are both
    `admissionregistration.k8s.io/v1` (the GA `v1` API, **not** `v1alpha1`); `PodDisruptionBudget` is `policy/v1`;
-   `PriorityClass` is `scheduling.k8s.io/v1`; `OpenTelemetryCollector` is `opentelemetry.io/v1alpha1`; all five
+   `PriorityClass` is `scheduling.k8s.io/v1`; all four
    `meshery-core` kinds used here are `core.meshery.io/v1alpha1`.
 8. Confirm `Ingress.component.version == "networking.k8s.io/v1"`,
    `Deployment/StatefulSet.component.version == "apps/v1"`,
@@ -248,7 +247,7 @@ detect catalog drift before apply.
 ## Gate 4 — Schema version consistency
 
 **Why.** ADR-014 declares `components.meshery.io/v1beta2` on every component, including those sourced from
-`meshery-core` (catalog says `v1beta1`) and `sumologic` (catalog says `v1beta1`). This is the design's
+`meshery-core` (catalog says `v1beta1`). This is the design's
 **highest-risk assumption**, and it cannot be verified offline.
 
 **Offline assertions:**
@@ -316,7 +315,7 @@ needs individual sign-off. All six gaps were confirmed by exhaustive search of e
 | F1 `sec-state-creds → sts-postgres` | No `Secret → StatefulSet` blueprint | Zero matches | Is `edge/non-binding/reference` right, or should this be `binding`? |
 | F2 `sec-state-creds → sts-redis` | Same | Zero matches | Same |
 | F3 `prometheus → alertmanager` | No `Prometheus → Alertmanager` blueprint | Zero matches | Confirm the alert path is real and the direction is correct. |
-| A-9 `otel-collector → prometheus` | `sumologic` ships no `relationships/` directory at all | Directory absent (only `components/` + `model.json`) | Should this edge be annotation-level? It currently is. |
+| A-9 `otel-collector → prometheus` | The collector ships no relationship blueprints | Directory absent (only `components/` + `model.json`) | Should this edge be annotation-level? It currently is. |
 | §7 + §10 (27 edges) | No `Section` blueprint exists in any model | No blueprint pairs `Section` with anything | Is `hierarchical/parent/alias` right, or should grouping use another mechanism? |
 
 The first six are individually authored edges. The last row is 27 containment edges, all sharing one gap, counted
@@ -347,7 +346,9 @@ validated offline and must be confirmed before the design is trusted.
 2. **Prometheus Operator CRDs installed.** `prometheus`, `sm-platform`, `alertmanager`, and
    `promrule-platform-slo` are CRDs from `monitoring.coreos.com/v1`. The design does **not** include the
    operator — it is a cluster prerequisite. Confirm before apply.
-3. **OpenTelemetry Operator CRDs installed.** `otel-collector` is `opentelemetry.io/v1alpha1`. Same situation.
+3. **OpenTelemetry Collector runs as a `Deployment`.** `otel-collector` is a plain `kubernetes` `Deployment`
+   (`apps/v1`), not a CRD, so no OpenTelemetry Operator is required; the collector image is selected at
+   deploy time. (The catalog's only `OpenTelemetryCollector` CRD lives in the unshipped `sumologic` model.)
 4. **Meshery Operator CRDs installed.** `meshsync` and `broker` are `meshery.io/v1alpha1`. Same situation.
 5. **`ValidatingAdmissionPolicy` is GA in the target cluster.** If the cluster is older than 1.30, the
    `admissionregistration.k8s.io/v1` API is unavailable and ADR-006's enforcement point does not exist. Check
@@ -416,7 +417,7 @@ annotations.
 | Namespace written to the wrong namespace because an inventory edge is malformed | Schema-valid either way | Gate 2 assertion 4, Gate 8 item 5 |
 | Annotation-level edges being honoured as real bindings at apply time | Depends on server interpretation of `isAnnotation` | Gate 8 item 6 — verify no unintended manifests |
 | The catalog being stale relative to the deployed Meshery server | Offline validation reads the catalog, not the server's registry | Gate 8 item 7 diff |
-| `sumologic` model being withdrawn or its component renamed | External event | Re-run Gate 3 before each apply |
+| The registry dropping a model the design depends on (it already omits `sumologic`) | External event | Re-run Gate 3 before each apply |
 | Empty `configuration` on `deploy-meshery-control` producing a pod with no image | Deployment-time, not design-time | Gate 8 item 6 dry-run manifest review |
 | **A future upstream schema fix removes `replace` from being used, or adds it to the enum** | Gate 1's exception is scoped to the *current* shipped schema | Re-run Gate 1 on schema change; if the enum gains `replace`, the exception naturally becomes 0 findings and Gate 1 must be re-baselined |
 | **A design legitimately needing a non-`replace` patch strategy** | The exception masks nothing, but a new strategy would appear as `UNEXPECTED` and correctly fail the gate | Add a new documented exception class; never widen the existing one |

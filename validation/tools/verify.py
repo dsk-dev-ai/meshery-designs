@@ -23,7 +23,7 @@ import spec_data as S  # noqa: E402
 
 MODELS_ROOT = "/home/dsk/opensource_new_programs/meshery/models"
 MODEL_VERSION = {S.K8S: "v1.37.1", S.CORE: "0.7.2", S.OPER: "1.0.70",
-                 S.PROM: "89.2.2", S.SUMO: "4.18.0"}
+                 S.PROM: "89.2.2"}
 ZERO = "00000000-0000-0000-0000-000000000000"
 UUID_RE = re.compile(
     r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$")
@@ -142,7 +142,7 @@ def main():
 
     by_model = collections.Counter(
         c["modelReference"]["name"] for c in comps)
-    expect = {S.K8S: 33, S.CORE: 26, S.OPER: 2, S.PROM: 4, S.SUMO: 1}
+    expect = {S.K8S: 34, S.CORE: 26, S.OPER: 2, S.PROM: 4}
     check("component count per model matches inventory", dict(by_model) == expect,
           str(dict(by_model)))
 

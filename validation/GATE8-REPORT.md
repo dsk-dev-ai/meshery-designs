@@ -2,7 +2,11 @@
 
 Date: 2026-10-17
 Artifact under test: `../generated/design.yml`
-Artifact revision: regenerated artifact from `spec_data.py` changes (after `6c98ccc`), md5 `6aead397280a3a6a34780b5a0db009fd`, 247597 bytes
+Artifact revision: regenerated after the two component-kind fixes (`Environment` → `Section`;
+`sumologic` `OpenTelemetryCollector` → kubernetes `Deployment`). md5
+`7338b027b37efca726513372bd485945`, 248236 bytes. The import criterion below (66 components /
+113 relationships, zero drops) was re-verified against this revision. The original run captured here
+was taken at md5 `6aead397280a3a6a34780b5a0db009fd`.
 Server under test: `github.com/meshery/meshery` @ `90bac8dc4c9ea5d6d915c41fec0bb013adc1b6fe`
 
 ## Verdict

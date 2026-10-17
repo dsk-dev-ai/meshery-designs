@@ -50,7 +50,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id006
+  modelReference: &id005
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -126,7 +126,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id018
+  modelReference: &id017
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -201,7 +201,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id023
+  modelReference: &id022
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -276,7 +276,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id036
+  modelReference: &id035
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -355,7 +355,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id069
+  modelReference: &id068
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -433,7 +433,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id007
+  modelReference: &id006
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-operator
     version: v1.0.0
@@ -502,7 +502,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id008
+  modelReference: &id007
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-operator
     version: v1.0.0
@@ -572,7 +572,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id009
+  modelReference: &id008
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -655,7 +655,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id010
+  modelReference: &id009
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -726,7 +726,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id011
+  modelReference: &id010
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -796,7 +796,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id061
+  modelReference: &id060
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -881,7 +881,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id017
+  modelReference: &id016
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -951,7 +951,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id019
+  modelReference: &id018
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1020,7 +1020,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id012
+  modelReference: &id011
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1092,7 +1092,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id013
+  modelReference: &id012
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1165,7 +1165,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id029
+  modelReference: &id028
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1238,7 +1238,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id059
+  modelReference: &id058
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -1308,7 +1308,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id022
+  modelReference: &id021
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1392,7 +1392,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id024
+  modelReference: &id023
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1463,7 +1463,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id025
+  modelReference: &id024
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1533,7 +1533,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id026
+  modelReference: &id025
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1617,7 +1617,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id027
+  modelReference: &id026
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1688,7 +1688,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id028
+  modelReference: &id027
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -1718,57 +1718,58 @@ components:
     svgWhite: ''
     svgComplete: ''
     secondaryColor: '#7aa1f0'
-- id: 0d0922e4-d9e9-59bb-8d59-6bb7b8e95214
+- id: 14cce6f4-3a22-59f0-9ecf-92e4ee4fdc2a
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: OpenTelemetryCollector
-  description: Receives, processes, and exports traces and metrics from every namespace. Sourced from
-    the sumologic model, which is the only catalog model providing a real OpenTelemetryCollector.
+  displayName: Deployment
+  description: 'Runs the OpenTelemetry Collector. Modelled as a plain kubernetes Deployment: the only
+    catalog OpenTelemetryCollector CRD lives in the `sumologic` model, which the registry does not ship,
+    so it cannot be resolved at deploy time. A Deployment is the portable, vendor-neutral way to run the
+    collector.'
   format: JSON
   status: enabled
   model:
     id: 00000000-0000-0000-0000-000000000000
-    schemaVersion: models.meshery.io/v1beta1
+    schemaVersion: models.meshery.io/v1beta2
     version: v1.0.0
-    name: sumologic
-    displayName: Sumologic
-    status: ignored
+    name: kubernetes
+    displayName: Kubernetes
+    status: enabled
     registrant:
       id: 00000000-0000-0000-0000-000000000000
-      name: Artifact Hub
+      name: Github
       type: registry
-      kind: artifacthub
+      subType: ''
+      kind: github
       status: discovered
       created_at: '0001-01-01T00:00:00Z'
       updated_at: '0001-01-01T00:00:00Z'
       schemaVersion: models.meshery.io/v1beta1
-      subType: ''
     category:
       id: 00000000-0000-0000-0000-000000000000
-      name: Observability and Analysis
+      name: Orchestration & Management
       metadata: {}
-    subCategory: Logging
-    model: &id004
-      version: 4.18.0
+    subCategory: Scheduling & Orchestration
+    model: *id001
     created_at: '0001-01-01T00:00:00Z'
     updated_at: '0001-01-01T00:00:00Z'
     components: []
     relationships: []
-    description: Sumologic model registered in the Meshery catalog, catalog model version 4.18.0.
+    description: Kubernetes model registered in the Meshery catalog, catalog model version v1.37.1.
     categoryId: 00000000-0000-0000-0000-000000000000
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id035
+  modelReference: &id034
     id: 00000000-0000-0000-0000-000000000000
-    name: sumologic
+    name: kubernetes
     version: v1.0.0
-    displayName: Sumologic
-    model: *id004
+    displayName: Kubernetes
+    model: *id001
     registrant:
-      kind: artifacthub
+      kind: github
   metadata:
-    genealogy: ''
+    genealogy: parent
     isAnnotation: false
     isNamespaced: true
     published: false
@@ -1778,17 +1779,31 @@ components:
     metadata:
       labels: {}
       annotations: {}
+    spec:
+      selector:
+        matchLabels:
+          app.kubernetes.io/name: otel-collector
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: otel-collector
+        spec:
+          containers:
+          - name: otel-collector
   component:
-    version: opentelemetry.io/v1alpha1
-    kind: OpenTelemetryCollector
+    version: apps/v1
+    kind: Deployment
     schema: ''
   styles:
-    shape: ellipse
-    primaryColor: '#00B39F'
+    shape: round-rectangle
+    primaryColor: '#326CE5'
     svgColor: ''
     svgWhite: ''
     svgComplete: ''
-    secondaryColor: '#00D3A9'
+    background-image: none
+    background-opacity: 0.5
+    border-width: 2
+    secondaryColor: '#7aa1f0'
 - id: b540c6ff-cf1c-5503-a63d-418655b5040f
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
@@ -1818,7 +1833,7 @@ components:
       name: Observability and Analysis
       metadata: {}
     subCategory: Monitoring
-    model: &id005
+    model: &id004
       version: 89.2.2
     created_at: '0001-01-01T00:00:00Z'
     updated_at: '0001-01-01T00:00:00Z'
@@ -1830,12 +1845,12 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id037
+  modelReference: &id036
     id: 00000000-0000-0000-0000-000000000000
     name: kube-prometheus-stack
     version: v1.0.0
     displayName: Kube Prometheus Stack
-    model: *id005
+    model: *id004
     registrant:
       kind: artifacthub
   metadata:
@@ -1890,7 +1905,7 @@ components:
       name: Observability and Analysis
       metadata: {}
     subCategory: Monitoring
-    model: *id005
+    model: *id004
     created_at: '0001-01-01T00:00:00Z'
     updated_at: '0001-01-01T00:00:00Z'
     components: []
@@ -1901,12 +1916,12 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id038
+  modelReference: &id037
     id: 00000000-0000-0000-0000-000000000000
     name: kube-prometheus-stack
     version: v1.0.0
     displayName: Kube Prometheus Stack
-    model: *id005
+    model: *id004
     registrant:
       kind: artifacthub
   metadata:
@@ -1966,7 +1981,7 @@ components:
       name: Observability and Analysis
       metadata: {}
     subCategory: Monitoring
-    model: *id005
+    model: *id004
     created_at: '0001-01-01T00:00:00Z'
     updated_at: '0001-01-01T00:00:00Z'
     components: []
@@ -1977,12 +1992,12 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id039
+  modelReference: &id038
     id: 00000000-0000-0000-0000-000000000000
     name: kube-prometheus-stack
     version: v1.0.0
     displayName: Kube Prometheus Stack
-    model: *id005
+    model: *id004
     registrant:
       kind: artifacthub
   metadata:
@@ -2038,7 +2053,7 @@ components:
       name: Observability and Analysis
       metadata: {}
     subCategory: Monitoring
-    model: *id005
+    model: *id004
     created_at: '0001-01-01T00:00:00Z'
     updated_at: '0001-01-01T00:00:00Z'
     components: []
@@ -2049,12 +2064,12 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id040
+  modelReference: &id039
     id: 00000000-0000-0000-0000-000000000000
     name: kube-prometheus-stack
     version: v1.0.0
     displayName: Kube Prometheus Stack
-    model: *id005
+    model: *id004
     registrant:
       kind: artifacthub
   metadata:
@@ -2119,7 +2134,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id014
+  modelReference: &id013
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2189,7 +2204,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id015
+  modelReference: &id014
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2260,7 +2275,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id016
+  modelReference: &id015
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2335,7 +2350,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id030
+  modelReference: &id029
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2404,7 +2419,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id031
+  modelReference: &id030
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2475,7 +2490,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id032
+  modelReference: &id031
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2551,7 +2566,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id041
+  modelReference: &id040
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2621,7 +2636,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id042
+  modelReference: &id041
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2690,7 +2705,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id066
+  modelReference: &id065
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -2775,7 +2790,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id044
+  modelReference: &id043
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2863,7 +2878,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id045
+  modelReference: &id044
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -2937,7 +2952,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id020
+  modelReference: &id019
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -3007,7 +3022,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id021
+  modelReference: &id020
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -3076,7 +3091,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id063
+  modelReference: &id062
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -3161,7 +3176,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id064
+  modelReference: &id063
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -3245,7 +3260,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id033
+  modelReference: &id032
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -3314,7 +3329,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id034
+  modelReference: &id033
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -3384,7 +3399,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id043
+  modelReference: &id042
     id: 00000000-0000-0000-0000-000000000000
     name: kubernetes
     version: v1.0.0
@@ -3454,7 +3469,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id068
+  modelReference: &id067
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -3540,7 +3555,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id047
+  modelReference: &id046
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -3625,7 +3640,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id049
+  modelReference: &id048
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -3710,7 +3725,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id050
+  modelReference: &id049
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -3795,7 +3810,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id052
+  modelReference: &id051
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -3880,7 +3895,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id053
+  modelReference: &id052
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -3965,7 +3980,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id054
+  modelReference: &id053
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4050,7 +4065,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id055
+  modelReference: &id054
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4134,7 +4149,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id057
+  modelReference: &id056
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4219,7 +4234,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id058
+  modelReference: &id057
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4303,7 +4318,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id046
+  modelReference: &id045
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4380,7 +4395,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id048
+  modelReference: &id047
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4457,7 +4472,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id051
+  modelReference: &id050
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4535,7 +4550,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id056
+  modelReference: &id055
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4612,7 +4627,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id060
+  modelReference: &id059
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4690,7 +4705,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id062
+  modelReference: &id061
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4767,7 +4782,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id065
+  modelReference: &id064
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -4845,7 +4860,7 @@ components:
     registrantId: 00000000-0000-0000-0000-000000000000
     componentsCount: 0
     relationshipsCount: 0
-  modelReference: &id067
+  modelReference: &id066
     id: 00000000-0000-0000-0000-000000000000
     name: meshery-core
     version: v1.0.0
@@ -5052,13 +5067,13 @@ relationships:
   metadata:
     description: 'meshsync -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: ce2a979e-5a8e-596a-83c1-7f2913ed38a3
         kind: MeshSync
-        model: *id007
+        model: *id006
         patch:
           mutatedRef:
           - - configuration
@@ -5068,7 +5083,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5083,13 +5098,13 @@ relationships:
   metadata:
     description: 'broker -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 5d252a3b-1b26-5347-98db-5034535b7aab
         kind: Broker
-        model: *id008
+        model: *id007
         patch:
           mutatedRef:
           - - configuration
@@ -5099,7 +5114,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5115,13 +5130,13 @@ relationships:
     description: 'deploy-meshery-control -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 1f9852e8-2638-5742-bd52-099ed58a7459
         kind: Deployment
-        model: *id009
+        model: *id008
         patch:
           mutatedRef:
           - - configuration
@@ -5131,7 +5146,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5147,13 +5162,13 @@ relationships:
     description: 'svc-meshery-control -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 8faffa35-1917-5e64-8cd5-57d734ccfa73
         kind: Service
-        model: *id010
+        model: *id009
         patch:
           mutatedRef:
           - - configuration
@@ -5163,7 +5178,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5179,13 +5194,13 @@ relationships:
     description: 'ingress-ai-platform -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 402e2057-09a9-565e-91e3-cd02f54eb7b9
         kind: Ingress
-        model: *id011
+        model: *id010
         patch:
           mutatedRef:
           - - configuration
@@ -5195,7 +5210,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5211,13 +5226,13 @@ relationships:
     description: 'sec-broker-endpoint -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: c4a5cb85-ebe0-5d50-9a16-8dc290369f5f
         kind: Secret
-        model: *id012
+        model: *id011
         patch:
           mutatedRef:
           - - configuration
@@ -5227,7 +5242,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5243,13 +5258,13 @@ relationships:
     description: 'sec-registry-creds -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 1caa5e3d-1b98-5de8-81c8-9d85981b7546
         kind: Secret
-        model: *id013
+        model: *id012
         patch:
           mutatedRef:
           - - configuration
@@ -5259,7 +5274,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5274,13 +5289,13 @@ relationships:
   metadata:
     description: 'sa-ai-control -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 12021055-0473-54a4-a650-bb7276b01917
         kind: ServiceAccount
-        model: *id014
+        model: *id013
         patch:
           mutatedRef:
           - - configuration
@@ -5290,7 +5305,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5305,13 +5320,13 @@ relationships:
   metadata:
     description: 'role-ai-control -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: f44c824b-dacb-568b-b29a-6816e0e2f17e
         kind: Role
-        model: *id015
+        model: *id014
         patch:
           mutatedRef:
           - - configuration
@@ -5321,7 +5336,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5336,13 +5351,13 @@ relationships:
   metadata:
     description: 'rb-ai-control -> ns-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: bb49bdcc-aaf8-5630-bb93-8e281d9e3ae5
         kind: RoleBinding
-        model: *id016
+        model: *id015
         patch:
           mutatedRef:
           - - configuration
@@ -5352,7 +5367,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatorRef:
           - - displayName
@@ -5367,13 +5382,13 @@ relationships:
   metadata:
     description: 'cm-agent-runtime -> ns-ai-runtime. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: e869b471-daa2-5557-aa72-3eece82b2644
         kind: ConfigMap
-        model: *id017
+        model: *id016
         patch:
           mutatedRef:
           - - configuration
@@ -5383,7 +5398,7 @@ relationships:
       to:
       - id: c9ab01cc-91a2-57d7-ba59-c4c13c3582e4
         kind: Namespace
-        model: *id018
+        model: *id017
         patch:
           mutatorRef:
           - - displayName
@@ -5398,13 +5413,13 @@ relationships:
   metadata:
     description: 'cm-model-router -> ns-ai-runtime. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 45c4a4b1-e84b-58d8-9aaa-8a5b6482e8df
         kind: ConfigMap
-        model: *id019
+        model: *id018
         patch:
           mutatedRef:
           - - configuration
@@ -5414,7 +5429,7 @@ relationships:
       to:
       - id: c9ab01cc-91a2-57d7-ba59-c4c13c3582e4
         kind: Namespace
-        model: *id018
+        model: *id017
         patch:
           mutatorRef:
           - - displayName
@@ -5429,13 +5444,13 @@ relationships:
   metadata:
     description: 'quota-ai-runtime -> ns-ai-runtime. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: bd3310b6-60a3-5a42-8839-98927c434b0a
         kind: ResourceQuota
-        model: *id020
+        model: *id019
         patch:
           mutatedRef:
           - - configuration
@@ -5445,7 +5460,7 @@ relationships:
       to:
       - id: c9ab01cc-91a2-57d7-ba59-c4c13c3582e4
         kind: Namespace
-        model: *id018
+        model: *id017
         patch:
           mutatorRef:
           - - displayName
@@ -5461,13 +5476,13 @@ relationships:
     description: 'limits-ai-runtime -> ns-ai-runtime. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: b0797584-06b1-5dc9-8a47-308fd82421fb
         kind: LimitRange
-        model: *id021
+        model: *id020
         patch:
           mutatedRef:
           - - configuration
@@ -5477,7 +5492,7 @@ relationships:
       to:
       - id: c9ab01cc-91a2-57d7-ba59-c4c13c3582e4
         kind: Namespace
-        model: *id018
+        model: *id017
         patch:
           mutatorRef:
           - - displayName
@@ -5492,13 +5507,13 @@ relationships:
   metadata:
     description: 'sts-redis -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: a3667d58-ed1b-5ec5-ae10-40fd00f5c682
         kind: StatefulSet
-        model: *id022
+        model: *id021
         patch:
           mutatedRef:
           - - configuration
@@ -5508,7 +5523,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5523,13 +5538,13 @@ relationships:
   metadata:
     description: 'svc-redis -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: bc1314bf-d776-5f48-befd-cfeded4711a6
         kind: Service
-        model: *id024
+        model: *id023
         patch:
           mutatedRef:
           - - configuration
@@ -5539,7 +5554,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5554,13 +5569,13 @@ relationships:
   metadata:
     description: 'pvc-redis -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 81ba6ca4-4f9b-51ee-9a88-8107a40efc87
         kind: PersistentVolumeClaim
-        model: *id025
+        model: *id024
         patch:
           mutatedRef:
           - - configuration
@@ -5570,7 +5585,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5585,13 +5600,13 @@ relationships:
   metadata:
     description: 'sts-postgres -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
-        model: *id026
+        model: *id025
         patch:
           mutatedRef:
           - - configuration
@@ -5601,7 +5616,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5616,13 +5631,13 @@ relationships:
   metadata:
     description: 'svc-postgres -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: a503c7f9-7f29-5541-970b-ae1f85b08cb8
         kind: Service
-        model: *id027
+        model: *id026
         patch:
           mutatedRef:
           - - configuration
@@ -5632,7 +5647,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5647,13 +5662,13 @@ relationships:
   metadata:
     description: 'pvc-postgres -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 434226aa-c060-59ed-9000-a79791a400d6
         kind: PersistentVolumeClaim
-        model: *id028
+        model: *id027
         patch:
           mutatedRef:
           - - configuration
@@ -5663,7 +5678,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5678,13 +5693,13 @@ relationships:
   metadata:
     description: 'sec-state-creds -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: f83267d3-5a4d-596a-87dd-3bf2670b4895
         kind: Secret
-        model: *id029
+        model: *id028
         patch:
           mutatedRef:
           - - configuration
@@ -5694,7 +5709,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5709,13 +5724,13 @@ relationships:
   metadata:
     description: 'sa-ai-state -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 8794f64d-7e6f-5e03-bbb5-53f2e5992250
         kind: ServiceAccount
-        model: *id030
+        model: *id029
         patch:
           mutatedRef:
           - - configuration
@@ -5725,7 +5740,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5740,13 +5755,13 @@ relationships:
   metadata:
     description: 'role-ai-state -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: b8b4edab-caea-5a45-88d7-b817f6e28f05
         kind: Role
-        model: *id031
+        model: *id030
         patch:
           mutatedRef:
           - - configuration
@@ -5756,7 +5771,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5771,13 +5786,13 @@ relationships:
   metadata:
     description: 'rb-ai-state -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 4f29e2fd-e223-5505-82a2-f0e1150d6f72
         kind: RoleBinding
-        model: *id032
+        model: *id031
         patch:
           mutatedRef:
           - - configuration
@@ -5787,7 +5802,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5802,13 +5817,13 @@ relationships:
   metadata:
     description: 'pdb-sts-redis -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: cc174c28-e5c1-51ae-b03a-58bf845946f4
         kind: PodDisruptionBudget
-        model: *id033
+        model: *id032
         patch:
           mutatedRef:
           - - configuration
@@ -5818,7 +5833,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5833,13 +5848,13 @@ relationships:
   metadata:
     description: 'pdb-sts-postgres -> ns-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: e424c405-2795-5068-a73e-4a2ff6bb3c6d
         kind: PodDisruptionBudget
-        model: *id034
+        model: *id033
         patch:
           mutatedRef:
           - - configuration
@@ -5849,7 +5864,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatorRef:
           - - displayName
@@ -5865,13 +5880,13 @@ relationships:
     description: 'otel-collector -> ns-ai-observability. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
-      - id: 0d0922e4-d9e9-59bb-8d59-6bb7b8e95214
-        kind: OpenTelemetryCollector
-        model: *id035
+      - id: 14cce6f4-3a22-59f0-9ecf-92e4ee4fdc2a
+        kind: Deployment
+        model: *id034
         patch:
           mutatedRef:
           - - configuration
@@ -5881,7 +5896,7 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id036
+        model: *id035
         patch:
           mutatorRef:
           - - displayName
@@ -5896,13 +5911,13 @@ relationships:
   metadata:
     description: 'prometheus -> ns-ai-observability. Provenance B (RELATIONSHIP_MATRIX.md#1); basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id037
+        model: *id036
         patch:
           mutatedRef:
           - - configuration
@@ -5912,7 +5927,7 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id036
+        model: *id035
         patch:
           mutatorRef:
           - - displayName
@@ -5928,13 +5943,13 @@ relationships:
     description: 'sm-platform -> ns-ai-observability. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id038
+        model: *id037
         patch:
           mutatedRef:
           - - configuration
@@ -5944,7 +5959,7 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id036
+        model: *id035
         patch:
           mutatorRef:
           - - displayName
@@ -5960,13 +5975,13 @@ relationships:
     description: 'alertmanager -> ns-ai-observability. Provenance B (RELATIONSHIP_MATRIX.md#1); basis:
       hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 8c183854-165d-5253-a3f9-f42f54260825
         kind: Alertmanager
-        model: *id039
+        model: *id038
         patch:
           mutatedRef:
           - - configuration
@@ -5976,7 +5991,7 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id036
+        model: *id035
         patch:
           mutatorRef:
           - - displayName
@@ -5992,13 +6007,13 @@ relationships:
     description: 'promrule-platform-slo -> ns-ai-observability. Provenance B (RELATIONSHIP_MATRIX.md#1);
       basis: hierarchical-parent-inventory-kmjea.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 9fc66572-889e-55e6-95db-611b6a9e7373
         kind: PrometheusRule
-        model: *id040
+        model: *id039
         patch:
           mutatedRef:
           - - configuration
@@ -6008,7 +6023,7 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id036
+        model: *id035
         patch:
           mutatorRef:
           - - displayName
@@ -6023,13 +6038,13 @@ relationships:
   metadata:
     description: 'sts-redis -> sts-postgres. Provenance B (RELATIONSHIP_MATRIX.md#2); basis: sibling-tagsets.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: a3667d58-ed1b-5ec5-ae10-40fd00f5c682
         kind: StatefulSet
-        model: *id022
+        model: *id021
         match:
           refs:
           - - configuration
@@ -6038,7 +6053,7 @@ relationships:
       to:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
-        model: *id026
+        model: *id025
         match:
           refs:
           - - configuration
@@ -6054,13 +6069,13 @@ relationships:
   metadata:
     description: 'prometheus -> sm-platform. Provenance B (RELATIONSHIP_MATRIX.md#2); basis: sibling-tagsets.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id037
+        model: *id036
         match:
           refs:
           - - configuration
@@ -6069,7 +6084,7 @@ relationships:
       to:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id038
+        model: *id037
         match:
           refs:
           - - configuration
@@ -6086,13 +6101,13 @@ relationships:
     description: 'netpol-default-deny -> netpol-ai-allowlist. Provenance B (RELATIONSHIP_MATRIX.md#2);
       basis: sibling-tagsets.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 08935853-d938-585a-99c8-cd1f642967be
         kind: NetworkPolicy
-        model: *id041
+        model: *id040
         match:
           refs:
           - - configuration
@@ -6101,7 +6116,7 @@ relationships:
       to:
       - id: cf30eeb1-f57b-534e-b0c6-88c15c758ed0
         kind: NetworkPolicy
-        model: *id042
+        model: *id041
         match:
           refs:
           - - configuration
@@ -6118,13 +6133,13 @@ relationships:
     description: 'svc-meshery-control -> deploy-meshery-control. Provenance B (RELATIONSHIP_MATRIX.md#3);
       basis: edge-non-binding-network-duixv.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 8faffa35-1917-5e64-8cd5-57d734ccfa73
         kind: Service
-        model: *id010
+        model: *id009
         patch:
           mutatorRef:
           - - configuration
@@ -6144,7 +6159,7 @@ relationships:
       to:
       - id: 1f9852e8-2638-5742-bd52-099ed58a7459
         kind: Deployment
-        model: *id009
+        model: *id008
         patch:
           mutatedRef:
           - - configuration
@@ -6181,13 +6196,13 @@ relationships:
     description: 'ingress-ai-platform -> svc-meshery-control. Provenance B (RELATIONSHIP_MATRIX.md#3);
       basis: edge-non-binding-network-jccsr.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 402e2057-09a9-565e-91e3-cd02f54eb7b9
         kind: Ingress
-        model: *id011
+        model: *id010
         patch:
           mutatedRef:
           - - configuration
@@ -6215,7 +6230,7 @@ relationships:
       to:
       - id: 8faffa35-1917-5e64-8cd5-57d734ccfa73
         kind: Service
-        model: *id010
+        model: *id009
         patch:
           mutatorRef:
           - - displayName
@@ -6235,13 +6250,13 @@ relationships:
   metadata:
     description: 'svc-redis -> sts-redis. Provenance H (RELATIONSHIP_MATRIX.md#3); basis: edge-non-binding-network-duixv.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: bc1314bf-d776-5f48-befd-cfeded4711a6
         kind: Service
-        model: *id024
+        model: *id023
         patch:
           mutatorRef:
           - - configuration
@@ -6261,7 +6276,7 @@ relationships:
       to:
       - id: a3667d58-ed1b-5ec5-ae10-40fd00f5c682
         kind: StatefulSet
-        model: *id022
+        model: *id021
         patch:
           mutatedRef:
           - - configuration
@@ -6297,13 +6312,13 @@ relationships:
   metadata:
     description: 'svc-postgres -> sts-postgres. Provenance H (RELATIONSHIP_MATRIX.md#3); basis: edge-non-binding-network-duixv.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: a503c7f9-7f29-5541-970b-ae1f85b08cb8
         kind: Service
-        model: *id027
+        model: *id026
         patch:
           mutatorRef:
           - - configuration
@@ -6323,7 +6338,7 @@ relationships:
       to:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
-        model: *id026
+        model: *id025
         patch:
           mutatedRef:
           - - configuration
@@ -6359,13 +6374,13 @@ relationships:
   metadata:
     description: 'pvc-redis -> sts-redis. Provenance B (RELATIONSHIP_MATRIX.md#4.1); basis: edge-non-binding-reference-rcycs.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 81ba6ca4-4f9b-51ee-9a88-8107a40efc87
         kind: PersistentVolumeClaim
-        model: *id025
+        model: *id024
         patch:
           mutatorRef:
           - - configuration
@@ -6374,7 +6389,7 @@ relationships:
       to:
       - id: a3667d58-ed1b-5ec5-ae10-40fd00f5c682
         kind: StatefulSet
-        model: *id022
+        model: *id021
         patch:
           mutatedRef:
           - - configuration
@@ -6393,13 +6408,13 @@ relationships:
   metadata:
     description: 'pvc-postgres -> sts-postgres. Provenance B (RELATIONSHIP_MATRIX.md#4.1); basis: edge-non-binding-reference-rcycs.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 434226aa-c060-59ed-9000-a79791a400d6
         kind: PersistentVolumeClaim
-        model: *id028
+        model: *id027
         patch:
           mutatorRef:
           - - configuration
@@ -6408,7 +6423,7 @@ relationships:
       to:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
-        model: *id026
+        model: *id025
         patch:
           mutatedRef:
           - - configuration
@@ -6428,13 +6443,13 @@ relationships:
     description: 'cm-agent-runtime -> deploy-meshery-control. Provenance B (RELATIONSHIP_MATRIX.md#4.2);
       basis: hierarchical-parent-inventory-pfnyn.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: e869b471-daa2-5557-aa72-3eece82b2644
         kind: ConfigMap
-        model: *id017
+        model: *id016
         patch:
           mutatorRef:
           - - displayName
@@ -6442,7 +6457,7 @@ relationships:
       to:
       - id: 1f9852e8-2638-5742-bd52-099ed58a7459
         kind: Deployment
-        model: *id009
+        model: *id008
         patch:
           mutatedRef:
           - - configuration
@@ -6467,13 +6482,13 @@ relationships:
     description: 'cm-model-router -> deploy-meshery-control. Provenance B (RELATIONSHIP_MATRIX.md#4.2);
       basis: hierarchical-parent-inventory-pfnyn.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 45c4a4b1-e84b-58d8-9aaa-8a5b6482e8df
         kind: ConfigMap
-        model: *id019
+        model: *id018
         patch:
           mutatorRef:
           - - displayName
@@ -6481,7 +6496,7 @@ relationships:
       to:
       - id: 1f9852e8-2638-5742-bd52-099ed58a7459
         kind: Deployment
-        model: *id009
+        model: *id008
         patch:
           mutatedRef:
           - - configuration
@@ -6506,13 +6521,13 @@ relationships:
     description: 'sec-broker-endpoint -> deploy-meshery-control. Provenance B (RELATIONSHIP_MATRIX.md#4.2);
       basis: reference-secret-to-deployment.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: c4a5cb85-ebe0-5d50-9a16-8dc290369f5f
         kind: Secret
-        model: *id012
+        model: *id011
         patch:
           mutatorRef:
           - - displayName
@@ -6520,7 +6535,7 @@ relationships:
       to:
       - id: 1f9852e8-2638-5742-bd52-099ed58a7459
         kind: Deployment
-        model: *id009
+        model: *id008
         patch:
           mutatedRef:
           - - configuration
@@ -6545,13 +6560,13 @@ relationships:
     description: 'sec-registry-creds -> deploy-meshery-control. Provenance B (RELATIONSHIP_MATRIX.md#4.2);
       basis: reference-secret-to-deployment.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 1caa5e3d-1b98-5de8-81c8-9d85981b7546
         kind: Secret
-        model: *id013
+        model: *id012
         patch:
           mutatorRef:
           - - displayName
@@ -6559,7 +6574,7 @@ relationships:
       to:
       - id: 1f9852e8-2638-5742-bd52-099ed58a7459
         kind: Deployment
-        model: *id009
+        model: *id008
         patch:
           mutatedRef:
           - - configuration
@@ -6584,13 +6599,13 @@ relationships:
     description: 'rb-ai-control -> role-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#4.3); basis:
       edge-non-binding-reference-keceb.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: bb49bdcc-aaf8-5630-bb93-8e281d9e3ae5
         kind: RoleBinding
-        model: *id016
+        model: *id015
         patch:
           mutatorRef:
           - - configuration
@@ -6601,7 +6616,7 @@ relationships:
       to:
       - id: f44c824b-dacb-568b-b29a-6816e0e2f17e
         kind: Role
-        model: *id015
+        model: *id014
         patch:
           mutatedRef:
           - - configuration
@@ -6618,13 +6633,13 @@ relationships:
   metadata:
     description: 'rb-ai-state -> role-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#4.3); basis: edge-non-binding-reference-keceb.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 4f29e2fd-e223-5505-82a2-f0e1150d6f72
         kind: RoleBinding
-        model: *id032
+        model: *id031
         patch:
           mutatorRef:
           - - configuration
@@ -6635,7 +6650,7 @@ relationships:
       to:
       - id: b8b4edab-caea-5a45-88d7-b817f6e28f05
         kind: Role
-        model: *id031
+        model: *id030
         patch:
           mutatedRef:
           - - configuration
@@ -6652,13 +6667,13 @@ relationships:
   metadata:
     description: 'pdb-sts-redis -> sts-redis. Provenance B (RELATIONSHIP_MATRIX.md#4.4); basis: edge-non-binding-reference-xtrmo.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: cc174c28-e5c1-51ae-b03a-58bf845946f4
         kind: PodDisruptionBudget
-        model: *id033
+        model: *id032
         patch:
           mutatorRef:
           - - configuration
@@ -6669,7 +6684,7 @@ relationships:
       to:
       - id: a3667d58-ed1b-5ec5-ae10-40fd00f5c682
         kind: StatefulSet
-        model: *id022
+        model: *id021
         patch:
           mutatedRef:
           - - configuration
@@ -6687,13 +6702,13 @@ relationships:
     description: 'pdb-sts-postgres -> sts-postgres. Provenance B (RELATIONSHIP_MATRIX.md#4.4); basis:
       edge-non-binding-reference-xtrmo.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: e424c405-2795-5068-a73e-4a2ff6bb3c6d
         kind: PodDisruptionBudget
-        model: *id034
+        model: *id033
         patch:
           mutatorRef:
           - - configuration
@@ -6704,7 +6719,7 @@ relationships:
       to:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
-        model: *id026
+        model: *id025
         patch:
           mutatedRef:
           - - configuration
@@ -6721,13 +6736,13 @@ relationships:
   metadata:
     description: 'pc-ai-critical -> sts-redis. Provenance B (RELATIONSHIP_MATRIX.md#4.4); basis: edge-non-binding-reference-statefulset.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 9c491a46-fb3c-5874-bd81-953ca87b49e1
         kind: PriorityClass
-        model: *id043
+        model: *id042
         patch:
           mutatorRef:
           - - displayName
@@ -6735,7 +6750,7 @@ relationships:
       to:
       - id: a3667d58-ed1b-5ec5-ae10-40fd00f5c682
         kind: StatefulSet
-        model: *id022
+        model: *id021
         patch:
           mutatorRef:
           - - configuration
@@ -6754,13 +6769,13 @@ relationships:
   metadata:
     description: 'pc-ai-critical -> sts-postgres. Provenance B (RELATIONSHIP_MATRIX.md#4.4); basis: edge-non-binding-reference-statefulset.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 9c491a46-fb3c-5874-bd81-953ca87b49e1
         kind: PriorityClass
-        model: *id043
+        model: *id042
         patch:
           mutatorRef:
           - - displayName
@@ -6768,7 +6783,7 @@ relationships:
       to:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
-        model: *id026
+        model: *id025
         patch:
           mutatorRef:
           - - configuration
@@ -6788,13 +6803,13 @@ relationships:
     description: 'vap-required-labels -> vapb-ai-runtime. Provenance B (RELATIONSHIP_MATRIX.md#4.5); basis:
       edge-binding-reference-ecilr.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 8632e5f1-4455-5a24-88ca-1e37c580613f
         kind: ValidatingAdmissionPolicy
-        model: *id044
+        model: *id043
         patch:
           mutatorRef:
           - - configuration
@@ -6804,7 +6819,7 @@ relationships:
       to:
       - id: b3c96680-fe14-54f2-b05d-d78c771ffffb
         kind: ValidatingAdmissionPolicyBinding
-        model: *id045
+        model: *id044
         patch:
           mutatedRef:
           - - configuration
@@ -6821,13 +6836,13 @@ relationships:
   metadata:
     description: 'prometheus -> sm-platform. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis: edge-sibling-matchlabels-fmlwc.json.'
     isAnnotation: false
-  model: *id037
+  model: *id036
   selectors:
   - allow:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id037
+        model: *id036
         patch:
           mutatorRef:
           - - configuration
@@ -6837,7 +6852,7 @@ relationships:
       to:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id038
+        model: *id037
         patch:
           mutatedRef:
           - - configuration
@@ -6855,13 +6870,13 @@ relationships:
     description: 'sm-platform -> svc-meshery-control. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis:
       edge-sibling-matchlabels-qvwox.json.'
     isAnnotation: false
-  model: *id037
+  model: *id036
   selectors:
   - allow:
       from:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id038
+        model: *id037
         patch:
           mutatorRef:
           - - configuration
@@ -6871,7 +6886,7 @@ relationships:
       to:
       - id: 8faffa35-1917-5e64-8cd5-57d734ccfa73
         kind: Service
-        model: *id010
+        model: *id009
         patch:
           mutatedRef:
           - - configuration
@@ -6888,13 +6903,13 @@ relationships:
   metadata:
     description: 'sm-platform -> svc-redis. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis: edge-sibling-matchlabels-qvwox.json.'
     isAnnotation: false
-  model: *id037
+  model: *id036
   selectors:
   - allow:
       from:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id038
+        model: *id037
         patch:
           mutatorRef:
           - - configuration
@@ -6904,7 +6919,7 @@ relationships:
       to:
       - id: bc1314bf-d776-5f48-befd-cfeded4711a6
         kind: Service
-        model: *id024
+        model: *id023
         patch:
           mutatedRef:
           - - configuration
@@ -6921,13 +6936,13 @@ relationships:
   metadata:
     description: 'sm-platform -> svc-postgres. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis: edge-sibling-matchlabels-qvwox.json.'
     isAnnotation: false
-  model: *id037
+  model: *id036
   selectors:
   - allow:
       from:
       - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
         kind: ServiceMonitor
-        model: *id038
+        model: *id037
         patch:
           mutatorRef:
           - - configuration
@@ -6937,7 +6952,7 @@ relationships:
       to:
       - id: a503c7f9-7f29-5541-970b-ae1f85b08cb8
         kind: Service
-        model: *id027
+        model: *id026
         patch:
           mutatedRef:
           - - configuration
@@ -6955,13 +6970,13 @@ relationships:
     description: 'prometheus -> promrule-platform-slo. Provenance B (RELATIONSHIP_MATRIX.md#4.6); basis:
       edge-sibling-matchlabels-cunlc.json.'
     isAnnotation: false
-  model: *id037
+  model: *id036
   selectors:
   - allow:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id037
+        model: *id036
         patch:
           mutatorRef:
           - - configuration
@@ -6971,7 +6986,7 @@ relationships:
       to:
       - id: 9fc66572-889e-55e6-95db-611b6a9e7373
         kind: PrometheusRule
-        model: *id040
+        model: *id039
         patch:
           mutatedRef:
           - - configuration
@@ -6988,13 +7003,13 @@ relationships:
   metadata:
     description: 'role-ai-control -> sa-ai-control. Provenance B (RELATIONSHIP_MATRIX.md#5); basis: edge-binding-permission-homji.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: f44c824b-dacb-568b-b29a-6816e0e2f17e
         kind: Role
-        model: *id015
+        model: *id014
         match:
           from:
           - kind: self
@@ -7016,7 +7031,7 @@ relationships:
       to:
       - id: 12021055-0473-54a4-a650-bb7276b01917
         kind: ServiceAccount
-        model: *id014
+        model: *id013
         match:
           from:
           - kind: RoleBinding
@@ -7040,13 +7055,13 @@ relationships:
   metadata:
     description: 'role-ai-state -> sa-ai-state. Provenance B (RELATIONSHIP_MATRIX.md#5); basis: edge-binding-permission-homji.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: b8b4edab-caea-5a45-88d7-b817f6e28f05
         kind: Role
-        model: *id031
+        model: *id030
         match:
           from:
           - kind: self
@@ -7068,7 +7083,7 @@ relationships:
       to:
       - id: 8794f64d-7e6f-5e03-bbb5-53f2e5992250
         kind: ServiceAccount
-        model: *id030
+        model: *id029
         match:
           from:
           - kind: RoleBinding
@@ -7092,13 +7107,13 @@ relationships:
   metadata:
     description: 'sec-state-creds -> sts-postgres. Provenance H (RELATIONSHIP_MATRIX.md#6); basis: reference-secret-to-deployment.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: f83267d3-5a4d-596a-87dd-3bf2670b4895
         kind: Secret
-        model: *id029
+        model: *id028
         patch:
           mutatorRef:
           - - displayName
@@ -7106,7 +7121,7 @@ relationships:
       to:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
-        model: *id026
+        model: *id025
         patch:
           mutatedRef:
           - - configuration
@@ -7130,13 +7145,13 @@ relationships:
   metadata:
     description: 'sec-state-creds -> sts-redis. Provenance H (RELATIONSHIP_MATRIX.md#6); basis: reference-secret-to-deployment.json.'
     isAnnotation: false
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: f83267d3-5a4d-596a-87dd-3bf2670b4895
         kind: Secret
-        model: *id029
+        model: *id028
         patch:
           mutatorRef:
           - - displayName
@@ -7144,7 +7159,7 @@ relationships:
       to:
       - id: a3667d58-ed1b-5ec5-ae10-40fd00f5c682
         kind: StatefulSet
-        model: *id022
+        model: *id021
         patch:
           mutatedRef:
           - - configuration
@@ -7168,13 +7183,13 @@ relationships:
   metadata:
     description: 'prometheus -> alertmanager. Provenance H (RELATIONSHIP_MATRIX.md#6); basis: edge-sibling-matchlabels-fmlwc.json.'
     isAnnotation: false
-  model: *id037
+  model: *id036
   selectors:
   - allow:
       from:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id037
+        model: *id036
         patch:
           mutatorRef:
           - - configuration
@@ -7184,7 +7199,7 @@ relationships:
       to:
       - id: 8c183854-165d-5253-a3f9-f42f54260825
         kind: Alertmanager
-        model: *id039
+        model: *id038
         patch:
           mutatedRef:
           - - configuration
@@ -7202,13 +7217,13 @@ relationships:
     description: 'sec-L1-mcp-access -> mcp-access-gateway. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: f4c22a30-6540-59f3-933e-31d3b1979981
         kind: Section
-        model: *id046
+        model: *id045
         patch:
           mutatorRef:
           - - configuration
@@ -7221,7 +7236,7 @@ relationships:
       to:
       - id: 12b65915-14b7-5129-ba4c-89ea4c193316
         kind: GenericNode
-        model: *id047
+        model: *id046
         patch:
           mutatedRef:
           - - configuration
@@ -7242,13 +7257,13 @@ relationships:
     description: 'sec-L2-agent-runtime -> agent-runtime. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 65e2eb28-fbc9-52f7-b7dc-e38719a6a2b3
         kind: Section
-        model: *id048
+        model: *id047
         patch:
           mutatorRef:
           - - configuration
@@ -7261,7 +7276,7 @@ relationships:
       to:
       - id: 2ec8e438-c15e-5223-8fea-4b6b780aaf7c
         kind: GenericNode
-        model: *id049
+        model: *id048
         patch:
           mutatedRef:
           - - configuration
@@ -7282,13 +7297,13 @@ relationships:
     description: 'sec-L2-agent-runtime -> agent-tool-bridge. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 65e2eb28-fbc9-52f7-b7dc-e38719a6a2b3
         kind: Section
-        model: *id048
+        model: *id047
         patch:
           mutatorRef:
           - - configuration
@@ -7301,7 +7316,7 @@ relationships:
       to:
       - id: 721d974f-fd00-5b68-8ec8-e0558cba4fb0
         kind: GenericNode
-        model: *id050
+        model: *id049
         patch:
           mutatedRef:
           - - configuration
@@ -7322,13 +7337,13 @@ relationships:
     description: 'sec-L34-routing-fallback -> model-router. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 1e9e3321-1793-5cf1-8cca-826007d57197
         kind: Section
-        model: *id051
+        model: *id050
         patch:
           mutatorRef:
           - - configuration
@@ -7341,7 +7356,7 @@ relationships:
       to:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
-        model: *id052
+        model: *id051
         patch:
           mutatedRef:
           - - configuration
@@ -7362,13 +7377,13 @@ relationships:
     description: 'sec-L34-routing-fallback -> tier-cloud-managed. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 1e9e3321-1793-5cf1-8cca-826007d57197
         kind: Section
-        model: *id051
+        model: *id050
         patch:
           mutatorRef:
           - - configuration
@@ -7381,7 +7396,7 @@ relationships:
       to:
       - id: 04273108-df39-51f2-b9ae-76ce5dbef43a
         kind: GenericNode
-        model: *id053
+        model: *id052
         patch:
           mutatedRef:
           - - configuration
@@ -7402,13 +7417,13 @@ relationships:
     description: 'sec-L34-routing-fallback -> tier-local-hosted. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 1e9e3321-1793-5cf1-8cca-826007d57197
         kind: Section
-        model: *id051
+        model: *id050
         patch:
           mutatorRef:
           - - configuration
@@ -7421,7 +7436,7 @@ relationships:
       to:
       - id: 96a614f1-823f-57f9-98d1-3260743cf97f
         kind: GenericNode
-        model: *id054
+        model: *id053
         patch:
           mutatedRef:
           - - configuration
@@ -7442,13 +7457,13 @@ relationships:
     description: 'sec-L34-routing-fallback -> tier-offline-cached. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 1e9e3321-1793-5cf1-8cca-826007d57197
         kind: Section
-        model: *id051
+        model: *id050
         patch:
           mutatorRef:
           - - configuration
@@ -7461,7 +7476,7 @@ relationships:
       to:
       - id: 47609e0c-98d0-51fc-b11e-58c8371713a8
         kind: GenericNode
-        model: *id055
+        model: *id054
         patch:
           mutatedRef:
           - - configuration
@@ -7481,13 +7496,13 @@ relationships:
   metadata:
     description: 'sec-L5-grounding -> context-store. Provenance C (RELATIONSHIP_MATRIX.md#7); basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: b58a37ef-541d-5655-8c1b-20fa67f91e03
         kind: Section
-        model: *id056
+        model: *id055
         patch:
           mutatorRef:
           - - configuration
@@ -7500,7 +7515,7 @@ relationships:
       to:
       - id: 32be07b6-c456-5938-9dc3-6210180f66fb
         kind: GenericNode
-        model: *id057
+        model: *id056
         patch:
           mutatedRef:
           - - configuration
@@ -7521,13 +7536,13 @@ relationships:
     description: 'sec-L5-grounding -> model-registry. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: b58a37ef-541d-5655-8c1b-20fa67f91e03
         kind: Section
-        model: *id056
+        model: *id055
         patch:
           mutatorRef:
           - - configuration
@@ -7540,7 +7555,7 @@ relationships:
       to:
       - id: 64751509-5cbc-508f-9116-6ee47a7c937f
         kind: GenericNode
-        model: *id058
+        model: *id057
         patch:
           mutatedRef:
           - - configuration
@@ -7561,13 +7576,13 @@ relationships:
     description: 'sec-L5-grounding -> registry-credential. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: b58a37ef-541d-5655-8c1b-20fa67f91e03
         kind: Section
-        model: *id056
+        model: *id055
         patch:
           mutatorRef:
           - - configuration
@@ -7580,7 +7595,7 @@ relationships:
       to:
       - id: 3e7e2036-596a-52a8-a2e8-32af6d3f8457
         kind: Credential
-        model: *id059
+        model: *id058
         patch:
           mutatedRef:
           - - configuration
@@ -7601,13 +7616,13 @@ relationships:
     description: 'sec-L6-control-plane -> meshery-control-plane. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 3faebee4-912c-5f9e-894f-128969fdefb2
         kind: Section
-        model: *id060
+        model: *id059
         patch:
           mutatorRef:
           - - configuration
@@ -7620,7 +7635,7 @@ relationships:
       to:
       - id: b72a226c-a9e6-5aaf-b479-45406a2febc6
         kind: GenericNode
-        model: *id061
+        model: *id060
         patch:
           mutatedRef:
           - - configuration
@@ -7640,13 +7655,13 @@ relationships:
   metadata:
     description: 'sec-L6-control-plane -> meshsync. Provenance C (RELATIONSHIP_MATRIX.md#7); basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 3faebee4-912c-5f9e-894f-128969fdefb2
         kind: Section
-        model: *id060
+        model: *id059
         patch:
           mutatorRef:
           - - configuration
@@ -7659,7 +7674,7 @@ relationships:
       to:
       - id: ce2a979e-5a8e-596a-83c1-7f2913ed38a3
         kind: MeshSync
-        model: *id007
+        model: *id006
         patch:
           mutatedRef:
           - - configuration
@@ -7679,13 +7694,13 @@ relationships:
   metadata:
     description: 'sec-L6-control-plane -> broker. Provenance C (RELATIONSHIP_MATRIX.md#7); basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 3faebee4-912c-5f9e-894f-128969fdefb2
         kind: Section
-        model: *id060
+        model: *id059
         patch:
           mutatorRef:
           - - configuration
@@ -7698,7 +7713,7 @@ relationships:
       to:
       - id: 5d252a3b-1b26-5347-98db-5034535b7aab
         kind: Broker
-        model: *id008
+        model: *id007
         patch:
           mutatedRef:
           - - configuration
@@ -7719,13 +7734,13 @@ relationships:
     description: 'sec-L7-policy-boundary -> policy-boundary. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: fb7f2d14-a8d0-567d-9f90-6d08eca1e8b4
         kind: Section
-        model: *id062
+        model: *id061
         patch:
           mutatorRef:
           - - configuration
@@ -7738,7 +7753,7 @@ relationships:
       to:
       - id: 8a00ddd1-a076-572f-a021-63062feb36a8
         kind: GenericNode
-        model: *id063
+        model: *id062
         patch:
           mutatedRef:
           - - configuration
@@ -7759,13 +7774,13 @@ relationships:
     description: 'sec-L7-policy-boundary -> grounding-validator. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: fb7f2d14-a8d0-567d-9f90-6d08eca1e8b4
         kind: Section
-        model: *id062
+        model: *id061
         patch:
           mutatorRef:
           - - configuration
@@ -7778,7 +7793,7 @@ relationships:
       to:
       - id: fc9f12a2-d974-5a2d-a147-888c36ee18fb
         kind: GenericNode
-        model: *id064
+        model: *id063
         patch:
           mutatedRef:
           - - configuration
@@ -7799,13 +7814,13 @@ relationships:
     description: 'sec-L7-policy-boundary -> quota-ai-runtime. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: fb7f2d14-a8d0-567d-9f90-6d08eca1e8b4
         kind: Section
-        model: *id062
+        model: *id061
         patch:
           mutatorRef:
           - - configuration
@@ -7818,7 +7833,7 @@ relationships:
       to:
       - id: bd3310b6-60a3-5a42-8839-98927c434b0a
         kind: ResourceQuota
-        model: *id020
+        model: *id019
         patch:
           mutatedRef:
           - - configuration
@@ -7839,13 +7854,13 @@ relationships:
     description: 'sec-L7-policy-boundary -> limits-ai-runtime. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: fb7f2d14-a8d0-567d-9f90-6d08eca1e8b4
         kind: Section
-        model: *id062
+        model: *id061
         patch:
           mutatorRef:
           - - configuration
@@ -7858,7 +7873,7 @@ relationships:
       to:
       - id: b0797584-06b1-5dc9-8a47-308fd82421fb
         kind: LimitRange
-        model: *id021
+        model: *id020
         patch:
           mutatedRef:
           - - configuration
@@ -7879,13 +7894,13 @@ relationships:
     description: 'sec-L11-security -> trust-boundary. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: a2b45ae2-8d38-53de-b61b-480de9836741
         kind: Section
-        model: *id065
+        model: *id064
         patch:
           mutatorRef:
           - - configuration
@@ -7898,7 +7913,7 @@ relationships:
       to:
       - id: 479afef2-7fb1-51c6-a4f7-d47feab29f49
         kind: GenericNode
-        model: *id066
+        model: *id065
         patch:
           mutatedRef:
           - - configuration
@@ -7919,13 +7934,13 @@ relationships:
     description: 'sec-L11-security -> netpol-default-deny. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: a2b45ae2-8d38-53de-b61b-480de9836741
         kind: Section
-        model: *id065
+        model: *id064
         patch:
           mutatorRef:
           - - configuration
@@ -7938,7 +7953,7 @@ relationships:
       to:
       - id: 08935853-d938-585a-99c8-cd1f642967be
         kind: NetworkPolicy
-        model: *id041
+        model: *id040
         patch:
           mutatedRef:
           - - configuration
@@ -7959,13 +7974,13 @@ relationships:
     description: 'sec-L11-security -> netpol-ai-allowlist. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: a2b45ae2-8d38-53de-b61b-480de9836741
         kind: Section
-        model: *id065
+        model: *id064
         patch:
           mutatorRef:
           - - configuration
@@ -7978,7 +7993,7 @@ relationships:
       to:
       - id: cf30eeb1-f57b-534e-b0c6-88c15c758ed0
         kind: NetworkPolicy
-        model: *id042
+        model: *id041
         patch:
           mutatedRef:
           - - configuration
@@ -7999,13 +8014,13 @@ relationships:
     description: 'sec-L12-degradation -> degradation-controller. Provenance C (RELATIONSHIP_MATRIX.md#7);
       basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 7b4e31d4-70e1-5ed9-8c7c-cace0cf68cbb
         kind: Section
-        model: *id067
+        model: *id066
         patch:
           mutatorRef:
           - - configuration
@@ -8018,7 +8033,7 @@ relationships:
       to:
       - id: 8b814c3f-1a88-519e-989d-f8a408b80384
         kind: GenericNode
-        model: *id068
+        model: *id067
         patch:
           mutatedRef:
           - - configuration
@@ -8039,13 +8054,13 @@ relationships:
     description: 'sec-L12-degradation -> pdb-sts-redis. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 7b4e31d4-70e1-5ed9-8c7c-cace0cf68cbb
         kind: Section
-        model: *id067
+        model: *id066
         patch:
           mutatorRef:
           - - configuration
@@ -8058,7 +8073,7 @@ relationships:
       to:
       - id: cc174c28-e5c1-51ae-b03a-58bf845946f4
         kind: PodDisruptionBudget
-        model: *id033
+        model: *id032
         patch:
           mutatedRef:
           - - configuration
@@ -8079,13 +8094,13 @@ relationships:
     description: 'sec-L12-degradation -> pdb-sts-postgres. Provenance C (RELATIONSHIP_MATRIX.md#7); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 7b4e31d4-70e1-5ed9-8c7c-cace0cf68cbb
         kind: Section
-        model: *id067
+        model: *id066
         patch:
           mutatorRef:
           - - configuration
@@ -8098,7 +8113,7 @@ relationships:
       to:
       - id: e424c405-2795-5068-a73e-4a2ff6bb3c6d
         kind: PodDisruptionBudget
-        model: *id034
+        model: *id033
         patch:
           mutatedRef:
           - - configuration
@@ -8119,17 +8134,17 @@ relationships:
     description: 'mcp-access-gateway -> agent-runtime. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id049
+  model: *id048
   selectors:
   - allow:
       from:
       - id: 12b65915-14b7-5129-ba4c-89ea4c193316
         kind: GenericNode
-        model: *id047
+        model: *id046
       to:
       - id: 2ec8e438-c15e-5223-8fea-4b6b780aaf7c
         kind: GenericNode
-        model: *id049
+        model: *id048
 - id: 1b3d72f0-d26a-5f67-b594-5fe2fb7fd83b
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8141,17 +8156,17 @@ relationships:
     description: 'agent-runtime -> agent-tool-bridge. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id050
+  model: *id049
   selectors:
   - allow:
       from:
       - id: 2ec8e438-c15e-5223-8fea-4b6b780aaf7c
         kind: GenericNode
-        model: *id049
+        model: *id048
       to:
       - id: 721d974f-fd00-5b68-8ec8-e0558cba4fb0
         kind: GenericNode
-        model: *id050
+        model: *id049
 - id: 4526ecc2-b608-5224-a3f3-6a823498c3bd
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8163,17 +8178,17 @@ relationships:
     description: 'agent-runtime -> context-store. Provenance H (RELATIONSHIP_MATRIX.md#8); basis: no upstream
       blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id057
+  model: *id056
   selectors:
   - allow:
       from:
       - id: 2ec8e438-c15e-5223-8fea-4b6b780aaf7c
         kind: GenericNode
-        model: *id049
+        model: *id048
       to:
       - id: 32be07b6-c456-5938-9dc3-6210180f66fb
         kind: GenericNode
-        model: *id057
+        model: *id056
 - id: 0689b061-39be-5561-adeb-8a48569944e6
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8185,17 +8200,17 @@ relationships:
     description: 'agent-runtime -> model-router. Provenance H (RELATIONSHIP_MATRIX.md#8); basis: no upstream
       blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id052
+  model: *id051
   selectors:
   - allow:
       from:
       - id: 2ec8e438-c15e-5223-8fea-4b6b780aaf7c
         kind: GenericNode
-        model: *id049
+        model: *id048
       to:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
-        model: *id052
+        model: *id051
 - id: 85066dc7-1b75-5f24-84fc-16d122a98c36
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8207,17 +8222,17 @@ relationships:
     description: 'model-router -> tier-cloud-managed. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id053
+  model: *id052
   selectors:
   - allow:
       from:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
-        model: *id052
+        model: *id051
       to:
       - id: 04273108-df39-51f2-b9ae-76ce5dbef43a
         kind: GenericNode
-        model: *id053
+        model: *id052
 - id: da036ae3-3fa9-5329-a014-d7502cb8426d
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8229,17 +8244,17 @@ relationships:
     description: 'model-router -> tier-local-hosted. Provenance H (RELATIONSHIP_MATRIX.md#8); basis: no
       upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id054
+  model: *id053
   selectors:
   - allow:
       from:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
-        model: *id052
+        model: *id051
       to:
       - id: 96a614f1-823f-57f9-98d1-3260743cf97f
         kind: GenericNode
-        model: *id054
+        model: *id053
 - id: cf5e7e8d-296e-5e7b-ad61-c9cb86d8a4e4
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8251,17 +8266,17 @@ relationships:
     description: 'model-router -> tier-offline-cached. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id055
+  model: *id054
   selectors:
   - allow:
       from:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
-        model: *id052
+        model: *id051
       to:
       - id: 47609e0c-98d0-51fc-b11e-58c8371713a8
         kind: GenericNode
-        model: *id055
+        model: *id054
 - id: db7a2586-30d2-5679-bee4-0ee2b72953d3
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8273,17 +8288,17 @@ relationships:
     description: 'model-router -> model-registry. Provenance H (RELATIONSHIP_MATRIX.md#8); basis: no upstream
       blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id058
+  model: *id057
   selectors:
   - allow:
       from:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
-        model: *id052
+        model: *id051
       to:
       - id: 64751509-5cbc-508f-9116-6ee47a7c937f
         kind: GenericNode
-        model: *id058
+        model: *id057
 - id: 38fec468-2441-5e35-a9f0-e1dbc67a95af
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8295,17 +8310,17 @@ relationships:
     description: 'model-router -> grounding-validator. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id064
+  model: *id063
   selectors:
   - allow:
       from:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
-        model: *id052
+        model: *id051
       to:
       - id: fc9f12a2-d974-5a2d-a147-888c36ee18fb
         kind: GenericNode
-        model: *id064
+        model: *id063
 - id: 0b224165-88e3-57d0-8d95-9a4eb8d66103
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8317,17 +8332,17 @@ relationships:
     description: 'model-registry -> registry-credential. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id059
+  model: *id058
   selectors:
   - allow:
       from:
       - id: 64751509-5cbc-508f-9116-6ee47a7c937f
         kind: GenericNode
-        model: *id058
+        model: *id057
       to:
       - id: 3e7e2036-596a-52a8-a2e8-32af6d3f8457
         kind: Credential
-        model: *id059
+        model: *id058
 - id: 6b2b9e6c-4b77-5ed3-a478-11a9bbd86424
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8339,17 +8354,17 @@ relationships:
     description: 'registry-credential -> sec-registry-creds. Provenance H (RELATIONSHIP_MATRIX.md#8);
       basis: no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id013
+  model: *id012
   selectors:
   - allow:
       from:
       - id: 3e7e2036-596a-52a8-a2e8-32af6d3f8457
         kind: Credential
-        model: *id059
+        model: *id058
       to:
       - id: 1caa5e3d-1b98-5de8-81c8-9d85981b7546
         kind: Secret
-        model: *id013
+        model: *id012
 - id: 6b3a5d2f-2a36-5d29-9a50-4a92dea0d03f
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8361,17 +8376,17 @@ relationships:
     description: 'grounding-validator -> context-store. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id057
+  model: *id056
   selectors:
   - allow:
       from:
       - id: fc9f12a2-d974-5a2d-a147-888c36ee18fb
         kind: GenericNode
-        model: *id064
+        model: *id063
       to:
       - id: 32be07b6-c456-5938-9dc3-6210180f66fb
         kind: GenericNode
-        model: *id057
+        model: *id056
 - id: fff1c8df-4011-53c5-82a8-b20db1356238
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8383,17 +8398,17 @@ relationships:
     description: 'grounding-validator -> model-registry. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id058
+  model: *id057
   selectors:
   - allow:
       from:
       - id: fc9f12a2-d974-5a2d-a147-888c36ee18fb
         kind: GenericNode
-        model: *id064
+        model: *id063
       to:
       - id: 64751509-5cbc-508f-9116-6ee47a7c937f
         kind: GenericNode
-        model: *id058
+        model: *id057
 - id: 8df1430f-22ef-59ba-90c6-06de4b69f739
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8405,17 +8420,17 @@ relationships:
     description: 'grounding-validator -> policy-boundary. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id063
+  model: *id062
   selectors:
   - allow:
       from:
       - id: fc9f12a2-d974-5a2d-a147-888c36ee18fb
         kind: GenericNode
-        model: *id064
+        model: *id063
       to:
       - id: 8a00ddd1-a076-572f-a021-63062feb36a8
         kind: GenericNode
-        model: *id063
+        model: *id062
 - id: 36f4a5a0-2cae-55ef-8662-7703727adbcb
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8427,17 +8442,17 @@ relationships:
     description: 'tier-offline-cached -> context-store. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id057
+  model: *id056
   selectors:
   - allow:
       from:
       - id: 47609e0c-98d0-51fc-b11e-58c8371713a8
         kind: GenericNode
-        model: *id055
+        model: *id054
       to:
       - id: 32be07b6-c456-5938-9dc3-6210180f66fb
         kind: GenericNode
-        model: *id057
+        model: *id056
 - id: 35c4b356-6b14-5e80-883c-c6505692be04
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8449,17 +8464,17 @@ relationships:
     description: 'degradation-controller -> model-router. Provenance H (RELATIONSHIP_MATRIX.md#8); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id052
+  model: *id051
   selectors:
   - allow:
       from:
       - id: 8b814c3f-1a88-519e-989d-f8a408b80384
         kind: GenericNode
-        model: *id068
+        model: *id067
       to:
       - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
         kind: GenericNode
-        model: *id052
+        model: *id051
 - id: cac62f35-ba75-5d91-bd1a-ee1cf6c1ccdf
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8471,17 +8486,17 @@ relationships:
     description: 'meshery-control-plane -> meshsync. Provenance A (RELATIONSHIP_MATRIX.md#9); basis: no
       upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id007
+  model: *id006
   selectors:
   - allow:
       from:
       - id: b72a226c-a9e6-5aaf-b479-45406a2febc6
         kind: GenericNode
-        model: *id061
+        model: *id060
       to:
       - id: ce2a979e-5a8e-596a-83c1-7f2913ed38a3
         kind: MeshSync
-        model: *id007
+        model: *id006
 - id: 77c14964-71d4-50c6-b608-ab0a93492bcf
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8493,17 +8508,17 @@ relationships:
     description: 'meshery-control-plane -> broker. Provenance A (RELATIONSHIP_MATRIX.md#9); basis: no
       upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id008
+  model: *id007
   selectors:
   - allow:
       from:
       - id: b72a226c-a9e6-5aaf-b479-45406a2febc6
         kind: GenericNode
-        model: *id061
+        model: *id060
       to:
       - id: 5d252a3b-1b26-5347-98db-5034535b7aab
         kind: Broker
-        model: *id008
+        model: *id007
 - id: 52ef61d2-81ab-59ad-a99b-488691398bca
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8515,17 +8530,17 @@ relationships:
     description: 'meshery-control-plane -> deploy-meshery-control. Provenance A (RELATIONSHIP_MATRIX.md#9);
       basis: no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id009
+  model: *id008
   selectors:
   - allow:
       from:
       - id: b72a226c-a9e6-5aaf-b479-45406a2febc6
         kind: GenericNode
-        model: *id061
+        model: *id060
       to:
       - id: 1f9852e8-2638-5742-bd52-099ed58a7459
         kind: Deployment
-        model: *id009
+        model: *id008
 - id: 153e78c9-2858-5331-ae08-7dba622360b5
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8537,17 +8552,17 @@ relationships:
     description: 'context-store -> sts-postgres. Provenance A (RELATIONSHIP_MATRIX.md#9); basis: no upstream
       blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id026
+  model: *id025
   selectors:
   - allow:
       from:
       - id: 32be07b6-c456-5938-9dc3-6210180f66fb
         kind: GenericNode
-        model: *id057
+        model: *id056
       to:
       - id: f712b974-bded-54ca-9741-8c3842346b96
         kind: StatefulSet
-        model: *id026
+        model: *id025
 - id: 07f3c27f-30f3-544d-be2d-ac1527ffc5e9
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8559,17 +8574,17 @@ relationships:
     description: 'model-registry -> sec-registry-creds. Provenance A (RELATIONSHIP_MATRIX.md#9); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id013
+  model: *id012
   selectors:
   - allow:
       from:
       - id: 64751509-5cbc-508f-9116-6ee47a7c937f
         kind: GenericNode
-        model: *id058
+        model: *id057
       to:
       - id: 1caa5e3d-1b98-5de8-81c8-9d85981b7546
         kind: Secret
-        model: *id013
+        model: *id012
 - id: 3f40ed56-d7b8-59e5-96e0-8096f8825366
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8581,17 +8596,17 @@ relationships:
     description: 'trust-boundary -> ingress-ai-platform. Provenance A (RELATIONSHIP_MATRIX.md#9); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id011
+  model: *id010
   selectors:
   - allow:
       from:
       - id: 479afef2-7fb1-51c6-a4f7-d47feab29f49
         kind: GenericNode
-        model: *id066
+        model: *id065
       to:
       - id: 402e2057-09a9-565e-91e3-cd02f54eb7b9
         kind: Ingress
-        model: *id011
+        model: *id010
 - id: 6e0c866d-87ec-547d-aad7-92be37c348e1
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8603,17 +8618,17 @@ relationships:
     description: 'policy-boundary -> vap-required-labels. Provenance A (RELATIONSHIP_MATRIX.md#9); basis:
       no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id044
+  model: *id043
   selectors:
   - allow:
       from:
       - id: 8a00ddd1-a076-572f-a021-63062feb36a8
         kind: GenericNode
-        model: *id063
+        model: *id062
       to:
       - id: 8632e5f1-4455-5a24-88ca-1e37c580613f
         kind: ValidatingAdmissionPolicy
-        model: *id044
+        model: *id043
 - id: b4732e1c-86bd-5588-a5e4-7fa41df4502f
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8625,17 +8640,17 @@ relationships:
     description: 'degradation-controller -> promrule-platform-slo. Provenance A (RELATIONSHIP_MATRIX.md#9);
       basis: no upstream blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id040
+  model: *id039
   selectors:
   - allow:
       from:
       - id: 8b814c3f-1a88-519e-989d-f8a408b80384
         kind: GenericNode
-        model: *id068
+        model: *id067
       to:
       - id: 9fc66572-889e-55e6-95db-611b6a9e7373
         kind: PrometheusRule
-        model: *id040
+        model: *id039
 - id: db6d2be5-dcac-5a33-8f6e-f995f1a0dae7
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8647,17 +8662,17 @@ relationships:
     description: 'otel-collector -> prometheus. Provenance A (RELATIONSHIP_MATRIX.md#9); basis: no upstream
       blueprint exists for this participant pairing.'
     isAnnotation: true
-  model: *id037
+  model: *id036
   selectors:
   - allow:
       from:
-      - id: 0d0922e4-d9e9-59bb-8d59-6bb7b8e95214
-        kind: OpenTelemetryCollector
-        model: *id035
+      - id: 14cce6f4-3a22-59f0-9ecf-92e4ee4fdc2a
+        kind: Deployment
+        model: *id034
       to:
       - id: b540c6ff-cf1c-5503-a63d-418655b5040f
         kind: Prometheus
-        model: *id037
+        model: *id036
 - id: a9006fd5-6d75-5e4d-8183-a47440b32126
   schemaVersion: relationships.meshery.io/v1beta2
   version: v1.0.0
@@ -8668,13 +8683,13 @@ relationships:
   metadata:
     description: 'env-production -> ns-ai-control. Provenance C (RELATIONSHIP_MATRIX.md#10); basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
         kind: Section
-        model: *id069
+        model: *id068
         patch:
           mutatorRef:
           - - configuration
@@ -8687,7 +8702,7 @@ relationships:
       to:
       - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
         kind: Namespace
-        model: *id006
+        model: *id005
         patch:
           mutatedRef:
           - - configuration
@@ -8707,13 +8722,13 @@ relationships:
   metadata:
     description: 'env-production -> ns-ai-runtime. Provenance C (RELATIONSHIP_MATRIX.md#10); basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
         kind: Section
-        model: *id069
+        model: *id068
         patch:
           mutatorRef:
           - - configuration
@@ -8726,7 +8741,7 @@ relationships:
       to:
       - id: c9ab01cc-91a2-57d7-ba59-c4c13c3582e4
         kind: Namespace
-        model: *id018
+        model: *id017
         patch:
           mutatedRef:
           - - configuration
@@ -8746,13 +8761,13 @@ relationships:
   metadata:
     description: 'env-production -> ns-ai-state. Provenance C (RELATIONSHIP_MATRIX.md#10); basis: hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
         kind: Section
-        model: *id069
+        model: *id068
         patch:
           mutatorRef:
           - - configuration
@@ -8765,7 +8780,7 @@ relationships:
       to:
       - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
         kind: Namespace
-        model: *id023
+        model: *id022
         patch:
           mutatedRef:
           - - configuration
@@ -8786,13 +8801,13 @@ relationships:
     description: 'env-production -> ns-ai-observability. Provenance C (RELATIONSHIP_MATRIX.md#10); basis:
       hierarchical-parent-alias-iicqa.json.'
     isAnnotation: true
-  model: *id006
+  model: *id005
   selectors:
   - allow:
       from:
       - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
         kind: Section
-        model: *id069
+        model: *id068
         patch:
           mutatorRef:
           - - configuration
@@ -8805,7 +8820,7 @@ relationships:
       to:
       - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
         kind: Namespace
-        model: *id036
+        model: *id035
         patch:
           mutatedRef:
           - - configuration

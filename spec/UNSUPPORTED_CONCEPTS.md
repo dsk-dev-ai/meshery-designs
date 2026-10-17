@@ -75,8 +75,9 @@ OpenTelemetry Collector.
 not a deployable component. This is the single most likely false positive in the whole catalog and the reason
 icon models are called out in `RECONNAISSANCE.md` §K item 9.
 
-**Representation.** Traces are ingested by `otel-collector` (real, `sumologic` 4.18.0) and forwarded. The design
-asserts an ingest path, not a trace store. `prometheus` handles metrics; trace storage is unspecified.
+**Representation.** Traces are ingested by `otel-collector` (a `kubernetes` `Deployment` running the collector)
+and forwarded. The design asserts an ingest path, not a trace store. `prometheus` handles metrics; trace
+storage is unspecified.
 
 **What this asserts and what it does not.** It asserts that traces are collected and exported. It does **not**
 assert that traces are stored, retained, or queryable.
@@ -317,7 +318,7 @@ invented. All four gaps were confirmed by exhaustive search of every `relationsh
 | Service → workload | `Service → Deployment` (`edge-non-binding-network-duixv.json`) | `Service → StatefulSet` | Hand-authored, C3–C4. Triple copied from the Deployment variant. Zero catalog matches for the pair. |
 | Secret → workload | `Secret → Pod`, `Secret → Deployment` | `Secret → StatefulSet` | Hand-authored, F1–F2. Zero catalog matches for the pair. |
 | Prometheus → Alertmanager | `Alertmanager → AlertmanagerConfig` | `Prometheus → Alertmanager` | Hand-authored, F3. Zero catalog matches for the pair. |
-| OTel → Prometheus | `sumologic` ships **no** `relationships/` directory at all | `OpenTelemetryCollector → Prometheus` | Hand-authored, A-9. |
+| OTel → Prometheus | The collector ships **no** relationship blueprints | `Deployment → Prometheus` | Hand-authored, A-9. |
 | NetworkPolicy → workload | `NetworkPolicy → Pod`, `Pod → Pod` (both firewall blueprints) | No `Pod` components exist to target | **No edge authored.** Containment recorded by the `sec-L11-security` band instead. Recorded in `RELATIONSHIP_MATRIX.md` §6.1. |
 
 A sixth, related gap: no blueprint pairs `Section` with anything, so the 27 containment edges in

@@ -32,7 +32,34 @@ registered meshery-core `Section` annotation and retargeting its four §10
 `spec/COMPONENT_INVENTORY.md`. The current `generated/design.yml` contains
 zero `Environment` component references.
 
-## 2. Upload: 404 on `meshmap/index.js`
+## 2. Dry-run: "could not find component with name: OpenTelemetryCollector, model: sumologic"
+
+**Observed** (fixed in this repository; kept for reference)
+
+```
+error: Unable to deploy the selected design "ai-native-platform"
+probableCause: Connection Error ...
+longDescription: could not find component with name: OpenTelemetryCollector,
+model: sumologic, apiVersion: opentelemetry.io/v1alpha1
+```
+
+**Diagnosis** — A design defect of a different kind than #1. Unlike
+`Environment`, the `sumologic` model's `OpenTelemetryCollector` is a
+well-formed component (non-empty `component.schema`,
+`metadata.isAnnotation: false`) and would be registrable in principle. The
+problem is that the `sumologic` model is **not shipped by the Meshery
+registry at all**. Verified locally against the same seeding pipeline
+Playground uses: `kubernetes`, `meshery-core`, `meshery-operator` and
+`kube-prometheus-stack` are present, `sumologic` is not, and no model
+anywhere registers an `OpenTelemetryCollector`.
+
+**Resolution** — Fixed by modelling the collector as a plain, portable
+`kubernetes` `Deployment` (`apps/v1`), which is always resolvable. See
+ADR-010 and `spec/COMPONENT_INVENTORY.md`. This removes the `sumologic`
+model from the design (now 4 models); component and relationship counts
+are unchanged at 66/113.
+
+## 3. Upload: 404 on `meshmap/index.js`
 
 **Observed**
 
@@ -59,7 +86,7 @@ matching extension version. Report at `meshery/meshery` issues (the
 host error path above), noting the requested
 `packageVersion=v1.0.71-1` returned 404.
 
-## 3. Duplicate designs in the account
+## 4. Duplicate designs in the account
 
 If repeated import attempts left duplicate `ai-native-platform` entries,
 remove the stale ones in the UI (Designs → three-dot menu → Delete) and
@@ -76,4 +103,4 @@ python3 validation/tools/gate1.py generated/design.yml /tmp/g1out   # expect GAT
 bash tests/run_all.sh                                     # expect ALL TESTS PASSED
 ```
 
-`md5 7f5c4e87802de37a323204099958369c` — 66 components, 113 relationships.
+`md5 7338b027b37efca726513372bd485945` — 66 components, 113 relationships.

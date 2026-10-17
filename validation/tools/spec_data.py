@@ -19,7 +19,6 @@ K8S = "kubernetes"
 CORE = "meshery-core"
 OPER = "meshery-operator"
 PROM = "kube-prometheus-stack"
-SUMO = "sumologic"
 
 _N = False
 _A = True
@@ -84,9 +83,10 @@ COMPONENTS = [
     ("pvc-postgres", K8S, "PersistentVolumeClaim", _N,
      "Durable volume claim for the PostgreSQL store, so grounding records survive pod replacement."),
     # ---- Group 5: observability (layer 10)
-    ("otel-collector", SUMO, "OpenTelemetryCollector", _N,
-     "Receives, processes, and exports traces and metrics from every namespace. Sourced from the sumologic "
-     "model, which is the only catalog model providing a real OpenTelemetryCollector."),
+    ("otel-collector", K8S, "Deployment", _N,
+     "Runs the OpenTelemetry Collector. Modelled as a plain kubernetes Deployment: the only catalog "
+     "OpenTelemetryCollector CRD lives in the `sumologic` model, which the registry does not ship, so it "
+     "cannot be resolved at deploy time. A Deployment is the portable, vendor-neutral way to run the collector."),
     ("prometheus", PROM, "Prometheus", _N,
      "Metrics store and evaluation engine for the platform."),
     ("sm-platform", PROM, "ServiceMonitor", _N,
