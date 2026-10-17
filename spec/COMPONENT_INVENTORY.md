@@ -60,13 +60,16 @@ Model versions used:
 - **Expected relationships:** target of 5 `hierarchical/parent/inventory` edges
 
 ### `env-production`
-- **Model:** `meshery-core` 0.7.2 · **Kind:** `Environment` (`core.meshery.io/v1alpha1`)
-- **Class:** Annotation-grouped (note: `isAnnotation: false` upstream — it is a scoping primitive, not a
-  conceptual node)
-- **Source:** `models/meshery-core/0.7.2/v1.0.0/components/Environment.json`
-- **Purpose:** Declares the target environment for the whole design.
-- **Why it exists:** A design that is environment-agnostic cannot be reviewed for promotion. Naming the
-  environment in-graph is cheaper than maintaining it in prose.
+- **Model:** `meshery-core` 0.7.2 · **Kind:** `Section` (`core.meshery.io/v1alpha1`)
+- **Class:** Annotation node (`metadata.isAnnotation: true`, matching the catalog)
+- **Source:** `models/meshery-core/0.7.2/v1.0.0/components/Section.json`
+- **Purpose:** Declares the target environment grouping for the whole design.
+- **Why this kind:** meshery-core's catalog `Environment` component
+  (`components/Environment.json`) is the only component in that model with an empty
+  `component.schema` and `metadata.isAnnotation: false`; `ComponentDefinition.Create`
+  silently drops such components, so the registry never holds it and any design that
+  references it fails dry-run validation. The registered `Section` annotation is used
+  instead.
 - **Dependencies:** none
 - **Expected relationships:** `hierarchical/parent/alias` containment over the four `Namespace` components
   (`metadata.isAnnotation: true`)
@@ -692,19 +695,27 @@ Every component in this document appears in exactly one of these rows, and the r
 | `sumologic` 4.18.0 | 1 | 0 | 1 |
 | **Total** | **40** | **26** | **66** |
 
-`meshery-core` 26 breaks down as: 1 `Environment`, 14 `GenericNode`, 8 `Section`, 2 `Comment`, 1 `Credential`.
+`meshery-core` 26 breaks down as: 14 `GenericNode`, 9 `Section`, 2 `Comment`, 1 `Credential`.
 
 `kubernetes` 33 breaks down as: `Namespace`×4, `ServiceAccount`×2, `Role`×2, `RoleBinding`×2, `Deployment`,
 `Service`×3, `Ingress`, `ConfigMap`×2, `Secret`×3, `StatefulSet`×2, `PersistentVolumeClaim`×2,
 `NetworkPolicy`×2, `ResourceQuota`, `LimitRange`, `ValidatingAdmissionPolicy`,
 `ValidatingAdmissionPolicyBinding`, `PriorityClass`, `PodDisruptionBudget`×2.
 
-### The one deliberate override of an upstream value
+### Why no component overrides an upstream value
 
-`Environment` is defined in `meshery-core` 0.7.2 with `metadata.isAnnotation: false`. This design sets it to
-`true`, and it is the only component whose `isAnnotation` differs from its catalog default.
+Every component takes its catalog `isAnnotation` value unchanged.
 
-The reason: `Environment` is not a deployable Kubernetes resource — it is a Meshery-level statement about which
-environment the design targets. Setting `isAnnotation: true` is what prevents it from being rendered as a
-manifest. Every other component takes its catalog value unchanged. The upstream default is recorded here rather
-than silently overridden.
+The environment grouping originally used meshery-core's catalog `Environment`
+component, but that component is unusable: it is the only component in
+`meshery-core` 0.7.2 with an empty `component.schema` together with
+`metadata.isAnnotation: false`, and `ComponentDefinition.Create`
+(`schemas/models/v1beta3/component/component_helper.go`) silently returns without
+registering any component in that state. The registry therefore never holds a
+`meshery-core` `Environment`, and dry-run validation — which resolves every
+referenced component — fails with
+`could not find component with name: Environment, model: meshery-core`.
+
+The grouping is expressed with the registered `Section` annotation instead. This
+keeps the design's `isAnnotation` values identical to the catalog; no override is
+needed.

@@ -5,7 +5,7 @@ Issues observed when importing this design into Meshery Playground
 
 ## 1. Dry-run: "could not find component with name: Environment, model: meshery-core"
 
-**Observed**
+**Observed** (fixed in this repository; kept for reference)
 
 ```
 error: Unable to deploy the selected design "ai-native-platform"
@@ -14,15 +14,23 @@ longDescription: could not find component with name: Environment,
 model: meshery-core, apiVersion: core.meshery.io/v1alpha1
 ```
 
-**Diagnosis** — Not a design defect. The design file is structurally
-valid (Gate 1 PASS, `verify.py` 28/0, full test suite PASS). The failure
-is raised while the Playground resolves the `Environment` component from
-the `meshery-core` model (0.7.2) during the deploy/dry-run step, which
-needs a resolvable model catalog plus a connected Kubernetes target.
+**Diagnosis** — This *was* a design defect. The design originally used
+meshery-core's catalog `Environment` component as the environment
+grouping. That component is the only one in `meshery-core` 0.7.2 with an
+empty `component.schema` **and** `metadata.isAnnotation: false`;
+`ComponentDefinition.Create`
+(`schemas/models/v1beta3/component/component_helper.go`) silently returns
+without registering any component in that state, so the registry never
+holds a `meshery-core` `Environment`. Dry-run validation resolves every
+referenced component and fails when it reaches this one. The file is
+structurally valid (Gate 1 PASS, `verify.py` 28/0, full test suite PASS);
+the failure is specifically in component *resolution*.
 
-**Resolution** — Import the design without the immediate deploy/dry-run,
-and ensure the Playground environment has the `meshery-core` model loaded
-and a Kubernetes connection assigned to the selected environment.
+**Resolution** — Fixed by replacing `env-production`'s kind with the
+registered meshery-core `Section` annotation and retargeting its four §10
+`hierarchical/parent/alias` edges. No `isAnnotation` override remains. See
+`spec/COMPONENT_INVENTORY.md`. The current `generated/design.yml` contains
+zero `Environment` component references.
 
 ## 2. Upload: 404 on `meshmap/index.js`
 
@@ -68,4 +76,4 @@ python3 validation/tools/gate1.py generated/design.yml /tmp/g1out   # expect GAT
 bash tests/run_all.sh                                     # expect ALL TESTS PASSED
 ```
 
-`md5 6aead397280a3a6a34780b5a0db009fd` — 66 components, 113 relationships.
+`md5 7f5c4e87802de37a323204099958369c` — 66 components, 113 relationships.

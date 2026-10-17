@@ -383,7 +383,7 @@ Legend: **RC** = `REAL_COMPONENT` · **AC** = `ARCHITECTURAL_CONCEPT` (must be e
 | "AI agent" / "agent runtime" | **AC** | No model. Encode as `meshery-core` `GenericNode` (or `Container` for a group) with `isAnnotation: true`. |
 | Agent↔tool MCP links | **AC** | `meshery-core` `Connection` component, or a `Container`→X `edge/non-binding` relationship. `meshery-mcp-server` has no deployable artifact (see H). |
 | External LLM / cloud model endpoint | **AC** | No model. `meshery-core` `GenericNode` + `Connection`. |
-| Environment scoping | **RC** | `meshery-core` `Environment` (`isAnnotation: false`) |
+| Environment scoping | **RC (not usable)** | `meshery-core` `Environment` (`isAnnotation: false`) — but it is **never registered** (empty `schema` + `isAnnotation: false` is dropped by `ComponentDefinition.Create`). Use `Section` instead. See `COMPONENT_INVENTORY.md`. |
 | Credential references | **RC** | `meshery-core` `Credential` |
 | Grouping / canvas structure | **RC** | `meshery-core` `Container`, `Section`, `BoundingBox`, `NodeGroupInventoryWallet` |
 | `digitalocean-icons`, `meshery-shapes`, `meshery-dev-icons`, `meshery-flowchart` | **RC (decorative only)** | Icon/shape models. `meshery-dev-icons/tempo.json` proves these are presentation assets, not components. |
@@ -408,7 +408,8 @@ available — keep it as a `GenericNode` rather than coupling to `fmtok8s-confer
 
 **Layer 3 — AI-native abstraction, all AC via `meshery-core`:**
 `GenericNode` for each agent / model endpoint / MCP tool server, wrapped in `Container` groups, joined by
-`Connection` components, scoped by an `Environment`. This is the upstream-sanctioned encoding and matches the
+`Connection` components, scoped by a `Section` annotation (the catalog `Environment` is unregisterable; see
+`COMPONENT_INVENTORY.md`). This is the upstream-sanctioned encoding and matches the
 388 existing `meshery-core` usages in the catalog.
 
 **Explicitly excluded as unrepresentable today:** Ollama, Tempo, and upstream Gateway API CRDs.

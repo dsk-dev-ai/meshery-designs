@@ -5,8 +5,11 @@ Every catalog-derived value (model, kind, component.version, component.schema,
 model id, registrant, isNamespaced, genealogy, styles, capabilities) is read from
 the Meshery model catalog at the pinned versions. Nothing is invented.
 
-The only deliberate override is Environment.metadata.isAnnotation, documented in
-COMPONENT_INVENTORY.md.
+No value is overridden: every component uses its catalog kind and annotation
+flag. The design's environment grouping uses the registered `Section`
+annotation rather than meshery-core's `Environment`, which the registry never
+registers (empty `component.schema` together with `metadata.isAnnotation: false`
+is silently dropped by ComponentDefinition.Create). See COMPONENT_INVENTORY.md.
 
 Deterministic UUIDs (uuid5) are used so re-running produces an identical file.
 """
@@ -365,8 +368,6 @@ def build_components():
         assert cat["component"]["kind"] == kind, (name, kind, cat["component"]["kind"])
 
         cat_meta = cat.get("metadata") or {}
-        if name == "env-production":
-            assert cat_meta.get("isAnnotation") is False, "override no longer needed"
 
         cid = str(uuid.uuid5(COMPONENT_NS, f"{model}/{kind}/{name}"))
 
