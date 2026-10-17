@@ -163,7 +163,7 @@ def main():
     check("Gate 3 every component.version/kind/isNamespaced/genealogy matches catalog",
           not bad, str(bad[:5]))
 
-    # ---- the one documented override
+    # ---- no isAnnotation override vs the catalog
     overrides = []
     for (spec_name, model, kind, is_ann, _d), c in zip(S.COMPONENTS, comps):
         p = os.path.join(MODELS_ROOT, model, MODEL_VERSION[model], "v1.0.0",
@@ -171,8 +171,8 @@ def main():
         cat_ann = json.load(open(p))["metadata"]["isAnnotation"]
         if bool(cat_ann) != bool(c["metadata"]["isAnnotation"]):
             overrides.append(spec_name)
-    check("Environment is the only isAnnotation override vs catalog",
-          overrides == ["env-production"], str(overrides))
+    check("no component overrides its catalog isAnnotation value",
+          overrides == [], str(overrides))
 
     # ---- selector integrity (Gate 2 assertion 4, offline half)
     bad = []

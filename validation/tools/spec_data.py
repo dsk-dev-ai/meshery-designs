@@ -10,9 +10,10 @@ COMPONENT_INVENTORY.md, and every edge is a row of RELATIONSHIP_MATRIX.md.
 """
 
 # (name, model_dir, kind, isAnnotation, description)
-# isAnnotation True/False is the value the design uses. Only `env-production`
-# differs from its catalog default (documented override in COMPONENT_INVENTORY.md
-# "The one deliberate override of an upstream value").
+# isAnnotation True/False is the design's value and always equals the catalog
+# default; no component overrides an upstream value. The environment grouping
+# uses meshery-core's registered `Section` annotation rather than `Environment`,
+# which the registry never registers (see COMPONENT_INVENTORY.md).
 
 K8S = "kubernetes"
 CORE = "meshery-core"
@@ -33,10 +34,12 @@ COMPONENTS = [
      "Holds both stateful stores, their Services, their PersistentVolumeClaims, and their credentials."),
     ("ns-ai-observability", K8S, "Namespace", _N,
      "Holds the OpenTelemetry Collector and the full Prometheus Operator CRD set."),
-    ("env-production", CORE, "Environment", _A,
-     "Declares the target environment for the whole design. The only component whose isAnnotation "
-     "differs from its catalog default (catalog says false; this design sets true because an Environment "
-     "is a Meshery-level statement, not a deployable resource)."),
+    ("env-production", CORE, "Section", _A,
+     "Declares the target environment grouping for the whole design. Expressed with meshery-core's "
+     "registered `Section` annotation: the catalog's `Environment` component is never registered because "
+     "it carries an empty `component.schema` with `metadata.isAnnotation: false`, which "
+     "ComponentDefinition.Create silently drops, so any design that references it fails dry-run "
+     "validation."),
     # ---- Group 2: control plane (layer 6)
     ("meshsync", OPER, "MeshSync", _N,
      "GitOps synchronisation resource - reconciles desired design state against the cluster."),

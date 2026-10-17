@@ -209,7 +209,7 @@ For each of the 66 components, assert that
 | Model | Kinds to resolve | Instances |
 |---|---|---|
 | `kubernetes` `v1.37.1/v1.0.0` | `Namespace`×4, `ServiceAccount`×2, `Role`×2, `RoleBinding`×2, `Deployment`×1, `Service`×3, `Ingress`×1, `ConfigMap`×2, `Secret`×3, `StatefulSet`×2, `PersistentVolumeClaim`×2, `NetworkPolicy`×2, `ResourceQuota`×1, `LimitRange`×1, `ValidatingAdmissionPolicy`×1, `ValidatingAdmissionPolicyBinding`×1, `PriorityClass`×1, `PodDisruptionBudget`×2 | 33 |
-| `meshery-core` `0.7.2/v1.0.0` | `Environment`×1, `GenericNode`×14, `Section`×8, `Comment`×2, `Credential`×1 | 26 |
+| `meshery-core` `0.7.2/v1.0.0` | `GenericNode`×14, `Section`×9, `Comment`×2, `Credential`×1 | 26 |
 | `meshery-operator` `1.0.70/v1.0.0` | `MeshSync`×1, `Broker`×1 | 2 |
 | `kube-prometheus-stack` `89.2.2/v1.0.0` | `Prometheus`×1, `ServiceMonitor`×1, `Alertmanager`×1, `PrometheusRule`×1 | 4 |
 | `sumologic` `4.18.0/v1.0.0` | `OpenTelemetryCollector`×1 | 1 |
@@ -234,9 +234,12 @@ detect catalog drift before apply.
    `NetworkPolicy.component.version == "networking.k8s.io/v1"`.
 9. Confirm `PodDisruptionBudget` component version (`policy/v1`).
 10. For annotation components, confirm the catalog file's `component.version == "core.meshery.io/v1alpha1"`.
-    `component.schema` is the empty string for `Environment`, `GenericNode`, `Section`, and `Credential`; it is
+    `component.schema` is the empty string for `GenericNode`, `Section`, and `Credential`; it is
     **non-empty** for `Comment` (an inline Draft-07 schema for `userMessages`). An assertion that every
     `meshery-core` component has an empty `schema` would fail on `Comment` — the two notes rely on it.
+    A component with an empty `schema` is only registered when `metadata.isAnnotation` is `true`; the catalog's
+    `Environment` component pairs an empty `schema` with `isAnnotation: false` and is therefore never
+    registered, so this design does not reference it (see `COMPONENT_INVENTORY.md`).
 
 **Pass:** all 66 resolve; all 10 assertions hold.
 
