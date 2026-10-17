@@ -351,6 +351,9 @@ go run ./persist \
 python3 ../gate1.py /tmp/persisted.json /tmp/persistedreports
 ```
 
-`../generated/design.yml` and `../tools/gen.py` are unmodified (md5-verified: design md5
-`6aead397280a3a6a34780b5a0db009fd`). No file in `meshery` or `meshery-mcp-server` was
-written; `meshery` remains clean at `90bac8dc4`.
+`../generated/design.yml` and `../tools/gen.py` were unmodified at the time of the round-trip
+(md5-verified: design md5 `6aead397280a3a6a34780b5a0db009fd`). The artifact has since been
+regenerated with two component-kind fixes that are unrelated to the exceptions catalogued here
+(`Environment` → `Section`; `sumologic` `OpenTelemetryCollector` → kubernetes `Deployment`;
+current design md5 `7338b027b37efca726513372bd485945`). No file in `meshery` or
+`meshery-mcp-server` was written; `meshery` remains clean at `90bac8dc4`.

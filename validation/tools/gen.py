@@ -30,7 +30,6 @@ MODEL_VERSION = {
     S.CORE: "0.7.2",
     S.OPER: "1.0.70",
     S.PROM: "89.2.2",
-    S.SUMO: "4.18.0",
 }
 DESIGN_ID = uuid.uuid5(uuid.NAMESPACE_URL, "meshery-design/ai-native-platform")
 COMPONENT_NS = uuid.uuid5(uuid.NAMESPACE_URL, "meshery-design/ai-native-platform/component")
@@ -250,6 +249,29 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "meshery-control",
+                            },
+                        ],
+                    },
+                },
+            },
+        },
+        "otel-collector": {
+            "spec": {
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/name": "otel-collector",
+                    },
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app.kubernetes.io/name": "otel-collector",
+                        },
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "otel-collector",
                             },
                         ],
                     },

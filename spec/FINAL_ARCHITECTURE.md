@@ -117,9 +117,10 @@ State stores are `StatefulSet` + `Service` + `PersistentVolumeClaim`, not operat
 
 ## 6. Observability path
 
-`otel-collector` (`sumologic` 4.18.0, kind `OpenTelemetryCollector`, `opentelemetry.io/v1alpha1`) is the only real
-OpenTelemetry Collector component available upstream — there is no dedicated OTel model. `kube-prometheus-stack`
-89.2.2 supplies the Prometheus Operator CRDs.
+`otel-collector` (`kubernetes` v1.37.1, kind `Deployment`, `apps/v1`) runs the OpenTelemetry Collector. There is
+no dedicated OTel model, and the catalog's only `OpenTelemetryCollector` CRD lives in the `sumologic` model,
+which the registry does not ship — so the collector is modelled as a plain, vendor-neutral `Deployment`.
+`kube-prometheus-stack` 89.2.2 supplies the Prometheus Operator CRDs.
 
 ```
 workloads → otel-collector → prometheus
@@ -128,9 +129,9 @@ workloads → otel-collector → prometheus
                               ← promrule-platform-slo (degradation SLOs)
 ```
 
-The `otel-collector → prometheus` edge has **no upstream blueprint**; `sumologic` ships no relationship
+The `otel-collector → prometheus` edge has **no upstream blueprint**; the collector ships no relationship
 definitions. It is hand-authored as `edge/non-binding/reference` with `metadata.isAnnotation: true`, because the
-OTel-Collector CRD's actual output path is a configuration concern, not something Meshery can verify. The
+collector's actual output path is a configuration concern, not something Meshery can verify. The
 `prometheus → sm-platform` and `sm-platform → service` edges **do** have real blueprints.
 
 Grafana is deliberately absent. See `UNSUPPORTED_CONCEPTS.md` §5 and ADR-007.
