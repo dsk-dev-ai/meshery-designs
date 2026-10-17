@@ -240,38 +240,42 @@ blueprint-backed.
 
 ---
 
-## ADR-010 — Use `sumologic`'s `OpenTelemetryCollector`, with provenance disclosed
+## ADR-010 — Represent the OpenTelemetry Collector as a `kubernetes` `Deployment`
 
 **Context.** Layer 10 requires OpenTelemetry. A search of all 477 models found real
 `OpenTelemetryCollector` components in exactly one place: `sumologic` 4.18.0. Also available:
 `MeshOpenTelemetryBackend` (`kuma`, `kong-mesh` — mesh-scoped, not a collector) and
-`AWS Distro for OpenTelemetry` (`aws` — cloud-specific). `istio-base` and `kiae` have a `Telemetry` component
-that is an Istio/Kiali tracing config, not a collector.
+`AWS Distro for OpenTelemetry` (`aws` — cloud-specific).
 
-**Decision.** Use `sumologic` 4.18.0 `OpenTelemetryCollector`
-(`kind: OpenTelemetryCollector`, `component.version: opentelemetry.io/v1alpha1`, `isNamespaced: true`,
-`status: enabled`). Disclose the model provenance in `COMPONENT_INVENTORY.md` and in the component's
-`description`.
+**Superseded decision.** Use `sumologic` 4.18.0 `OpenTelemetryCollector` and disclose the provenance in
+`COMPONENT_INVENTORY.md` and the component's `description`.
+
+**Why superseded.** The `sumologic` model is not shipped by the Meshery registry, so the
+`OpenTelemetryCollector` component cannot be resolved at deploy/dry-run time: any design referencing it
+fails with `could not find component with name: OpenTelemetryCollector, model: sumologic`. Verified against
+the registry — `kubernetes`, `meshery-core`, `meshery-operator` and `kube-prometheus-stack` are present,
+`sumologic` is not.
+
+**Current decision.** Declare `otel-collector` as a `kubernetes` v1.37.1 `Deployment` (`apps/v1`) with a
+minimal `configuration`. A `Deployment` is the portable, vendor-neutral way to run the collector and is
+always resolvable.
 
 **Alternatives rejected.**
 - *A dedicated OTel model.* Rejected: none exists. Creating one is out of scope and would be inventing a model.
 - *`MeshOpenTelemetryBackend` from `kuma`.* Rejected: it is a Kuma mesh resource describing where a mesh sends
-  traces. It is not a collector and cannot receive, process, or export telemetry. Using it would be a category
-  error.
-- *A bare `kubernetes` `Deployment` running a collector.* Rejected: that would assert a workload with no
-  upstream CRD, which is the fabrication ADR-002 prohibits. The CRD is preferable because it is real and
-  declared in its own right.
-- *Drop OpenTelemetry and keep only Prometheus.* Rejected: layer 10 explicitly requires OpenTelemetry, and
-  `OpenTelemetryCollector` is genuinely available.
+  traces, not a collector.
+- *Keep the `sumologic` CRD and document the failure.* Rejected: it makes dry-run and deploy impossible.
+- *A `meshery-core` `GenericNode` annotation.* Rejected: the collector is a real deployable workload, so a
+  native kind is more faithful; it also keeps the native/annotation split at 40/26.
 
-**Consequences.** The design's telemetry model is tied to a model published by an observability vendor. This is
-acceptable because the component is the upstream `opentelemetry.io` CRD and is vendor-neutral in substance. It
-must be disclosed, not hidden — hence the `description` on the component and the ADR.
+**Consequence.** ADR-002's prohibition on fabricating CRDs is not engaged: a `Deployment` is a real
+upstream kind, and the design claims no CRD it cannot back. The collector's model provenance is no longer
+sumologic; the rationale is carried in the component's `description`.
 
-**Consequence for relationships.** `sumologic` ships no `relationships/` directory — verified: the model contains
-only `components/` and `model.json` — so the `otel-collector → prometheus` edge has no blueprint. Hand-authored as
-A-9. For the provenance tally it is counted once, as class **A** (annotation-to-native correspondence), with its
-hand-authored nature recorded alongside rather than double-counted. See `RELATIONSHIP_MATRIX.md` §9 and §11.
+**Consequence for relationships.** The `otel-collector → prometheus` edge still has no blueprint (the
+collector ships none), so it remains hand-authored as A-9. For the provenance tally it is counted once, as
+class **A** (annotation-to-native correspondence), with its hand-authored nature recorded alongside rather
+than double-counted. See `RELATIONSHIP_MATRIX.md` §9 and §11.
 
 ---
 
@@ -351,24 +355,23 @@ descriptions. Accepted as the better trade: explicit and short beats exhaustive 
 
 ## ADR-014 — Declare `components.meshery.io/v1beta2` uniformly
 
-**Context.** The catalog is internally inconsistent. Measured across four models:
+**Context.** The catalog is internally inconsistent. Measured across the three models used here:
 `kubernetes` v1.37.1 → all 158 components declare `components.meshery.io/v1beta2`;
-`kube-prometheus-stack` 89.2.2 → all 10 declare `v1beta2`; but `meshery-core` 0.7.2 → all 18 declare `v1beta1`;
-`sumologic` 4.18.0 → all 12 declare `v1beta1`. Meanwhile all 180 non-empty catalog designs declare `v1beta1`
-components.
+`kube-prometheus-stack` 89.2.2 → all 10 declare `v1beta2`; but `meshery-core` 0.7.2 → all 18 declare `v1beta1`.
+Meanwhile all 180 non-empty catalog designs declare `v1beta1` components.
 
 **Decision.** Declare `components.meshery.io/v1beta2` on every component in the design, including those sourced
-from `meshery-core` and `sumologic`, whose catalog files say `v1beta1`.
+from `meshery-core`, whose catalog files say `v1beta1`.
 
 **Alternatives rejected.**
 - *Mirror each source model's declaration.* Rejected: it would produce a design where the component schema version
-  varies by which model a concept came from, for no semantic reason. `meshery-core` and `sumologic` are simply
-  stale relative to `kubernetes`.
+  varies by which model a concept came from, for no semantic reason. `meshery-core` is simply stale relative to
+  `kubernetes`.
 - *Use `v1beta1` throughout to match the catalog corpus.* Rejected: the v1beta3 design schema `$ref`s
   `v1beta2/component` and `component.yaml` sets `default: components.meshery.io/v1beta2`. Declaring `v1beta1`
   against a v1beta2 `$ref` is a self-inconsistency.
 
-**Consequences.** Component entries diverge from their source catalog file in two models. `schemaVersion` is a
+**Consequences.** Component entries diverge from their source catalog file in one model (`meshery-core`). `schemaVersion` is a
 free `VersionString` in the schema (not an enum), so both values validate, and the v1beta3 design references the
 v1beta2 construct regardless. Uniform v1beta2 is forward-consistent.
 

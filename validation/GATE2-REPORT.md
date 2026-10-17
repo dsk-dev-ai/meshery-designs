@@ -5,6 +5,13 @@ Artifact under test: `../generated/design.yml` (unmodified; md5 `6aead397280a3a6
 Probe: `tools/gate2/` — `meshkit/encoding.Unmarshal` → `design.PatternFile` → `encoding.Marshal`
 Assertions: `tools/gate2/assertions.py` (14 checks, extends the plan's six)
 
+> **Artifact revision note.** This report documents the artifact as of md5
+> `6aead397280a3a6a34780b5a0db009fd`. The artifact has since been regenerated with two
+> component-kind fixes that change no structural counts (66 components / 113 relationships,
+> 83/30 patch split, 226 selectors, 166 patch fields, provenance B56/H21/C27/A9):
+> `Environment` → `Section`, and `sumologic` `OpenTelemetryCollector` → kubernetes
+> `Deployment`. Every offline conclusion in this report is unaffected by those swaps.
+
 ## Verdict: **FAIL**
 
 13 of 14 assertions pass. **Assertion 6 fails**: the round-tripped document has **1001**

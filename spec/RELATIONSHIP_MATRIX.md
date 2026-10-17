@@ -316,7 +316,7 @@ annotation layer floats free of the infrastructure. All `edge` / `non-binding` /
 | A-6 | `trust-boundary` | `ingress-ai-platform` | The boundary is enforced at the ingress. |
 | A-7 | `policy-boundary` | `vap-required-labels` | The boundary has one real enforcement point. |
 | A-8 | `degradation-controller` | `promrule-platform-slo` | Degradation is detected by the SLO rules. |
-| A-9 | `otel-collector` | `prometheus` | Telemetry pipeline handoff. **Provenance H as well as A** — `sumologic` ships no relationship blueprints at all, so both the triple and the edge are hand-authored. |
+| A-9 | `otel-collector` | `prometheus` | Telemetry pipeline handoff. **Provenance H as well as A** — the collector ships no relationship blueprints at all, so both the triple and the edge are hand-authored. |
 
 ---
 

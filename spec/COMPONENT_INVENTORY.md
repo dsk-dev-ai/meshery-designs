@@ -10,11 +10,10 @@ Model versions used:
 
 | Model | Version | Components used |
 |---|---|---|
-| `kubernetes` | `v1.37.1` / `v1.0.0` | 18 distinct kinds, 33 instances |
-| `meshery-core` | `0.7.2` / `v1.0.0` | 5 distinct kinds, 26 instances |
+| `kubernetes` | `v1.37.1` / `v1.0.0` | 18 distinct kinds, 34 instances |
+| `meshery-core` | `0.7.2` / `v1.0.0` | 4 distinct kinds, 26 instances |
 | `meshery-operator` | `1.0.70` / `v1.0.0` | `MeshSync`, `Broker` |
 | `kube-prometheus-stack` | `89.2.2` / `v1.0.0` | `Prometheus`, `ServiceMonitor`, `Alertmanager`, `PrometheusRule` |
-| `sumologic` | `4.18.0` / `v1.0.0` | `OpenTelemetryCollector` |
 
 ---
 
@@ -286,17 +285,19 @@ Model versions used:
 ## Group 5 — Observability (layer 10)
 
 ### `otel-collector`
-- **Model:** `sumologic` 4.18.0 · **Kind:** `OpenTelemetryCollector` (`opentelemetry.io/v1alpha1`)
+- **Model:** `kubernetes` v1.37.1 · **Kind:** `Deployment` (`apps/v1`)
 - **Class:** Native
-- **Source:** `models/sumologic/4.18.0/v1.0.0/components/OpenTelemetryCollector.json` (`isNamespaced: true`,
+- **Source:** `models/kubernetes/v1.37.1/v1.0.0/components/Deployment.json` (`isNamespaced: true`,
   `status: enabled`)
-- **Purpose:** Receives, processes, and exports traces and metrics from every namespace.
-- **Why it exists:** Layer 10 requires OpenTelemetry. `sumologic` 4.18.0 is the **only** model in the 477-model
-  catalog that provides a real `OpenTelemetryCollector` component. Using it is honest; it is a genuine upstream
-  CRD, and the `sumologic` provenance is disclosed rather than hidden.
+- **Purpose:** Runs the OpenTelemetry Collector — receives, processes, and exports traces and metrics
+  from every namespace.
+- **Why this kind:** Layer 10 requires OpenTelemetry. The **only** catalog `OpenTelemetryCollector` CRD
+  lives in the `sumologic` model, which the registry does not ship, so dry-run cannot resolve it (see
+  `docs/TROUBLESHOOTING.md`). A `kubernetes` `Deployment` is the portable, vendor-neutral way to run the
+  collector and is always resolvable.
 - **Dependencies:** `ns-ai-observability`
 - **Expected relationships:** `hierarchical/parent/inventory` → `ns-ai-observability`; hand-authored annotation-level
-  `edge/non-binding/reference` → `prometheus` (`sumologic` ships no relationship blueprints)
+  `edge/non-binding/reference` → `prometheus` (no relationship blueprints exist for this collector)
 
 ### `prometheus`
 - **Model:** `kube-prometheus-stack` 89.2.2 · **Kind:** `Prometheus` (`monitoring.coreos.com/v1`)
@@ -688,19 +689,19 @@ Every component in this document appears in exactly one of these rows, and the r
 
 | Model | Native | Annotation | Total |
 |---|---|---|---|
-| `kubernetes` v1.37.1 | 33 | 0 | 33 |
+| `kubernetes` v1.37.1 | 34 | 0 | 34 |
 | `meshery-core` 0.7.2 | 0 | 26 | 26 |
 | `meshery-operator` 1.0.70 | 2 | 0 | 2 |
 | `kube-prometheus-stack` 89.2.2 | 4 | 0 | 4 |
-| `sumologic` 4.18.0 | 1 | 0 | 1 |
 | **Total** | **40** | **26** | **66** |
 
 `meshery-core` 26 breaks down as: 14 `GenericNode`, 9 `Section`, 2 `Comment`, 1 `Credential`.
 
-`kubernetes` 33 breaks down as: `Namespace`×4, `ServiceAccount`×2, `Role`×2, `RoleBinding`×2, `Deployment`,
-`Service`×3, `Ingress`, `ConfigMap`×2, `Secret`×3, `StatefulSet`×2, `PersistentVolumeClaim`×2,
-`NetworkPolicy`×2, `ResourceQuota`, `LimitRange`, `ValidatingAdmissionPolicy`,
-`ValidatingAdmissionPolicyBinding`, `PriorityClass`, `PodDisruptionBudget`×2.
+`kubernetes` 34 breaks down as: `Namespace`×4, `ServiceAccount`×2, `Role`×2, `RoleBinding`×2,
+`Deployment`×2, `Service`×3, `Ingress`, `ConfigMap`×2, `Secret`×3, `StatefulSet`×2,
+`PersistentVolumeClaim`×2, `NetworkPolicy`×2, `ResourceQuota`, `LimitRange`,
+`ValidatingAdmissionPolicy`, `ValidatingAdmissionPolicyBinding`, `PriorityClass`,
+`PodDisruptionBudget`×2.
 
 ### Why no component overrides an upstream value
 

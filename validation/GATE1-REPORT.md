@@ -1,7 +1,7 @@
 # Gate 1 report — `generated/design.yml`
 
-Artifact: `../generated/design.yml` (247597 bytes, 66 components, 113 relationships;
-md5 `6aead397280a3a6a34780b5a0db009fd`)
+Artifact: `../generated/design.yml` (248236 bytes, 66 components, 113 relationships;
+md5 `7338b027b37efca726513372bd485945`)
 Schema: `meshery/schemas@v1.3.37` — `constructs/v1beta3/design/design.yaml`, **unmodified**
 Harness: `tools/gate1.py` (bundles external `$ref`s by filesystem path, strips the flattened
 upstream `$id` values **in memory only**, runs Draft-07 validation)
@@ -43,15 +43,15 @@ loss rather than a design choice.
 
 | # | Catalog / blueprint | Shipped schema | Resolution | Affected |
 |---|---|---|---|---|
-| 1 | `displayName` with spaces (e.g. `API Group`) | `InputString` `^[a-zA-Z_][a-zA-Z0-9_-]*[a-zA-Z0-9_]$` | Emitted the component `kind`. Stripping spaces reproduces `kind` **exactly in all 66 cases**; the generator now *raises* if it ever would not. | 22 |
-| 2 | `model.metadata.capabilities: null` | typed as an array | `metadata` omitted from the model block (not required). Same information is carried on each component's `styles`. | 5 models |
-| 3 | `model.metadata.shape: "circle"` | not in the 25-value `Shape` enum | same as #2 | 5 models |
-| 4 | `model.metadata.svgColor: ""` / no `svgWhite` (sumologic) | both `required`, `minLength: 1` | same as #2 | 1 model |
+| 1 | `displayName` with spaces (e.g. `API Group`) | `InputString` `^[a-zA-Z_][a-zA-Z0-9_-]*[a-zA-Z0-9_]$` | Emitted the component `kind`. Stripping spaces reproduces `kind` **exactly in all 66 cases**; the generator now *raises* if it ever would not. | 21 |
+| 2 | `model.metadata.capabilities: null` | typed as an array | `metadata` omitted from the model block (not required). Same information is carried on each component's `styles`. | 4 models |
+| 3 | `model.metadata.shape: "circle"` | not in the 25-value `Shape` enum | same as #2 | 4 models |
+| 4 | `model.metadata.svgColor: ""` / no `svgWhite` (sumologic) | both `required`, `minLength: 1` | same as #2 | n/a — the design no longer uses `sumologic` |
 | 5 | `registrant.deleted_at: null` | typed as a string | Null-valued keys dropped | — |
-| 6 | `registrant.sub_type` (sumologic only) | requires `subType`, rejects unknown keys | Spelling normalised | 1 model |
+| 6 | `registrant.sub_type` (sumologic only) | requires `subType`, rejects unknown keys | Spelling normalised | n/a — the design no longer uses `sumologic` |
 | 7 | `match` blocks with `id: null` | typed as a string | Null keys dropped (`null` and absent mean the same here) | 2 relationships |
 | 8 | blueprint `model` block with empty `displayName`/`version` | both `minLength: 1` | Reference rebuilt from the catalog `model.json` the blueprint names | all 78 blueprint-backed edges |
-| 9 | `styles.shape` `circle` (25), `shield` (4), `right-rhomboid` (1) | 25-value `Shape` enum | `circle`→`ellipse`, `right-rhomboid`→`rhomboid` (exact suffix match), `shield`→`pentagon`. An unmapped shape now raises instead of silently falling back. | 30 |
+| 9 | `styles.shape` `circle` (24), `shield` (4), `right-rhomboid` (1) | 25-value `Shape` enum | `circle`→`ellipse`, `right-rhomboid`→`rhomboid` (exact suffix match), `shield`→`pentagon`. An unmapped shape now raises instead of silently falling back. | 29 |
 | 10 | `styles.svg*` full inline SVG, often >10 KB | `maxLength: 500` | Emitted empty when over the cap, matching the shipped reference-design convention. 36 values that fit are kept verbatim. | 106 fields |
 | 11 | `subCategory: "App Definition and Development"` (meshery-operator) | not in the 46-value `SubCategory` enum | The schema's own documented default `Uncategorized` | 2 components |
 
@@ -73,7 +73,7 @@ the places a reviewer should push back if the loss matters:
   catalog* — they are the hand-authored `meshery-core` kinds (`Section`, `GenericNode`,
   `Credential`). Net: 0 of 66 components carry a schema. This matches shipped
   convention, so it is expected to be harmless, but it is total loss.
-- **`model.metadata` dropped from all 5 model blocks** (see #2–#4).
+- **`model.metadata` dropped from all 4 model blocks** (see #2–#4).
 - **`styles.svg*` emptied on 106 fields** (see #10); icons will fall back to the UI default.
 - **`meshery-operator` components reclassified to `subCategory: Uncategorized`** (see #11).
   The catalog's real value is not lost from the repo — it is in
@@ -121,7 +121,7 @@ python3 verify.py ../../generated/design.yml      # 28 structural/fidelity check
 
 `gen.py` reads the catalog at the pinned model versions
 (`kubernetes` v1.37.1, `meshery-core` 0.7.2, `meshery-operator` 1.0.70,
-`kube-prometheus-stack` 89.2.2, `sumologic` 4.18.0) from
+`kube-prometheus-stack` 89.2.2) from
 `/home/dsk/opensource_new_programs/meshery/models`. Component and relationship ids are
 deterministic UUID5 values, so regeneration is byte-stable. The generator is the authority
 for the artifact: `design.yml` must not be hand-edited.
