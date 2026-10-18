@@ -29,7 +29,7 @@ The design is split into two kinds of component, and the split is the whole poin
 
 | Class | Meaning | `metadata.isAnnotation` | Deployable |
 |---|---|---|---|
-| **Native** | A capability that exists as a real Meshery model component, backed by a real upstream API or CRD | `false` | Yes |
+| **Native** | A capability that exists as a real Meshery model component, backed by a real upstream API or CRD | `false` | Yes — all 40 apply to a live cluster with admission-valid placeholder values (ADR-015, `validation/GATE9-REPORT.md`) |
 | **Annotation** | An architectural concept that has no native model, expressed with `meshery-core` | `true` | No — descriptive only |
 
 Every annotation in this design states an architectural intent that a human or a future implementation will

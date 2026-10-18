@@ -23,7 +23,7 @@ The current design contains:
 - 226 selector entries
 - 166 patch entries
 - 31 namespace mutator relationships
-- 5 referenced models
+- 4 referenced models (`kubernetes`, `meshery-core`, `meshery-operator`, `kube-prometheus-stack`)
 
 The design uses four namespaces:
 
@@ -38,8 +38,11 @@ The design uses four namespaces:
 generated/     Generated Meshery design artifact
 spec/          Architecture, components, relationships and decisions
 reports/       Research and reconnaissance
-validation/   Validation gates and reproducible tooling
-docs/         User-facing documentation
+validation/    Validation gates and reproducible tooling
+docs/          User-facing documentation
+tests/         Reproducibility and harness tests
+```
+
 ## Tests
 
 Run the comprehensive validation tests:
@@ -53,3 +56,18 @@ Or run individual tests:
 ```bash
 for f in tests/test_*.py; do python3 $f; done
 ```
+
+## Deploy
+
+The design deploys to a live Kubernetes cluster: **40/40 components apply with zero failures** on a
+`kind` cluster running the design's native CRDs. See `validation/GATE9-REPORT.md` for the evidence.
+
+```bash
+bash deploy.sh
+```
+
+`deploy.sh` regenerates the artifact, runs every offline gate, deploys through a local Meshery
+server, and asserts the 40/40 result. `docs/QUICKSTART.md` walks through the same flow.
+
+> The component configurations are admission-valid **placeholders** (pause image, default ports,
+> 1Gi PVCs, inert policy/rule) so the artifact applies in any cluster. See ADR-015.

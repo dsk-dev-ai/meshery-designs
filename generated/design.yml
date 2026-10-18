@@ -12,7 +12,7 @@ components:
 - id: e2ab8bb6-cbf7-5a90-86c5-b5d751962108
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Namespace
+  displayName: ns-ai-control
   description: Isolated namespace holding the Meshery control plane, its broker, its GitOps sync, and
     its ingress.
   format: JSON
@@ -67,6 +67,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: ns-ai-control
       labels: {}
       annotations: {}
   component:
@@ -89,7 +90,7 @@ components:
 - id: c9ab01cc-91a2-57d7-ba59-c4c13c3582e4
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Namespace
+  displayName: ns-ai-runtime
   description: Holds the runtime configuration contract and the quota and limit objects that govern runtime
     workloads.
   format: JSON
@@ -143,6 +144,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: ns-ai-runtime
       labels: {}
       annotations: {}
   component:
@@ -165,7 +167,7 @@ components:
 - id: 0ff898f6-a545-5a5c-ab67-02cf4ba22594
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Namespace
+  displayName: ns-ai-state
   description: Holds both stateful stores, their Services, their PersistentVolumeClaims, and their credentials.
   format: JSON
   status: enabled
@@ -218,6 +220,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: ns-ai-state
       labels: {}
       annotations: {}
   component:
@@ -240,7 +243,7 @@ components:
 - id: 9b728d1c-4a01-50a2-9d09-e5b882951d2c
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Namespace
+  displayName: ns-ai-observability
   description: Holds the OpenTelemetry Collector and the full Prometheus Operator CRD set.
   format: JSON
   status: enabled
@@ -293,6 +296,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: ns-ai-observability
       labels: {}
       annotations: {}
   component:
@@ -315,7 +319,7 @@ components:
 - id: 331b0ad0-0b84-51e7-b865-3330f37ca569
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: env-production
   description: 'Declares the target environment grouping for the whole design. Expressed with meshery-core''s
     registered `Section` annotation: the catalog''s `Environment` component is never registered because
     it carries an empty `component.schema` with `metadata.isAnnotation: false`, which ComponentDefinition.Create
@@ -372,6 +376,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: env-production
       labels: {}
       annotations: {}
   component:
@@ -396,7 +401,7 @@ components:
 - id: ce2a979e-5a8e-596a-83c1-7f2913ed38a3
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: MeshSync
+  displayName: meshsync
   description: GitOps synchronisation resource - reconciles desired design state against the cluster.
   format: JSON
   status: enabled
@@ -450,8 +455,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: meshsync
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
   component:
     version: meshery.io/v1alpha1
     kind: MeshSync
@@ -466,7 +473,7 @@ components:
 - id: 5d252a3b-1b26-5347-98db-5034535b7aab
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Broker
+  displayName: broker
   description: Declares the message-broker endpoint the operator components talk to.
   format: JSON
   status: enabled
@@ -519,8 +526,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: broker
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
   component:
     version: meshery.io/v1alpha1
     kind: Broker
@@ -535,7 +544,7 @@ components:
 - id: 1f9852e8-2638-5742-bd52-099ed58a7459
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Deployment
+  displayName: deploy-meshery-control
   description: The workload slot for the Meshery control-plane server. Configuration is deliberately minimal;
     image selection happens at deploy time.
   format: JSON
@@ -589,8 +598,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: deploy-meshery-control
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
     spec:
       selector:
         matchLabels:
@@ -602,6 +613,7 @@ components:
         spec:
           containers:
           - name: meshery-control
+            image: registry.k8s.io/pause:3.9
   component:
     version: apps/v1
     kind: Deployment
@@ -619,7 +631,7 @@ components:
 - id: 8faffa35-1917-5e64-8cd5-57d734ccfa73
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Service
+  displayName: svc-meshery-control
   description: Cluster-internal endpoint for the control-plane server.
   format: JSON
   status: enabled
@@ -672,8 +684,15 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: svc-meshery-control
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
+    spec:
+      ports:
+      - name: http
+        port: 80
+        targetPort: 8080
   component:
     version: v1
     kind: Service
@@ -690,7 +709,7 @@ components:
 - id: 402e2057-09a9-565e-91e3-cd02f54eb7b9
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Ingress
+  displayName: ingress-ai-platform
   description: North-south entry point terminating external access to the control plane.
   format: JSON
   status: enabled
@@ -743,8 +762,22 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: ingress-ai-platform
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
+    spec:
+      rules:
+      - host: ai-platform.local
+        http:
+          paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-meshery-control
+                port:
+                  number: 80
   component:
     version: networking.k8s.io/v1
     kind: Ingress
@@ -759,7 +792,7 @@ components:
 - id: b72a226c-a9e6-5aaf-b479-45406a2febc6
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: meshery-control-plane
   description: 'Architectural node naming the Meshery design-and-control layer as a whole. Annotation:
     the Meshery server itself has no model in the catalog.'
   format: JSON
@@ -813,6 +846,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: meshery-control-plane
       labels: {}
       annotations: {}
   component:
@@ -844,7 +878,7 @@ components:
 - id: e869b471-daa2-5557-aa72-3eece82b2644
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: ConfigMap
+  displayName: cm-agent-runtime
   description: 'Non-sensitive configuration contract for the agent runtime: timeouts, concurrency limits,
     grounding requirements. This is what keeps the agent-runtime annotation from being content-free.'
   format: JSON
@@ -898,8 +932,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: cm-agent-runtime
       labels: {}
       annotations: {}
+      namespace: ns-ai-runtime
   component:
     version: v1
     kind: ConfigMap
@@ -914,7 +950,7 @@ components:
 - id: 45c4a4b1-e84b-58d8-9aaa-8a5b6482e8df
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: ConfigMap
+  displayName: cm-model-router
   description: 'Non-sensitive routing policy: tier preference order, fallback triggers, cost and privacy
     ceilings.'
   format: JSON
@@ -968,8 +1004,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: cm-model-router
       labels: {}
       annotations: {}
+      namespace: ns-ai-runtime
   component:
     version: v1
     kind: ConfigMap
@@ -984,7 +1022,7 @@ components:
 - id: c4a5cb85-ebe0-5d50-9a16-8dc290369f5f
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Secret
+  displayName: sec-broker-endpoint
   description: Broker connection credentials for meshsync and broker.
   format: JSON
   status: enabled
@@ -1037,8 +1075,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-broker-endpoint
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
   component:
     version: v1
     kind: Secret
@@ -1056,7 +1096,7 @@ components:
 - id: 1caa5e3d-1b98-5de8-81c8-9d85981b7546
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Secret
+  displayName: sec-registry-creds
   description: Credentials for the model registry referenced by layer 5 grounding.
   format: JSON
   status: enabled
@@ -1109,8 +1149,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-registry-creds
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
   component:
     version: v1
     kind: Secret
@@ -1128,7 +1170,7 @@ components:
 - id: f83267d3-5a4d-596a-87dd-3bf2670b4895
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Secret
+  displayName: sec-state-creds
   description: PostgreSQL and Redis credentials, kept in the state namespace so they sit inside the default-deny
     posture.
   format: JSON
@@ -1182,8 +1224,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-state-creds
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
   component:
     version: v1
     kind: Secret
@@ -1201,7 +1245,7 @@ components:
 - id: 3e7e2036-596a-52a8-a2e8-32af6d3f8457
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Credential
+  displayName: registry-credential
   description: Names the credential that the model registry requires, from the design's point of view.
     Pairs with the real sec-registry-creds.
   format: JSON
@@ -1255,6 +1299,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: registry-credential
       labels: {}
       annotations: {}
   component:
@@ -1272,7 +1317,7 @@ components:
 - id: a3667d58-ed1b-5ec5-ae10-40fd00f5c682
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: StatefulSet
+  displayName: sts-redis
   description: Session, cache, and agent short-term memory store.
   format: JSON
   status: enabled
@@ -1325,8 +1370,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sts-redis
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
     spec:
       serviceName: redis
       selector:
@@ -1339,6 +1386,7 @@ components:
         spec:
           containers:
           - name: redis
+            image: registry.k8s.io/pause:3.9
   component:
     version: apps/v1
     kind: StatefulSet
@@ -1356,7 +1404,7 @@ components:
 - id: bc1314bf-d776-5f48-befd-cfeded4711a6
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Service
+  displayName: svc-redis
   description: Cluster-internal endpoint for the Redis store.
   format: JSON
   status: enabled
@@ -1409,8 +1457,15 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: svc-redis
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
+    spec:
+      ports:
+      - name: redis
+        port: 6379
+        targetPort: 6379
   component:
     version: v1
     kind: Service
@@ -1427,7 +1482,7 @@ components:
 - id: 81ba6ca4-4f9b-51ee-9a88-8107a40efc87
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: PersistentVolumeClaim
+  displayName: pvc-redis
   description: Durable volume claim for the Redis store, so session state survives pod replacement.
   format: JSON
   status: enabled
@@ -1480,8 +1535,16 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: pvc-redis
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
   component:
     version: v1
     kind: PersistentVolumeClaim
@@ -1496,7 +1559,7 @@ components:
 - id: f712b974-bded-54ca-9741-8c3842346b96
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: StatefulSet
+  displayName: sts-postgres
   description: 'Durable store for grounding artefacts: model registry entries, context records, policy
     versions.'
   format: JSON
@@ -1550,8 +1613,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sts-postgres
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
     spec:
       serviceName: postgres
       selector:
@@ -1564,6 +1629,7 @@ components:
         spec:
           containers:
           - name: postgres
+            image: registry.k8s.io/pause:3.9
   component:
     version: apps/v1
     kind: StatefulSet
@@ -1581,7 +1647,7 @@ components:
 - id: a503c7f9-7f29-5541-970b-ae1f85b08cb8
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Service
+  displayName: svc-postgres
   description: Cluster-internal endpoint for the PostgreSQL store.
   format: JSON
   status: enabled
@@ -1634,8 +1700,15 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: svc-postgres
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
+    spec:
+      ports:
+      - name: postgres
+        port: 5432
+        targetPort: 5432
   component:
     version: v1
     kind: Service
@@ -1652,7 +1725,7 @@ components:
 - id: 434226aa-c060-59ed-9000-a79791a400d6
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: PersistentVolumeClaim
+  displayName: pvc-postgres
   description: Durable volume claim for the PostgreSQL store, so grounding records survive pod replacement.
   format: JSON
   status: enabled
@@ -1705,8 +1778,16 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: pvc-postgres
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
   component:
     version: v1
     kind: PersistentVolumeClaim
@@ -1721,7 +1802,7 @@ components:
 - id: 14cce6f4-3a22-59f0-9ecf-92e4ee4fdc2a
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Deployment
+  displayName: otel-collector
   description: 'Runs the OpenTelemetry Collector. Modelled as a plain kubernetes Deployment: the only
     catalog OpenTelemetryCollector CRD lives in the `sumologic` model, which the registry does not ship,
     so it cannot be resolved at deploy time. A Deployment is the portable, vendor-neutral way to run the
@@ -1777,8 +1858,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: otel-collector
       labels: {}
       annotations: {}
+      namespace: ns-ai-observability
     spec:
       selector:
         matchLabels:
@@ -1790,6 +1873,7 @@ components:
         spec:
           containers:
           - name: otel-collector
+            image: registry.k8s.io/pause:3.9
   component:
     version: apps/v1
     kind: Deployment
@@ -1807,7 +1891,7 @@ components:
 - id: b540c6ff-cf1c-5503-a63d-418655b5040f
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Prometheus
+  displayName: prometheus
   description: Metrics store and evaluation engine for the platform.
   format: JSON
   status: enabled
@@ -1862,8 +1946,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: prometheus
       labels: {}
       annotations: {}
+      namespace: ns-ai-observability
     spec: {}
   component:
     version: monitoring.coreos.com/v1
@@ -1879,7 +1965,7 @@ components:
 - id: cd005d83-ea1f-5e49-bbca-37bb9a9ecfed
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: ServiceMonitor
+  displayName: sm-platform
   description: Declares the scrape targets for the control plane and both state stores.
   format: JSON
   status: enabled
@@ -1933,8 +2019,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sm-platform
       labels: {}
       annotations: {}
+      namespace: ns-ai-observability
     spec:
       selector:
         matchLabels:
@@ -1955,7 +2043,7 @@ components:
 - id: 8c183854-165d-5253-a3f9-f42f54260825
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Alertmanager
+  displayName: alertmanager
   description: Routes alerts raised by promrule-platform-slo.
   format: JSON
   status: enabled
@@ -2009,8 +2097,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: alertmanager
       labels: {}
       annotations: {}
+      namespace: ns-ai-observability
     spec: {}
   component:
     version: monitoring.coreos.com/v1
@@ -2026,7 +2116,7 @@ components:
 - id: 9fc66572-889e-55e6-95db-611b6a9e7373
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: PrometheusRule
+  displayName: promrule-platform-slo
   description: Alerting rules covering fallback-tier exhaustion, store unavailability, and control-plane
     health.
   format: JSON
@@ -2081,8 +2171,21 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: promrule-platform-slo
       labels: {}
       annotations: {}
+      namespace: ns-ai-observability
+    spec:
+      groups:
+      - name: ai-platform-slo
+        rules:
+        - alert: PlaceholderSLO
+          expr: vector(0)
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: Placeholder SLO rule; real expressions are supplied at deploy time.
   component:
     version: monitoring.coreos.com/v1
     kind: PrometheusRule
@@ -2097,7 +2200,7 @@ components:
 - id: 12021055-0473-54a4-a650-bb7276b01917
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: ServiceAccount
+  displayName: sa-ai-control
   description: Workload identity for the control-plane server, so the pod does not run as the namespace-wide
     default.
   format: JSON
@@ -2151,8 +2254,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sa-ai-control
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
   component:
     version: v1
     kind: ServiceAccount
@@ -2167,7 +2272,7 @@ components:
 - id: f44c824b-dacb-568b-b29a-6816e0e2f17e
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Role
+  displayName: role-ai-control
   description: 'Least-privilege permissions for the control-plane identity: read designs, read broker
     config.'
   format: JSON
@@ -2221,8 +2326,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: role-ai-control
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
   component:
     version: rbac.authorization.k8s.io/v1
     kind: Role
@@ -2239,7 +2346,7 @@ components:
 - id: bb49bdcc-aaf8-5630-bb93-8e281d9e3ae5
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: RoleBinding
+  displayName: rb-ai-control
   description: Binds role-ai-control to sa-ai-control.
   format: JSON
   status: enabled
@@ -2292,8 +2399,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: rb-ai-control
       labels: {}
       annotations: {}
+      namespace: ns-ai-control
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: Role
@@ -2314,7 +2423,7 @@ components:
 - id: 8794f64d-7e6f-5e03-bbb5-53f2e5992250
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: ServiceAccount
+  displayName: sa-ai-state
   description: Workload identity for both stateful stores; the stores must not run as default.
   format: JSON
   status: enabled
@@ -2367,8 +2476,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sa-ai-state
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
   component:
     version: v1
     kind: ServiceAccount
@@ -2383,7 +2494,7 @@ components:
 - id: b8b4edab-caea-5a45-88d7-b817f6e28f05
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Role
+  displayName: role-ai-state
   description: 'Least-privilege permissions for the state identity: read only its own Secrets and PVCs.'
   format: JSON
   status: enabled
@@ -2436,8 +2547,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: role-ai-state
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
   component:
     version: rbac.authorization.k8s.io/v1
     kind: Role
@@ -2454,7 +2567,7 @@ components:
 - id: 4f29e2fd-e223-5505-82a2-f0e1150d6f72
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: RoleBinding
+  displayName: rb-ai-state
   description: Binds role-ai-state to sa-ai-state.
   format: JSON
   status: enabled
@@ -2507,8 +2620,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: rb-ai-state
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: Role
@@ -2529,7 +2644,7 @@ components:
 - id: 08935853-d938-585a-99c8-cd1f642967be
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: NetworkPolicy
+  displayName: netpol-default-deny
   description: Deny-all ingress/egress baseline for the state and control namespaces. The two catalog
     firewall blueprints both target Pod, and this design declares no Pod components, so no edge is authored.
   format: JSON
@@ -2583,6 +2698,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: netpol-default-deny
       labels: {}
       annotations: {}
   component:
@@ -2599,7 +2715,7 @@ components:
 - id: cf30eeb1-f57b-534e-b0c6-88c15c758ed0
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: NetworkPolicy
+  displayName: netpol-ai-allowlist
   description: 'Explicit east-west permissions: control plane to stores, collector to workloads, Prometheus
     to scrape targets. Without allow-rules, default-deny leaves the platform uncommunicable.'
   format: JSON
@@ -2653,6 +2769,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: netpol-ai-allowlist
       labels: {}
       annotations: {}
   component:
@@ -2669,7 +2786,7 @@ components:
 - id: 479afef2-7fb1-51c6-a4f7-d47feab29f49
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: trust-boundary
   description: Names the boundary between the untrusted MCP ingress zone and the trusted platform zone.
   format: JSON
   status: enabled
@@ -2722,6 +2839,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: trust-boundary
       labels: {}
       annotations: {}
   component:
@@ -2753,7 +2871,7 @@ components:
 - id: 8632e5f1-4455-5a24-88ca-1e37c580613f
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: ValidatingAdmissionPolicy
+  displayName: vap-required-labels
   description: 'Admission policy requiring platform labels on workload resources. Evaluated in-process
     by the API server: no webhook, no operator, no external dependency.'
   format: JSON
@@ -2807,8 +2925,24 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: vap-required-labels
       labels: {}
       annotations: {}
+    spec:
+      matchConstraints:
+        resourceRules:
+        - apiGroups:
+          - '*'
+          apiVersions:
+          - '*'
+          operations:
+          - CREATE
+          - UPDATE
+          resources:
+          - '*'
+      validations:
+      - expression: 'true'
+      failurePolicy: Ignore
   component:
     version: admissionregistration.k8s.io/v1
     kind: ValidatingAdmissionPolicy
@@ -2841,7 +2975,7 @@ components:
 - id: b3c96680-fe14-54f2-b05d-d78c771ffffb
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: ValidatingAdmissionPolicyBinding
+  displayName: vapb-ai-runtime
   description: Binds vap-required-labels to the runtime and state namespaces, leaving the control plane
     exempt.
   format: JSON
@@ -2895,6 +3029,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: vapb-ai-runtime
       labels: {}
       annotations: {}
     spec:
@@ -2915,7 +3050,7 @@ components:
 - id: bd3310b6-60a3-5a42-8839-98927c434b0a
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: ResourceQuota
+  displayName: quota-ai-runtime
   description: Caps total CPU, memory, and pod count in the runtime namespace, so a runaway agent loop
     cannot exhaust the cluster.
   format: JSON
@@ -2969,8 +3104,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: quota-ai-runtime
       labels: {}
       annotations: {}
+      namespace: ns-ai-runtime
   component:
     version: v1
     kind: ResourceQuota
@@ -2985,7 +3122,7 @@ components:
 - id: b0797584-06b1-5dc9-8a47-308fd82421fb
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: LimitRange
+  displayName: limits-ai-runtime
   description: Supplies default CPU/memory requests and limits for containers lacking them, so pods are
     shaped before quota judges them.
   format: JSON
@@ -3039,8 +3176,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: limits-ai-runtime
       labels: {}
       annotations: {}
+      namespace: ns-ai-runtime
   component:
     version: v1
     kind: LimitRange
@@ -3055,7 +3194,7 @@ components:
 - id: 8a00ddd1-a076-572f-a021-63062feb36a8
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: policy-boundary
   description: The architectural choke point where a request is checked before any model tier is contacted.
   format: JSON
   status: enabled
@@ -3108,6 +3247,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: policy-boundary
       labels: {}
       annotations: {}
   component:
@@ -3139,7 +3279,7 @@ components:
 - id: fc9f12a2-d974-5a2d-a147-888c36ee18fb
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: grounding-validator
   description: Checks that a request is answerable from registered, permitted context before it reaches
     a tier, so the fallback ladder cannot become an accidental bypass.
   format: JSON
@@ -3193,6 +3333,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: grounding-validator
       labels: {}
       annotations: {}
   component:
@@ -3224,7 +3365,7 @@ components:
 - id: cc174c28-e5c1-51ae-b03a-58bf845946f4
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: PodDisruptionBudget
+  displayName: pdb-sts-redis
   description: Prevents voluntary eviction of Redis below its quorum during node drains and upgrades.
   format: JSON
   status: enabled
@@ -3277,8 +3418,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: pdb-sts-redis
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
   component:
     version: policy/v1
     kind: PodDisruptionBudget
@@ -3293,7 +3436,7 @@ components:
 - id: e424c405-2795-5068-a73e-4a2ff6bb3c6d
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: PodDisruptionBudget
+  displayName: pdb-sts-postgres
   description: Prevents voluntary eviction of PostgreSQL below its quorum.
   format: JSON
   status: enabled
@@ -3346,8 +3489,10 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: pdb-sts-postgres
       labels: {}
       annotations: {}
+      namespace: ns-ai-state
   component:
     version: policy/v1
     kind: PodDisruptionBudget
@@ -3362,7 +3507,7 @@ components:
 - id: 9c491a46-fb3c-5874-bd81-953ca87b49e1
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: PriorityClass
+  displayName: pc-ai-critical
   description: 'Marks control-plane and state workloads as high-priority during contention, so graceful
     degradation is meaningful: the surviving tiers win scheduling.'
   format: JSON
@@ -3416,6 +3561,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: pc-ai-critical
       labels: {}
       annotations: {}
   component:
@@ -3432,7 +3578,7 @@ components:
 - id: 8b814c3f-1a88-519e-989d-f8a408b80384
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: degradation-controller
   description: Defines the behaviour of the platform when tiers 1 and 2 are unavailable. This is a policy
     about behaviour under failure, which Kubernetes primitives cannot express.
   format: JSON
@@ -3486,6 +3632,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: degradation-controller
       labels: {}
       annotations: {}
   component:
@@ -3517,7 +3664,7 @@ components:
 - id: 12b65915-14b7-5129-ba4c-89ea4c193316
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: mcp-access-gateway
   description: The single entry point through which Model Context Protocol clients reach platform capabilities.
     meshery-mcp-server contains no source, no go.mod, no manifests and no image, so no deployable artifact
     is claimed here.
@@ -3572,6 +3719,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: mcp-access-gateway
       labels: {}
       annotations: {}
   component:
@@ -3603,7 +3751,7 @@ components:
 - id: 2ec8e438-c15e-5223-8fea-4b6b780aaf7c
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: agent-runtime
   description: 'Executes agent loops: plan, retrieve context, call tools, assemble responses. Its configuration
     contract is real (cm-agent-runtime).'
   format: JSON
@@ -3657,6 +3805,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: agent-runtime
       labels: {}
       annotations: {}
   component:
@@ -3688,7 +3837,7 @@ components:
 - id: 721d974f-fd00-5b68-8ec8-e0558cba4fb0
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: agent-tool-bridge
   description: The agent's egress path to external tools and data sources, kept separate so tool egress
     can be restricted independently of agent compute.
   format: JSON
@@ -3742,6 +3891,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: agent-tool-bridge
       labels: {}
       annotations: {}
   component:
@@ -3773,7 +3923,7 @@ components:
 - id: 3765d592-f3ff-5cb4-8b6a-7410af825cc4
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: model-router
   description: Selects which model tier serves a given request, based on policy, cost, privacy, and capacity.
     Its policy is real (cm-model-router).
   format: JSON
@@ -3827,6 +3977,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: model-router
       labels: {}
       annotations: {}
   component:
@@ -3858,7 +4009,7 @@ components:
 - id: 04273108-df39-51f2-b9ae-76ce5dbef43a
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: tier-cloud-managed
   description: Requests served by externally hosted, managed model endpoints. Highest capability, but
     network-dependent, cost-bearing, and a data-egress risk.
   format: JSON
@@ -3912,6 +4063,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: tier-cloud-managed
       labels: {}
       annotations: {}
   component:
@@ -3943,7 +4095,7 @@ components:
 - id: 96a614f1-823f-57f9-98d1-3260743cf97f
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: tier-local-hosted
   description: Requests served by model endpoints hosted inside the platform trust boundary. The privacy-preserving
     tier.
   format: JSON
@@ -3997,6 +4149,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: tier-local-hosted
       labels: {}
       annotations: {}
   component:
@@ -4028,7 +4181,7 @@ components:
 - id: 47609e0c-98d0-51fc-b11e-58c8371713a8
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: tier-offline-cached
   description: 'Requests answered from locally cached artefacts with no external call. The floor of the
     ladder: this is the tier that keeps the platform answering when the network is gone.'
   format: JSON
@@ -4082,6 +4235,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: tier-offline-cached
       labels: {}
       annotations: {}
   component:
@@ -4113,7 +4267,7 @@ components:
 - id: 32be07b6-c456-5938-9dc3-6210180f66fb
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: context-store
   description: Holds assembled, retrievable context for agent grounding. The durable half is real (sts-postgres).
   format: JSON
   status: enabled
@@ -4166,6 +4320,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: context-store
       labels: {}
       annotations: {}
   component:
@@ -4197,7 +4352,7 @@ components:
 - id: 64751509-5cbc-508f-9116-6ee47a7c937f
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: GenericNode
+  displayName: model-registry
   description: The authoritative list of model identities the platform may use, with their grounding metadata.
     Prevents the router from selecting an unregistered model.
   format: JSON
@@ -4251,6 +4406,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: model-registry
       labels: {}
       annotations: {}
   component:
@@ -4282,7 +4438,7 @@ components:
 - id: f4c22a30-6540-59f3-933e-31d3b1979981
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: sec-L1-mcp-access
   description: Layer 1 band - MCP access. Contains mcp-access-gateway.
   format: JSON
   status: enabled
@@ -4335,6 +4491,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-L1-mcp-access
       labels: {}
       annotations: {}
   component:
@@ -4359,7 +4516,7 @@ components:
 - id: 65e2eb28-fbc9-52f7-b7dc-e38719a6a2b3
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: sec-L2-agent-runtime
   description: Layer 2 band - agent runtime. Contains agent-runtime and agent-tool-bridge.
   format: JSON
   status: enabled
@@ -4412,6 +4569,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-L2-agent-runtime
       labels: {}
       annotations: {}
   component:
@@ -4436,7 +4594,7 @@ components:
 - id: 1e9e3321-1793-5cf1-8cca-826007d57197
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: sec-L34-routing-fallback
   description: Layers 3-4 band - routing and fallback. Contains model-router and the three fallback tiers.
   format: JSON
   status: enabled
@@ -4489,6 +4647,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-L34-routing-fallback
       labels: {}
       annotations: {}
   component:
@@ -4513,7 +4672,7 @@ components:
 - id: b58a37ef-541d-5655-8c1b-20fa67f91e03
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: sec-L5-grounding
   description: Layer 5 band - context and registry grounding. Contains context-store, model-registry,
     registry-credential.
   format: JSON
@@ -4567,6 +4726,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-L5-grounding
       labels: {}
       annotations: {}
   component:
@@ -4591,7 +4751,7 @@ components:
 - id: 3faebee4-912c-5f9e-894f-128969fdefb2
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: sec-L6-control-plane
   description: Layer 6 band - Meshery design and control. Contains meshery-control-plane, meshsync, broker.
   format: JSON
   status: enabled
@@ -4644,6 +4804,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-L6-control-plane
       labels: {}
       annotations: {}
   component:
@@ -4668,7 +4829,7 @@ components:
 - id: fb7f2d14-a8d0-567d-9f90-6d08eca1e8b4
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: sec-L7-policy-boundary
   description: Layer 7 band - validation and policy. Contains policy-boundary, grounding-validator, quota-ai-runtime,
     limits-ai-runtime.
   format: JSON
@@ -4722,6 +4883,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-L7-policy-boundary
       labels: {}
       annotations: {}
   component:
@@ -4746,7 +4908,7 @@ components:
 - id: a2b45ae2-8d38-53de-b61b-480de9836741
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: sec-L11-security
   description: Layer 11 band - security boundaries. Contains trust-boundary, netpol-default-deny, netpol-ai-allowlist.
   format: JSON
   status: enabled
@@ -4799,6 +4961,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-L11-security
       labels: {}
       annotations: {}
   component:
@@ -4823,7 +4986,7 @@ components:
 - id: 7b4e31d4-70e1-5ed9-8c7c-cace0cf68cbb
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Section
+  displayName: sec-L12-degradation
   description: Layer 12 band - resilience and degradation. Contains degradation-controller, pdb-sts-redis,
     pdb-sts-postgres.
   format: JSON
@@ -4877,6 +5040,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: sec-L12-degradation
       labels: {}
       annotations: {}
   component:
@@ -4901,7 +5065,7 @@ components:
 - id: 5b973355-6a3e-5c95-a898-639f55d95219
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Comment
+  displayName: note-annotation-vs-infrastructure
   description: Annotation components describe intent and are not deployable. Only components with metadata.isAnnotation=false
     produce cluster resources.
   format: JSON
@@ -4955,6 +5119,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: note-annotation-vs-infrastructure
       labels: {}
       annotations: {}
   component:
@@ -4980,7 +5145,7 @@ components:
 - id: 8d63de6f-d229-547a-b271-defe7dd6e8c4
   schemaVersion: components.meshery.io/v1beta2
   version: v1.0.0
-  displayName: Comment
+  displayName: note-deferred-ai-workloads
   description: Layers 1-5 have no native components and must not be given fabricated Deployments until
     an implementation exists. Do not invent a workload to make a layer look deployed.
   format: JSON
@@ -5034,6 +5199,7 @@ components:
     configurationUISchema: ''
   configuration:
     metadata:
+      name: note-deferred-ai-workloads
       labels: {}
       annotations: {}
   component:
