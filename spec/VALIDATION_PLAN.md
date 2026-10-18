@@ -253,7 +253,8 @@ detect catalog drift before apply.
 **Offline assertions:**
 1. Every component declares `schemaVersion: components.meshery.io/v1beta2`.
 2. Every relationship declares `schemaVersion: relationships.meshery.io/v1beta2`.
-3. Every relationship's `model.name` is one of the five models in the design. (`meshery-core` ships **no**
+3. Every relationship's `model.name` is one of the four models in the design (`kubernetes`, `meshery-core`,
+   `meshery-operator`, `kube-prometheus-stack`). (`meshery-core` ships **no**
    relationship blueprints, so annotation-level edges have no model to inherit from — the design assigns them the
    `meshery-core` model explicitly. Confirm this is acceptable, per Gate 8 item 3.)
 4. The v1beta3 design schema's `$ref` target is `v1beta2/component` and `v1beta2/relationship` — re-read to
