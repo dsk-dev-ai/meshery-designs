@@ -1,5 +1,9 @@
 # Meshery Designs — AI-Native Platform
 
+[![CI](https://github.com/dsk-dev-ai/meshery-designs/actions/workflows/ci.yml/badge.svg)](https://github.com/dsk-dev-ai/meshery-designs/actions/workflows/ci.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/dsk-dev-ai/meshery-designs)](https://github.com/dsk-dev-ai/meshery-designs/releases)
+
 Research, architecture, generation, and validation of an AI-native
 platform design for Meshery.
 
