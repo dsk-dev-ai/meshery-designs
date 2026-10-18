@@ -32,6 +32,65 @@ The design uses four namespaces:
 - `ns-ai-state`
 - `ns-ai-observability`
 
+### Design at a glance
+
+The 40 native components and their semantic edges (the 26 `meshery-core` annotation components that
+describe intent are omitted):
+
+```mermaid
+flowchart LR
+  subgraph cluster["Cluster scope"]
+    NSC["Namespaces<br/>control · runtime · state · observability"]
+    PCCC["pc-ai-critical<br/>PriorityClass"]
+    VAPC["vap-required-labels<br/>+ vapb-ai-runtime"]
+    NETC["netpol-default-deny<br/>netpol-ai-allowlist"]
+  end
+
+  subgraph ctl["ns-ai-control"]
+    ING["ingress-ai-platform"]
+    SVC["svc-meshery-control"]
+    DEP["deploy-meshery-control"]
+    SEC1["sec-broker-endpoint<br/>sec-registry-creds"]
+    RBAC1["sa / role / rb-ai-control"]
+    OPS1["broker · meshsync"]
+  end
+
+  subgraph run["ns-ai-runtime"]
+    CM["cm-agent-runtime<br/>cm-model-router"]
+    QL["quota-ai-runtime<br/>limits-ai-runtime"]
+  end
+
+  subgraph st["ns-ai-state"]
+    SVCS["svc-postgres · svc-redis"]
+    STS["sts-postgres · sts-redis"]
+    PVC["pvc-postgres · pvc-redis"]
+    PDB["pdb-sts-postgres<br/>pdb-sts-redis"]
+    SEC2["sec-state-creds<br/>sa / role / rb-ai-state"]
+  end
+
+  subgraph obs["ns-ai-observability"]
+    OTEL["otel-collector"]
+    PROM["prometheus"]
+    RULE["promrule-platform-slo"]
+    AM["alertmanager"]
+    SM["sm-platform"]
+  end
+
+  ING --> SVC --> DEP
+  CM --> DEP
+  SEC1 --> DEP
+  SVCS --> STS
+  PVC --> STS
+  PDB --> STS
+  SEC2 --> STS
+  PCCC --> STS
+  PROM --> SM
+  SM --> SVC
+  SM --> SVCS
+  PROM --> RULE
+  PROM --> AM
+```
+
 ## Repository Structure
 
 ```text
