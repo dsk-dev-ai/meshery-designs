@@ -2,7 +2,7 @@
 
 Date: 2026-10-18
 Artifact under test: `../generated/design.yml`
-Artifact revision: md5 `44d8f52092fa537277235951100ec1fa`, 252989 bytes.
+Artifact revision: md5 `1c695cfcb45f9f4806475b17844b3b33`, 253199 bytes.
 Meshery server: `v1.0.71`, `PROVIDER=Local`, context `073aa6d8f9ed17503d2ae6ba6731d7e8`
 (`kind-ai-native`).
 Target cluster: `kind` cluster `ai-native` (kindest/node v1.37.0, Kubernetes v1.37).
@@ -34,10 +34,10 @@ namespaces. The failure surface was:
 | `promrule-platform-slo` | PrometheusRule | `spec.groups` |
 
 The current revision extends `component_configuration()` in `validation/tools/gen.py` with the
-minimum the API server accepts for these 12, while remaining placeholder values (ADR-015). The
-workload image is the zero-work
-[`registry.k8s.io/pause:3.9`](https://kubernetes.io/docs/concepts/) image, chosen so the artifact
-applies in any cluster without depending on a specific application image being pullable.
+minimum the API server accepts for these 12, and gives each workload the **real, publicly pullable
+image for its role** (ADR-015): `meshery/meshery:stable-latest`, the OpenTelemetry Collector, Redis
+and PostgreSQL. The stack therefore not only applies but **runs** — all four workload pods reach
+`1/1`.
 
 ## Environment
 
@@ -135,10 +135,14 @@ this gate:
   `isNamespaced: false` (a catalog inaccuracy), so the design faithfully emits no namespace for
   them and they take `default`. Documented in `GATE8-REPORT.md`.
 - **`pvc-redis` / `pvc-postgres` report `Pending`.** The `local-path` provisioner binds a volume when
-  a pod schedules against it; the placeholder StatefulSets do not mount these claims, so the PVCs
-  legitimately remain unbound. The objects exist and are accepted.
-- **`deploy-meshery-control` runs the pause image** and is Ready 1/1. This is the intended
-  placeholder state, not a working Meshery control plane.
+  a pod schedules against it; the StatefulSets do not mount these claims, so the PVCs legitimately
+  remain unbound. The objects exist and are accepted.
+- **All four workloads run `1/1`** with real images: `deploy-meshery-control`
+  (`meshery/meshery:stable-latest`), `otel-collector`
+  (`otel/opentelemetry-collector-contrib:0.111.0`), `sts-redis` (`redis:7.4-alpine`) and
+  `sts-postgres` (`postgres:16-alpine`). `prometheus-prometheus` and `alertmanager-alertmanager`
+  also run `2/2`. First pull on a slow network took several minutes; the images are public and
+  unpinned by design (ADR-015).
 
 ## Reproduce
 

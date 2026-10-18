@@ -132,8 +132,10 @@ bash deploy.sh
 `deploy.sh` regenerates the artifact, runs every offline gate, deploys through a local Meshery
 server, and asserts the 40/40 result. `docs/QUICKSTART.md` walks through the same flow.
 
-> The component configurations are admission-valid **placeholders** (pause image, default ports,
-> 1Gi PVCs, inert policy/rule) so the artifact applies in any cluster. See ADR-015.
+> Each workload uses the real, publicly pullable image for its role (Meshery, the OpenTelemetry
+> Collector, Redis, PostgreSQL), so the stack **runs**, not just applies. Sizing and policy values
+> (ports, PVC storage, the Postgres password, alert thresholds) are overridden for production. See
+> ADR-015.
 
 ## Continuous integration
 

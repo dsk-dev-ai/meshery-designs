@@ -239,13 +239,19 @@ def component_configuration(name):
     """Return the resource configuration for a component.
 
     This is the minimum the Kubernetes API server accepts, so the design
-    deploys end to end. It is deliberately a placeholder: workload images,
-    Service ports, PVC storage and policy expressions are the values an
-    operator overrides at deploy time (ADR-015). The placeholder image is the
-    canonical zero-work pause image, chosen so the artifact applies in any
-    cluster without depending on a specific application image being pullable.
+    deploys end to end. Each workload uses the real, publicly pullable image
+    for its role (Meshery, the OpenTelemetry Collector, Redis, PostgreSQL), so
+    the platform deploys as a coherent set rather than a set of inert
+    placeholders. Sizing and policy values (ports, PVC storage, the
+    PrometheusRule expression) are the ones an operator overrides at deploy
+    time (ADR-015).
     """
-    image = "registry.k8s.io/pause:3.9"
+    images = {
+        "deploy-meshery-control": "meshery/meshery:stable-latest",
+        "otel-collector": "otel/opentelemetry-collector-contrib:0.111.0",
+        "sts-redis": "redis:7.4-alpine",
+        "sts-postgres": "postgres:16-alpine",
+    }
     configs = {
         "deploy-meshery-control": {
             "spec": {
@@ -264,7 +270,7 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "meshery-control",
-                                "image": image,
+                                "image": images["deploy-meshery-control"],
                             },
                         ],
                     },
@@ -288,7 +294,7 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "otel-collector",
-                                "image": image,
+                                "image": images["otel-collector"],
                             },
                         ],
                     },
@@ -313,7 +319,7 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "redis",
-                                "image": image,
+                                "image": images["sts-redis"],
                             },
                         ],
                     },
@@ -338,7 +344,10 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "postgres",
-                                "image": image,
+                                "image": images["sts-postgres"],
+                                "env": [
+                                    {"name": "POSTGRES_PASSWORD", "value": "postgres"},
+                                ],
                             },
                         ],
                     },
@@ -468,12 +477,16 @@ def component_configuration(name):
                         "name": "ai-platform-slo",
                         "rules": [
                             {
-                                "alert": "PlaceholderSLO",
-                                "expr": "vector(0)",
-                                "for": "5m",
+                                "alert": "AiPlatformHighErrorRate",
+                                "expr": (
+                                    "sum(rate(http_requests_total{job=\"ai-platform\","
+                                    "code=~\"5..\"}[5m])) / sum(rate("
+                                    "http_requests_total{job=\"ai-platform\"}[5m])) > 0.05"
+                                ),
+                                "for": "10m",
                                 "labels": {"severity": "warning"},
                                 "annotations": {
-                                    "summary": "Placeholder SLO rule; real expressions are supplied at deploy time.",
+                                    "summary": "AI platform 5xx error rate above 5% for 10m.",
                                 },
                             },
                         ],

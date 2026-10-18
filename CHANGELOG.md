@@ -5,6 +5,14 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Use the real, publicly pullable workload images (Meshery, OpenTelemetry Collector, Redis,
+  PostgreSQL) instead of the `pause` placeholder, and a real PrometheusRule expression. The stack now
+  **runs** — all four workload pods reach `1/1` — not just applies. See ADR-015.
+
 ## [1.0.0] - 2026-10-18
 
 First release. The `ai-native-platform` Meshery design: 66 components and 113 relationships across
@@ -46,7 +54,8 @@ against a live Kubernetes cluster.
 
 ### Known limitations
 
-- Component configurations are admission-valid **placeholders**; replace them for a production deploy.
+- Sizing and policy values (ports, PVC storage, the Postgres password, alert thresholds) are
+  placeholders; replace them for a production deploy.
 - The two `NetworkPolicy` objects land in `default` (the catalog marks `NetworkPolicy`
   `isNamespaced: false`).
 - The Meshery Playground sandbox cannot deploy (shared read-only service account); deploy to your own
