@@ -6,10 +6,15 @@ model id, registrant, isNamespaced, genealogy, styles, capabilities) is read fro
 the Meshery model catalog at the pinned versions. Nothing is invented.
 
 No value is overridden: every component uses its catalog kind and annotation
-flag. The design's environment grouping uses the registered `Section`
-annotation rather than meshery-core's `Environment`, which the registry never
-registers (empty `component.schema` together with `metadata.isAnnotation: false`
-is silently dropped by ComponentDefinition.Create). See COMPONENT_INVENTORY.md.
+flag. Each component's `displayName` is the instance name from the frozen
+specification (not the kind), because Meshery's deploy path takes the
+Kubernetes resource `metadata.name` from `displayName` (meshkit
+converter.CreateK8sResourceStructure) and the Namespace-membership mutator
+reads it as the namespace value. The design's environment grouping uses the
+registered `Section` annotation rather than meshery-core's `Environment`, which
+the registry never registers (empty `component.schema` together with
+`metadata.isAnnotation: false` is silently dropped by
+ComponentDefinition.Create). See COMPONENT_INVENTORY.md.
 
 Deterministic UUIDs (uuid5) are used so re-running produces an identical file.
 """
@@ -230,7 +235,16 @@ def styles_block(cat_styles, fidelity=None):
 
 
 def component_configuration(name):
-    """Return the minimum catalog-valid resource configuration for Meshery validation."""
+    """Return the resource configuration for a component.
+
+    This is the minimum the Kubernetes API server accepts, so the design
+    deploys end to end. It is deliberately a placeholder: workload images,
+    Service ports, PVC storage and policy expressions are the values an
+    operator overrides at deploy time (ADR-015). The placeholder image is the
+    canonical zero-work pause image, chosen so the artifact applies in any
+    cluster without depending on a specific application image being pullable.
+    """
+    image = "registry.k8s.io/pause:3.9"
     configs = {
         "deploy-meshery-control": {
             "spec": {
@@ -249,6 +263,7 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "meshery-control",
+                                "image": image,
                             },
                         ],
                     },
@@ -272,6 +287,7 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "otel-collector",
+                                "image": image,
                             },
                         ],
                     },
@@ -296,6 +312,7 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "redis",
+                                "image": image,
                             },
                         ],
                     },
@@ -320,6 +337,7 @@ def component_configuration(name):
                         "containers": [
                             {
                                 "name": "postgres",
+                                "image": image,
                             },
                         ],
                     },
@@ -368,6 +386,100 @@ def component_configuration(name):
                 ],
             },
         },
+        "svc-meshery-control": {
+            "spec": {
+                "ports": [
+                    {"name": "http", "port": 80, "targetPort": 8080},
+                ],
+            },
+        },
+        "svc-redis": {
+            "spec": {
+                "ports": [
+                    {"name": "redis", "port": 6379, "targetPort": 6379},
+                ],
+            },
+        },
+        "svc-postgres": {
+            "spec": {
+                "ports": [
+                    {"name": "postgres", "port": 5432, "targetPort": 5432},
+                ],
+            },
+        },
+        "pvc-redis": {
+            "spec": {
+                "accessModes": ["ReadWriteOnce"],
+                "resources": {"requests": {"storage": "1Gi"}},
+            },
+        },
+        "pvc-postgres": {
+            "spec": {
+                "accessModes": ["ReadWriteOnce"],
+                "resources": {"requests": {"storage": "1Gi"}},
+            },
+        },
+        "ingress-ai-platform": {
+            "spec": {
+                "rules": [
+                    {
+                        "host": "ai-platform.local",
+                        "http": {
+                            "paths": [
+                                {
+                                    "path": "/",
+                                    "pathType": "Prefix",
+                                    "backend": {
+                                        "service": {
+                                            "name": "svc-meshery-control",
+                                            "port": {"number": 80},
+                                        },
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                ],
+            },
+        },
+        "vap-required-labels": {
+            "spec": {
+                "matchConstraints": {
+                    "resourceRules": [
+                        {
+                            "apiGroups": ["*"],
+                            "apiVersions": ["*"],
+                            "operations": ["CREATE", "UPDATE"],
+                            "resources": ["*"],
+                        },
+                    ],
+                },
+                "validations": [
+                    {"expression": "true"},
+                ],
+                "failurePolicy": "Ignore",
+            },
+        },
+        "promrule-platform-slo": {
+            "spec": {
+                "groups": [
+                    {
+                        "name": "ai-platform-slo",
+                        "rules": [
+                            {
+                                "alert": "PlaceholderSLO",
+                                "expr": "vector(0)",
+                                "for": "5m",
+                                "labels": {"severity": "warning"},
+                                "annotations": {
+                                    "summary": "Placeholder SLO rule; real expressions are supplied at deploy time.",
+                                },
+                            },
+                        ],
+                    },
+                ],
+            },
+        },
     }
     return configs.get(name, {})
 
@@ -380,6 +492,17 @@ def build_components():
     by_name = {}
     model_cache = {}
     fidelity = {"schema_omitted": [], "capabilities_omitted": 0}
+
+    # The catalog's parent/inventory relationship (blueprint kmjea) mutates a
+    # child's `configuration.metadata.namespace` from its parent Namespace's
+    # `displayName`. Meshery applies that mutation in the UI policy engine
+    # (POST /relationships/evaluate), not in the deploy API, so the resolved
+    # namespace is emitted onto the component here as well. The artifact then
+    # deploys through either path: a UI evaluation sees the value already equal
+    # and makes no change, and the deploy API places the resource correctly.
+    # The inventory relationships are still emitted (build_relationships).
+    ns_of = {src: dst for (src, dst, basis, _ann, _prov, _ref) in S.EDGES
+             if basis == "kmjea"}
 
     for name, model, kind, is_ann, desc in S.COMPONENTS:
         cat = load(f"{model}/{MODEL_VERSION[model]}/v1.0.0/components/{kind}.json")
@@ -404,10 +527,18 @@ def build_components():
         if cat.get("capabilities"):
             fidelity["capabilities_omitted"] += 1
 
-        # `displayName` is typed as InputString (no spaces) but the catalog
-        # ships spaced values such as "API Group". Stripping the spaces
-        # reproduces the component `kind` exactly in every case, so `kind` is
-        # used and the normalisation is reported rather than assumed.
+        # The component `displayName` carries the instance name from the
+        # frozen specification (the first field of each COMPONENTS row). This
+        # is not a catalog value: Meshery's deploy path derives the Kubernetes
+        # resource metadata.name from it (meshkit
+        # converter.CreateK8sResourceStructure) and the catalog's
+        # Namespace-membership mutator reads it as the namespace value, so it
+        # must be the intended resource name rather than the component kind.
+        #
+        # The catalog's own displayName is still checked for fidelity: it is
+        # typed as InputString with no spaces, and the catalog ships spaced
+        # values such as "API Group", but stripping the spaces reproduces the
+        # kind in every case.
         cat_dn = cat.get("displayName") or kind
         if cat_dn.replace(" ", "") != kind:
             raise SystemExit(
@@ -417,11 +548,15 @@ def build_components():
             fidelity["displayname_normalised"] = \
                 fidelity.get("displayname_normalised", 0) + 1
 
+        config_meta = {"name": name, "labels": {}, "annotations": {}}
+        if name in ns_of:
+            config_meta["namespace"] = ns_of[name]
+
         comp = {
             "id": cid,
             "schemaVersion": COMPONENT_SCHEMA_VERSION,
             "version": cat.get("version", "v1.0.0"),
-            "displayName": kind,
+            "displayName": name,
             "description": desc,
             "format": cat.get("format", "JSON"),
             "status": cat.get("status", "enabled"),
@@ -435,7 +570,7 @@ def build_components():
                 "instanceDetails": cat_meta.get("instanceDetails") or {},
                 "configurationUISchema": cat_meta.get("configurationUISchema", ""),
             },
-            "configuration": {"metadata": {"labels": {}, "annotations": {}}, **component_configuration(name)},
+            "configuration": {"metadata": config_meta, **component_configuration(name)},
             "component": {
                 "version": cat["component"]["version"],
                 "kind": cat["component"]["kind"],

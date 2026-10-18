@@ -66,7 +66,33 @@ Gate 8 verifies import, persistence, retrieval, and deep design integrity.
 
 It does **not** claim:
 
-- full Kubernetes cluster deployment
 - production rendering
 - production runtime behavior
+- production observability behavior
+
+Full Kubernetes cluster deployment is covered separately by Gate 9.
+
+## Gate 9 — Live Kubernetes Cluster Deploy
+
+Gate 9 was executed against a real `kind` cluster (`ai-native`, Kubernetes v1.37) through a locally
+running Meshery server.
+
+Verified:
+
+- all 40 native components apply with **zero failures**
+- designed resource names
+- designed namespaces for every namespaced resource
+- cluster-scoped resources remain cluster-scoped
+
+Report:
+
+`validation/GATE9-REPORT.md`
+
+### Gate 9 Scope
+
+Gate 9 verifies that the design is accepted by the Kubernetes API server and materialises as the
+intended resources. It does **not** claim:
+
+- production rendering or runtime behavior
+- that placeholder images/ports/expressions are production values (see ADR-015)
 - production observability behavior

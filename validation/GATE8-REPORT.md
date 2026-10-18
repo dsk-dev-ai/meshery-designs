@@ -167,9 +167,10 @@ components likewise receive no namespace edge; this is a catalog-data issue, not
 
 - **Item 4 (UI render):** not performed — no browser/UI render was done; `SKIP_COMP_GEN=true` means
   catalog icon assets were not generated.
-- **Item 6 (`metashery apply --dry-run`):** not performed — requires a Kubernetes cluster and the
-  Meshery adapter/`mesheryctl` apply path; no cluster is available (`~/.kube/config` absent) and no
-  cluster software was installed.
+- **Item 6 (`metashery apply --dry-run`):** not performed at the time of this gate — it requires a
+  Kubernetes cluster and the Meshery adapter/`mesheryctl` apply path; no cluster was available then.
+  **Now performed:** a live cluster deploy of a newer revision is recorded in
+  `GATE9-REPORT.md` (40/40 components apply).
 - **`mesheryctl design import` CLI:** not run as a binary; the equivalent server endpoint was called
   directly, exercising the identical handler.
 - The environment was reset between sessions (Go toolchain and module cache removed; Docker socket
