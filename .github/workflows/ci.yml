@@ -14,8 +14,8 @@ jobs:
     name: Artifact integrity
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install dependencies
@@ -45,8 +45,8 @@ jobs:
         models/meshery-operator/1.0.70
         models/kube-prometheus-stack/89.2.2
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install dependencies
