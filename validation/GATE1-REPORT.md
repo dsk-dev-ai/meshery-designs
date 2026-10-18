@@ -52,7 +52,7 @@ loss rather than a design choice.
 | 7 | `match` blocks with `id: null` | typed as a string | Null keys dropped (`null` and absent mean the same here) | 2 relationships |
 | 8 | blueprint `model` block with empty `displayName`/`version` | both `minLength: 1` | Reference rebuilt from the catalog `model.json` the blueprint names | all 78 blueprint-backed edges |
 | 9 | `styles.shape` `circle` (24), `shield` (4), `right-rhomboid` (1) | 25-value `Shape` enum | `circle`→`ellipse`, `right-rhomboid`→`rhomboid` (exact suffix match), `shield`→`pentagon`. An unmapped shape now raises instead of silently falling back. | 29 |
-| 10 | `styles.svg*` full inline SVG, often >10 KB | `maxLength: 500` | Emitted empty when over the cap, matching the shipped reference-design convention. 36 values that fit are kept verbatim. | 106 fields |
+| 10 | `styles.svg*` full inline SVG, often >10 KB | `maxLength: 500` | Emitted empty when over the cap (109), matching the shipped reference-design convention. 36 values that fit are kept verbatim; the remaining 53 svg fields are empty in the catalog itself. | 109 fields |
 | 11 | `subCategory: "App Definition and Development"` (meshery-operator) | not in the 46-value `SubCategory` enum | The schema's own documented default `Uncategorized` | 2 components |
 
 Items 1, 9 and 10 are cosmetic. Items 2–6, 8 and 11 are metadata plumbing. Item 7 is a
@@ -74,7 +74,9 @@ the places a reviewer should push back if the loss matters:
   `Credential`). Net: 0 of 66 components carry a schema. This matches shipped
   convention, so it is expected to be harmless, but it is total loss.
 - **`model.metadata` dropped from all 4 model blocks** (see #2–#4).
-- **`styles.svg*` emptied on 106 fields** (see #10); icons will fall back to the UI default.
+- **`styles.svg*` emptied on 109 fields** (see #10); icons will fall back to the UI default. (The
+  artifact carries 162 empty svg fields in all: the 109 emptied for length plus 53 that are empty in
+  the catalog.)
 - **`meshery-operator` components reclassified to `subCategory: Uncategorized`** (see #11).
   The catalog's real value is not lost from the repo — it is in
   `meshery/models/meshery-operator/1.0.70/v1.0.0/model.json` — but the design does not carry it.
