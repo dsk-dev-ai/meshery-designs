@@ -21,7 +21,8 @@ import yaml
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import spec_data as S  # noqa: E402
 
-MODELS_ROOT = "/home/dsk/opensource_new_programs/meshery/models"
+MODELS_ROOT = os.environ.get(
+    "MESHER_MODELS_ROOT", "/home/dsk/opensource_new_programs/meshery/models")
 MODEL_VERSION = {S.K8S: "v1.37.1", S.CORE: "0.7.2", S.OPER: "1.0.70",
                  S.PROM: "89.2.2"}
 ZERO = "00000000-0000-0000-0000-000000000000"

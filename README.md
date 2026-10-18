@@ -71,3 +71,19 @@ server, and asserts the 40/40 result. `docs/QUICKSTART.md` walks through the sam
 
 > The component configurations are admission-valid **placeholders** (pause image, default ports,
 > 1Gi PVCs, inert policy/rule) so the artifact applies in any cluster. See ADR-015.
+
+## Continuous integration
+
+CI (`.github/workflows/ci.yml`) runs two jobs: an **artifact integrity** job that checks the
+committed design with no external dependencies, and a **reproduce** job that fetches the pinned
+Meshery catalog and schemas, regenerates the artifact, and asserts it is byte-identical before
+running the structural and schema gates.
+
+## Contributing
+
+See `CONTRIBUTING.md`. Never edit `generated/design.yml` by hand — change `spec_data.py` or `gen.py`
+and regenerate.
+
+## License
+
+Apache-2.0. See `LICENSE` and `NOTICE`. Change history is in `CHANGELOG.md`.

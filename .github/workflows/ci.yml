@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "release/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  artifact:
+    name: Artifact integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install --quiet pyyaml
+      - name: Structural checks on the committed artifact
+        run: |
+          set -euo pipefail
+          python3 tests/test_counts.py
+          python3 tests/test_pdb_coverage.py
+          python3 tests/test_spec_data.py
+      - name: All four namespaces are present
+        run: |
+          set -euo pipefail
+          for ns in ns-ai-control ns-ai-runtime ns-ai-state ns-ai-observability; do
+            grep -q "$ns" generated/design.yml
+          done
+
+  reproduce:
+    name: Reproduce from pinned catalog
+    runs-on: ubuntu-latest
+    env:
+      MESHER_SHA: 90bac8dc4c9ea5d6d915c41fec0bb013adc1b6fe
+      SCHEMAS_TAG: v1.3.37
+      MODELS: >-
+        models/kubernetes/v1.37.1
+        models/meshery-core/0.7.2
+        models/meshery-operator/1.0.70
+        models/kube-prometheus-stack/89.2.2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install --quiet pyyaml jsonschema
+      - name: Fetch pinned Meshery catalog (four models)
+        run: |
+          set -euo pipefail
+          git init -q "$RUNNER_TEMP/catalog"
+          cd "$RUNNER_TEMP/catalog"
+          git remote add origin https://github.com/meshery/meshery.git
+          git sparse-checkout init --cone
+          git sparse-checkout set $MODELS
+          git fetch --depth 1 --filter=blob:none origin "$MESHER_SHA"
+          git checkout -q FETCH_HEAD
+          echo "catalog models:"
+          ls models
+      - name: Fetch pinned Meshery schemas
+        run: |
+          set -euo pipefail
+          curl -fsSL -o "$RUNNER_TEMP/schemas.tgz" \
+            "https://github.com/meshery/schemas/archive/refs/tags/${SCHEMAS_TAG}.tar.gz"
+          mkdir -p "$RUNNER_TEMP/schemas"
+          tar -xzf "$RUNNER_TEMP/schemas.tgz" -C "$RUNNER_TEMP/schemas" --strip-components=1
+          test -f "$RUNNER_TEMP/schemas/schemas/constructs/v1beta3/design/design.yaml"
+      - name: Regenerate byte-identically, verify, and schema-gate
+        env:
+          MESHER_MODELS_ROOT: ${{ runner.temp }}/catalog/models
+          MESHER_SCHEMAS: ${{ runner.temp }}/schemas/schemas/constructs
+        run: |
+          set -euo pipefail
+          python3 tests/test_gen_repro.py
+          python3 tests/test_verify.py
+          python3 tests/test_gate1.py

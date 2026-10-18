@@ -23,8 +23,9 @@ import yaml
 import jsonschema
 from jsonschema import RefResolver
 
-SCHEMAS = ("/home/dsk/go/pkg/mod/github.com/meshery/schemas@v1.3.37/"
-           "schemas/constructs")
+SCHEMAS = os.environ.get(
+    "MESHER_SCHEMAS",
+    "/home/dsk/go/pkg/mod/github.com/meshery/schemas@v1.3.37/schemas/constructs")
 DESIGN_SCHEMA = os.path.join(SCHEMAS, "v1beta3/design/design.yaml")
 
 KNOWN = "KNOWN_UPSTREAM_SCHEMA_EXCEPTION"
