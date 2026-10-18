@@ -49,9 +49,10 @@ bash deploy.sh
 the target Meshery context, deploys the design, and asserts that **40 of 40** components apply with
 zero failures. On success it prints the applied inventory.
 
-> The component configurations are admission-valid **placeholders** (pause image, default ports,
-> 1Gi PVCs, inert policy and rule) so the artifact applies in any cluster. Replace them with real
-> values for a production deploy. See `spec/ARCHITECTURAL_DECISIONS.md` ADR-015.
+> Each workload uses the real, publicly pullable image for its role (Meshery, the OpenTelemetry
+> Collector, Redis, PostgreSQL), so the stack runs, not just applies. Sizing and policy values
+> (ports, PVC storage, the Postgres password, alert thresholds) are placeholders to replace for a
+> production deploy. See `spec/ARCHITECTURAL_DECISIONS.md` ADR-015.
 
 ## 4. Inspect the result
 

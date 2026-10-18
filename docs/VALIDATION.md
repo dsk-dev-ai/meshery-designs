@@ -90,9 +90,11 @@ Report:
 
 ### Gate 9 Scope
 
-Gate 9 verifies that the design is accepted by the Kubernetes API server and materialises as the
-intended resources. It does **not** claim:
+Gate 9 verifies that the design is accepted by the Kubernetes API server, materialises as the
+intended resources, and that the workloads run (all four workload pods reach `1/1` with real
+images). It does **not** claim:
 
 - production rendering or runtime behavior
-- that placeholder images/ports/expressions are production values (see ADR-015)
+- that the sizing and policy values (ports, PVC storage, the Postgres password, alert thresholds)
+  are production values (see ADR-015)
 - production observability behavior

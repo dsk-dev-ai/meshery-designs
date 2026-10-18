@@ -380,7 +380,7 @@ component at load time — see `VALIDATION_PLAN.md` §4. This is the single high
 
 ---
 
-## ADR-015 — Deployable placeholder configuration
+## ADR-015 — Admission-valid configuration with real workload images
 
 **Context.** ADR-010 and ADR-011 left `otel-collector` and `deploy-meshery-control` (and the other
 workload, Service, PVC, Ingress, policy and rule components) with an empty or near-empty
@@ -392,33 +392,39 @@ a `PersistentVolumeClaim` with no `accessModes`/storage request, an `Ingress` wi
 groups — **12 of the 40 components failed `422`** even though their names and namespaces were
 correct.
 
-**Decision.** Every component's `configuration` carries the **minimum the API server accepts**, as a
-placeholder:
+**Decision.** Every component's `configuration` carries the minimum the API server accepts, and each
+workload uses the **real, publicly pullable image for its role**:
 
-- Workload containers use the zero-work pause image `registry.k8s.io/pause:3.9`.
-- Services declare their port (control :80, redis :6379, postgres :5432).
-- PVCs request `ReadWriteOnce` / `1Gi`.
-- The Ingress routes `ai-platform.local / → svc-meshery-control:80`.
+- `deploy-meshery-control` → `meshery/meshery:stable-latest`
+- `otel-collector` → `otel/opentelemetry-collector-contrib:0.111.0`
+- `sts-redis` → `redis:7.4-alpine`
+- `sts-postgres` → `postgres:16-alpine`, with `POSTGRES_PASSWORD` set from a literal
+- Services declare their port (control :80, redis :6379, postgres :5432)
+- PVCs request `ReadWriteOnce` / `1Gi`
+- The Ingress routes `ai-platform.local / → svc-meshery-control:80`
 - `vap-required-labels` matches all operations with a pass-through `expression: "true"` and
-  `failurePolicy: Ignore` (deliberately non-blocking; the real policy is intent, not enforcement).
-- `promrule-platform-slo` carries one inert placeholder group.
+  `failurePolicy: Ignore` (deliberately non-blocking; the real policy is intent, not enforcement)
+- `promrule-platform-slo` carries a real alerting expression (`AiPlatformHighErrorRate`)
 
-The design still deploys as a coherent platform; the placeholder image and inert rule are chosen so
-the artifact applies in **any** cluster without depending on a specific application image being
-pullable or a real alert expression being meaningful.
+Verified: all four workload pods run **1/1** on the Gate 9 cluster with these images.
 
 **Alternatives rejected.**
 - *Keep empty configuration and document that deployment is out of scope.* Rejected: it makes the
-  `Deployable: Yes` claim in `docs/ARCHITECTURE.md` §2 false and leaves the design non-portable — the
-  exact gap Gate 9 was commissioned to close.
-- *Use real application images.* Rejected: it couples the artifact to a specific registry and image
-  tag that may not be pullable, and asserts a runtime the design does not pin. The pause image is the
-  canonical "the spec is valid, the workload's identity is supplied later" choice.
+  `Deployable: Yes` claim in `docs/ARCHITECTURE.md` §2 false — the exact gap Gate 9 was commissioned
+  to close.
+- *Use the zero-work `pause` image.* Rejected after the real images proved pullable and runnable:
+  `pause` makes the deployment *apply* but not *run*, so the platform looks like an inert set of
+  placeholders rather than a working stack. This ADR's first revision used `pause`; this revision
+  supersedes it.
+- *Pin exact application image digests.* Rejected for now: the design is not a release pin for those
+  upstream projects, and floating tags keep it current. A production overlay should pin digests.
 - *Make `vap-required-labels` enforce real required labels.* Rejected: the design's own resources do
   not all carry those labels, so an enforcing policy would reject the design's own deploy. A
   pass-through placeholder keeps the design self-consistent.
 
-**Consequences.** The `configuration` payloads are larger and state values an operator must override
-for a production deploy. This is disclosed here and in `GATE9-REPORT.md`; the values are marked as
-placeholders so a reader is not misled. ADR-010's and ADR-011's "configuration is left minimal"
-consequence is superseded by this ADR: the configuration is now "minimal but admission-valid".
+**Consequences.** The design now deploys a **running** stack — the Meshery control plane, the
+OpenTelemetry Collector, Redis, PostgreSQL, Prometheus and Alertmanager — on any cluster that
+provides the required CRDs and can pull the images. Sizing, storage, the Postgres password and the
+alert thresholds are the values an operator overrides for production. This supersedes ADR-010's and
+ADR-011's "configuration is left minimal" consequence: the configuration is now "minimal,
+admission-valid, and runnable".
