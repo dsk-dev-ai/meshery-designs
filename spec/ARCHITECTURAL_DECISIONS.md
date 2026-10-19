@@ -428,3 +428,46 @@ provides the required CRDs and can pull the images. Sizing, storage, the Postgre
 alert thresholds are the values an operator overrides for production. This supersedes ADR-010's and
 ADR-011's "configuration is left minimal" consequence: the configuration is now "minimal,
 admission-valid, and runnable".
+
+## ADR-016 — Contribute a `gateway-api` model upstream
+
+**Status:** Accepted · 2026-10-19
+
+**Context.** The design routes traffic through a legacy `Ingress` (`kubernetes` model). The modern
+Kubernetes API is the **Gateway API** (`gateway.networking.k8s.io`), which is a separate project
+(`kubernetes-sigs/gateway-api`) and is *not* part of the core `kubernetes` model (that model is built
+from the Kubernetes OpenAPI spec). The catalog had **no** `gateway-api` model, so a design cannot
+reference `Gateway`/`HTTPRoute` at all.
+
+Meshery's own tooling anticipates such a model — `meshkit` ships a
+`generators/github/gateway-api/` fixture — but the CRD generator yields **0 components** for these
+CRDs (a CUE-extraction issue; not patchable here without a Go toolchain). So the components were
+authored directly from the official CRD schemas and the envelope of an existing committed component
+(`kubernetes` `Ingress`).
+
+**Decision.** Add a new **`gateway-api`** model (v1.6.3, standard channel) with six components —
+`GatewayClass` (cluster-scoped), `Gateway`, `HTTPRoute`, `GRPCRoute`, `ReferenceGrant`,
+`BackendTLSPolicy` (all namespaced, `gateway.networking.k8s.io/v1`). Schemas are taken verbatim from
+`spec.versions[0].schema.openAPIV3Schema`. Submit it upstream as
+[meshery/meshery#22452](https://github.com/meshery/meshery/pull/22452).
+
+A **separate** model (rather than extending `kubernetes`) is correct because Gateway API is a
+distinct API group with its own versioning and lifecycle — the same reason `meshkit` models it
+separately.
+
+**Validation.** All six components were registered into a live Meshery server
+(`POST /api/registry/register` via `mesheryctl model import`) — the authoritative schema check —
+and a clean re-import reproduced the result. The design itself is unaffected: this is an upstream
+capability addition, not a change to `generated/design.yml`.
+
+**Alternatives rejected.**
+- *Extend the `kubernetes` model.* Rejected: Gateway API is a separate project; folding it into the
+  core model misrepresents its provenance and versioning.
+- *Use the built-in meshkit CRD generator.* Rejected: it produces 0 components for these CRDs.
+- *Hand-write component JSON without a live-server check.* Rejected: the local Draft-07 validator
+  cannot resolve the schema's remote `$ref`s offline, so importing into a real server is the only
+  authoritative validation.
+
+**Consequences.** Once merged upstream, designs can reference `Gateway`/`HTTPRoute` and the design
+can migrate off `Ingress`. Until then, the design keeps `Ingress` — this ADR adds an upstream
+capability, it does not change the shipped artifact.

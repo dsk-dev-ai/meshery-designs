@@ -144,6 +144,18 @@ committed design with no external dependencies, and a **reproduce** job that fet
 Meshery catalog and schemas, regenerates the artifact, and asserts it is byte-identical before
 running the structural and schema gates.
 
+## Playing with Meshery
+
+`docs/PLAYING_WITH_MESHERY.md` walks through exercising the design against a **live Meshery
+server**: registering models and running the design through the server-side relationship/policy
+evaluation engine. It records the evidence and the API findings (see ADR-016).
+
+## Upstream contribution
+
+This project contributed a new **`gateway-api`** model (Gateway API v1.6.3 components: `Gateway`,
+`GatewayClass`, `HTTPRoute`, `GRPCRoute`, `ReferenceGrant`, `BackendTLSPolicy`) upstream to Meshery
+— [meshery/meshery#22452](https://github.com/meshery/meshery/pull/22452). See ADR-016.
+
 ## Contributing
 
 See `CONTRIBUTING.md`. Never edit `generated/design.yml` by hand — change `spec_data.py` or `gen.py`

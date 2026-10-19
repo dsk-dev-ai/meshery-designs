@@ -5,13 +5,30 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.1.0] - 2026-10-19
+
+Second release. Everything that landed after `v1.0.0`: the stack now **runs** on a real cluster, the
+repo is fully licensed and CI-gated, and a new `gateway-api` model has been contributed upstream.
 
 ### Changed
 
 - Use the real, publicly pullable workload images (Meshery, OpenTelemetry Collector, Redis,
   PostgreSQL) instead of the `pause` placeholder, and a real PrometheusRule expression. The stack now
   **runs** — all four workload pods reach `1/1` — not just applies. See ADR-015.
+
+### Added
+
+- `docs/PLAYING_WITH_MESHERY.md` — hands-on exercise against a live Meshery v1.0.71 server: register
+  the new `gateway-api` model and run the design through the server-side relationship/policy engine
+  (62 policy actions). See ADR-016.
+- Upstream contribution: a new **`gateway-api`** model with the Gateway API v1.6.3 components
+  (`Gateway`, `GatewayClass`, `HTTPRoute`, `GRPCRoute`, `ReferenceGrant`, `BackendTLSPolicy`),
+  submitted as [meshery/meshery#22452](https://github.com/meshery/meshery/pull/22452). The design
+  can now use modern `Gateway`/`HTTPRoute` instead of the legacy `Ingress`.
+
+### Fixed
+
+- Corrected the `styles.svg*` fidelity figure in `GATE1-REPORT.md` (109 fields, not 106).
 
 ## [1.0.0] - 2026-10-18
 
@@ -61,4 +78,5 @@ against a live Kubernetes cluster.
 - The Meshery Playground sandbox cannot deploy (shared read-only service account); deploy to your own
   cluster instead.
 
+[1.1.0]: https://github.com/dsk-dev-ai/meshery-designs/releases/tag/v1.1.0
 [1.0.0]: https://github.com/dsk-dev-ai/meshery-designs/releases/tag/v1.0.0
