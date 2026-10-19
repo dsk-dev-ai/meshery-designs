@@ -152,6 +152,19 @@ deploy.sh      End-to-end deploy + verification script
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). **Never edit `generated/design.yml` by hand** — change `spec/` or `validation/tools/spec_data.py` + `gen.py`, regenerate, and run all gates. DCO sign-off is required.
 
+## Meshery Community
+
+Join the Meshery community to learn, contribute, and grow with cloud native practitioners.
+
+- [#newcomers in Slack](https://slack.meshery.io/) — Introduce yourself and meet others.
+- [Community Handbook](https://docs.meshery.io/project/community) — Overview of how the community works.
+- [Community Calendar](https://meshery.io/calendar) — Join meetings and events.
+- [Community YouTube](https://www.youtube.com/@mesheryio) — Watch recordings and tutorials.
+- [Meshery Playground](https://play.meshery.io/) — Explore cloud native concepts and Kubernetes in your browser.
+- [Meshery Catalog](https://meshery.io/catalog) — Browse and publish designs to the Meshery Catalog.
+- [Contributor Training](https://docs.meshery.io/project/contributing) — Self-paced training for contributors.
+- [Become a Certified Meshery Contributor (CMC)](https://meshery.io/certification) — Validate your technical proficiency.
+
 ## License & Notices
 
 - [Apache-2.0 License](LICENSE)
